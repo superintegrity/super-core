@@ -1,0 +1,17 @@
+{
+  "name": "super-integrity",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install": "lerna bootstrap",
+    "test": "lerna run test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gatsby-cli": "^2.4.17",
+    "lerna": "^3.13.1"
+  }
+}
