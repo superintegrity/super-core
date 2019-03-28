@@ -5,6 +5,7 @@ import toUpper from "ramda/es/toUpper"
 export const SubHeader = ({ title }) => (
   <div style={styles.root}>
     <h1 style={styles.header}>{toUpper(title)}</h1>
+
   </div>
 )
 
