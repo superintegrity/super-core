@@ -3,22 +3,14 @@ import PropTypes from "prop-types"
 import toUpper from "ramda/es/toUpper"
 import styled from "styled-components"
 
-export const SubHeader = ({ title }) => (
+export const Footer = () => (
   <Root>
-    <Head>{toUpper(title)}</Head>
+    <Text>@{new Date().getFullYear()} Super Integrity</Text>
   </Root>
 )
 
-SubHeader.propTypes = {
-  title: PropTypes.string,
-}
-
-SubHeader.defaultProps = {
-  title: ``,
-}
-
 const Root = styled.div`
-  height: 150px;
+  height: 100px;
   background-color: rgba(166, 147, 116, 1);
   margin-bottom: 1.45rem;
   display: flex;
@@ -32,10 +24,6 @@ const Root = styled.div`
   }
 `
 
-const Head = styled.h1`
+const Text = styled.text`
   color: #fff;
-  font-family: sans-serif, "libre baskerville", sans-serif;
-  font-size: 28px;
-  font-weight: bold;
-  margin: 0;
 `

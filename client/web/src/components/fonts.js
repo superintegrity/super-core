@@ -8,6 +8,14 @@ export function Fonts() {
         href="https://fonts.googleapis.com/css?family=Anton"
         rel="stylesheet"
       />
+      <link
+        href="https://fonts.googleapis.com/css?family=Libre+Baskerville"
+        rel="stylesheet"
+      />
+      <link
+        href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700"
+        rel="stylesheet"
+      />
     </Helmet>
   )
 }
