@@ -42,14 +42,14 @@ template {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
-  color: white;
+  color: black;
   text-decoration: none;
 }
 a.active,
 a:active,
 a:hover {
   outline-width: 0;
-  color: #a69374;
+  color: rgb(225, 58, 68);
 }
 abbr[title] {
   border-bottom: none;

@@ -10,16 +10,12 @@ const MenuPage = () => (
     <SEO title="Menu" keywords={[`menu`, `super`, `integrity`]} />
     <Root>
       {menus.map((menu, i) => (
-        <Link style={{ color: "black" }} to={menu.url}>
+        <Link to={menu.url}>
           <LinkContent>
             {menu.title} - 0{i}
           </LinkContent>
         </Link>
       ))}
-
-      <Link to="/services">Services - 02</Link>
-      <Link to="/about">About - 03</Link>
-      <Link to="/contact">Contact - 04</Link>
     </Root>
   </Layout>
 )
