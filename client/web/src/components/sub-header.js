@@ -34,7 +34,7 @@ const Root = styled.div`
 
 const Head = styled.h1`
   color: #fff;
-  font-family: sans-serif, "libre baskerville", sans-serif;
+  font-family: "libre baskerville", sans-serif;
   font-size: 28px;
   font-weight: bold;
   margin: 0;

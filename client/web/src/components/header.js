@@ -2,19 +2,24 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import { Menu } from "./menu"
+import styled from "styled-components"
+import { FaBars } from "react-icons/fa"
+import { Spacer } from "./spacer"
 
 export const Header = ({ siteTitle }) => (
-  <header style={styles.root}>
-    <div style={styles.content}>
-      <div style={styles.logo}>
-        <h1 style={{ margin: 0 }}>
-          <Link to="/">{siteTitle}</Link>
-        </h1>
-      </div>
-
-      {/* <Menu /> */}
-    </div>
-  </header>
+  <Root>
+    <Link to="/">
+      <SiteTitle>{siteTitle}</SiteTitle>
+    </Link>
+    <Spacer />
+    <Link
+      style={{ color: "black" }}
+      activeStyle={{ color: "white" }}
+      to="/menu"
+    >
+      <FaBars fontWeight={100} fontSize={32} />
+    </Link>
+  </Root>
 )
 
 Header.propTypes = {
@@ -25,33 +30,20 @@ Header.defaultProps = {
   siteTitle: ``,
 }
 
-/**
- * @type {Record<string, import('react').CSSProperties}
- */
-const styles = {
-  root: {
-    backgroundColor: "rgba(77, 75, 75, 1)",
-    height: 122,
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "stretch",
-    fontSize: "0.9em",
-  },
-  content: {
-    display: "flex",
-    marginLeft: 50,
-    marginRight: 50,
-  },
-  logo: {
-    marginRight: 200,
-  },
-  menu: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    alignContent: "center",
-    flex: 1,
-  },
-  menuItem: {},
-}
+const Root = styled.div`
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: flex-start;
+`
+
+const SiteTitle = styled.h2`
+  color: rgb(225, 58, 68);
+  width: 150px;
+  font-weight: 300;
+`
