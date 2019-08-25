@@ -41,10 +41,3 @@ export const Layout = ({ children }) => (
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
-
-/**
- * @type {Record<string, import('react').CSSProperties}
- */
-const styles = {
-  content: {},
-}

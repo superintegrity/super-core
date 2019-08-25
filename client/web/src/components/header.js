@@ -1,7 +1,6 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import { Menu } from "./menu"
 import styled from "styled-components"
 import { FaBars } from "react-icons/fa"
 import { Spacer } from "./spacer"

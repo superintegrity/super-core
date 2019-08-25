@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "clean": "lerna clean --yes",
     "install": "lerna bootstrap",
     "test": "lerna run test"
   },
