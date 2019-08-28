@@ -3,5 +3,5 @@
 ```sh
 npm install
 npm test
-npm start
+npm run dev
 ```

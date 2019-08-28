@@ -11,8 +11,8 @@
     "build": "lerna run build --stream"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Jie Zhou",
+  "license": "MIT",
   "devDependencies": {
     "lerna": "^3.13.1"
   }
