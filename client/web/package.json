@@ -1,15 +1,17 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "name": "web",
+  "description": "Super Integrity Web",
+  "version": "1.0.0",
+  "author": "Jie Zhou",
   "dependencies": {
+    "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.2.3",
     "gatsby-image": "^2.0.34",
     "gatsby-plugin-manifest": "^2.0.24",
     "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.10",
     "gatsby-plugin-sharp": "^2.0.30",
+    "gatsby-plugin-styled-components": "^3.1.3",
     "gatsby-source-filesystem": "^2.0.27",
     "gatsby-transformer-sharp": "^2.1.17",
     "lodash": "^4.17.11",
@@ -19,14 +21,15 @@
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
     "react-icons": "^3.7.0",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.3.2"
   },
   "devDependencies": {
     "prettier": "^1.16.4",
     "typescript": "^3.3.4000"
   },
   "keywords": [
-    "gatsby"
+    "super",
+    "integrity"
   ],
   "license": "MIT",
   "scripts": {
@@ -35,12 +38,5 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }

@@ -1,10 +1,10 @@
-import React from "react"
-import { StaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
-import { Layout } from "../components/layout"
-import { SEO } from "../components/seo"
-import styled from "styled-components"
+import { Layout } from '../components/layout'
+import { SEO } from '../components/seo'
+// import styled from 'styled-components'
 
 const AboutPage = () => (
   <Layout>
@@ -88,9 +88,9 @@ const Images = ({ name }) => (
   />
 )
 
-const Root = styled.div`
-  margin-left: 20px;
-  margin-right: 20px;
-`
+// const Root = styled.div`
+//   margin-left: 20px;
+//   margin-right: 20px;
+// `
 
 export default AboutPage

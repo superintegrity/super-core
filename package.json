@@ -1,18 +1,19 @@
 {
   "name": "super-integrity",
   "version": "1.0.0",
-  "description": "",
+  "description": "Super Integrity",
   "main": "index.js",
   "scripts": {
-    "clean": "lerna clean --yes",
+    "clean": "lerna clean --yes && rm -rf node_modules",
     "install": "lerna bootstrap",
-    "test": "lerna run test"
+    "test": "lerna run test --stream",
+    "dev": "lerna run dev --parallel",
+    "build": "lerna run build --stream"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "gatsby-cli": "^2.4.17",
     "lerna": "^3.13.1"
   }
 }
