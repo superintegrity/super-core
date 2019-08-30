@@ -8,7 +8,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 const ContactPage = () => {
   const { site } = useStaticQuery(graphql`
-    query MapApiKeyQuery {
+    query {
       site {
         siteMetadata {
           mapApiKey

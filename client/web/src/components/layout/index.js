@@ -10,7 +10,7 @@ import Nav from '../nav'
 
 const Layout = ({ children }) => {
   const { site } = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query {
       site {
         siteMetadata {
           title
