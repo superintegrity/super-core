@@ -3,6 +3,7 @@ module.exports = {
     title: `Super Integrity`,
     description: `Super Integrity`,
     author: `Jie Zhou`,
+    mapApiKey: `AIzaSyAVZcp3tZikbfWLKqysbMv2jeHfRogn7dw`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -11,6 +12,13 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'about-images',
+        path: `${__dirname}/src/pages/about/images`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -27,5 +35,6 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-plugin-styled-components`,
   ],
 }

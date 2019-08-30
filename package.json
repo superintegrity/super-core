@@ -14,6 +14,8 @@
   "author": "Jie Zhou",
   "license": "MIT",
   "devDependencies": {
-    "lerna": "^3.13.1"
+    "@types/styled-components": "^4.1.18",
+    "lerna": "^3.13.1",
+    "typescript": "^3.6.2"
   }
 }
