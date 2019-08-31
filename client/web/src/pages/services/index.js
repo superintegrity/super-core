@@ -7,7 +7,7 @@ import { Section } from './styled'
 const ServicesPage = () => (
   <Layout>
     <SEO title="Services" />
-    <h1>Services</h1>
+    <h1>Services.</h1>
 
     <Section>
       <h3>Business Continuity</h3>

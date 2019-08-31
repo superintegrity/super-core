@@ -2,6 +2,7 @@ import styled from 'styled-components/macro'
 
 export const Section = styled.div`
   & iframe {
+    width: 1px; /* Workaround flex-basis not working on iframe */
     flex: 1;
     border: 0;
   }
@@ -16,6 +17,11 @@ export const Section = styled.div`
 export const ContactBox = styled.div`
   justify-content: flex-start;
   align-content: flex-start;
+
+  > h3 {
+    margin: 5px 0;
+    font-size: 1.1em;
+  }
 `
 
 export const MapBox = styled.div`

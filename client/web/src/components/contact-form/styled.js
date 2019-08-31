@@ -8,14 +8,13 @@ export const Root = styled.form`
     border-top: 0;
     border-bottom: 1px solid #00000044;
 
-    margin-top: 10px;
+    margin: 15px 10px 0 0;
     padding: 5px;
   }
 `
 
 export const NameInput = styled.input`
   flex: 1 0;
-  margin-right: 20px;
 `
 
 export const EmailInput = styled.input`
@@ -29,4 +28,11 @@ export const SubjectInput = styled.input`
 export const MessageInput = styled.textarea`
   flex: 1 100%;
   resize: none;
+`
+
+export const Submit = styled.button`
+  flex: 1 100%;
+  border: 0;
+  margin: 15px 10px 0 0;
+  padding: 5px;
 `

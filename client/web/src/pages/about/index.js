@@ -8,12 +8,12 @@ import { AboutSection, StaffSection } from './styled'
 const AboutPage = () => (
   <Layout>
     <SEO title="About" />
-    <h1>About</h1>
+    <h1>About.</h1>
 
     <AboutSection>
       <h3>
-        Since our inception, Ernst & Goldschmidt has been totally focused on
-        building a strategic, quality search practice.
+        Since our inception, <span>Super Integrity</span> has been totally
+        focused on building a strategic, quality search practice.
       </h3>
       <div>
         <p>
