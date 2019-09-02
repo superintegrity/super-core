@@ -5,6 +5,7 @@ export const Section = styled.div`
     width: 1px; /* Workaround flex-basis not working on iframe */
     flex: 1;
     border: 0;
+    border-radius: 5px;
   }
 
   @media all and (min-width: 768px) {

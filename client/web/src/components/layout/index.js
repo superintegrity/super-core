@@ -8,7 +8,7 @@ import { Root } from './styled'
 import Header from '../header'
 import Footer from '../footer'
 import Nav from '../nav'
-import { theme } from '../../lib/defaultTheme'
+import { theme } from './defaultTheme'
 
 const Layout = ({ children }) => {
   const { site } = useStaticQuery(graphql`
@@ -24,9 +24,11 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <Root>
-        <Header siteTitle={site.siteMetadata.title} />
-        <Nav />
-        <main>{children}</main>
+        <div>
+          <Header siteTitle={site.siteMetadata.title} />
+          <Nav />
+          <main>{children}</main>
+        </div>
         <Footer siteTitle={site.siteMetadata.title} />
       </Root>
     </ThemeProvider>

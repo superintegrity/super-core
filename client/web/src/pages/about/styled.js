@@ -10,6 +10,7 @@ export const AboutSection = styled.div`
   @media all and (min-width: 768px) {
     > h3 {
       flex: 1;
+      margin-right: 20px;
     }
 
     > div {
@@ -20,17 +21,17 @@ export const AboutSection = styled.div`
 
 export const StaffSection = styled.section`
   > h2 {
-    margin: 10px 0;
+    margin: 20px 0;
     font-size: 1.3em;
   }
 
   > h3 {
     color: ${({ theme }) => theme.main};
     font-size: 1em;
-    /* margin: 0; */
   }
 
   @media all and (min-width: 768px) {
     flex: 1;
+    margin-right: 20px;
   }
 `

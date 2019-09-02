@@ -1,13 +1,15 @@
 import React from 'react'
 import { Root } from './styled'
-import { Link } from '@reach/router'
+import { Link } from 'gatsby'
 
 const Nav = () => (
   <Root>
     <ul>
       {menuItems.map(({ text, link }) => (
         <li>
-          <Link to={link}>{text}</Link>
+          <Link to={link} activeClassName="active">
+            {text}
+          </Link>
         </li>
       ))}
     </ul>

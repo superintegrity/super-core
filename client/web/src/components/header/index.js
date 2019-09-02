@@ -7,9 +7,8 @@ import Image from './images'
 const Header = ({ siteTitle }) => (
   <Root>
     <Link to="/">
-      <h1>
-        <Image id="logo" /> {siteTitle}
-      </h1>
+      <Image id="logo" />
+      <span>{siteTitle}</span>
     </Link>
   </Root>
 )
