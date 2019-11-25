@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Root } from './styled'
 import Image from './images'
+import Nav from '../nav'
 
 const Header = ({ siteTitle }) => (
   <Root>
@@ -10,6 +11,7 @@ const Header = ({ siteTitle }) => (
       <Image id="logo" />
       <span>{siteTitle}</span>
     </Link>
+    <Nav />
   </Root>
 )
 

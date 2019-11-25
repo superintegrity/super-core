@@ -7,7 +7,6 @@ import './reset.css'
 import { Root } from './styled'
 import Header from '../header'
 import Footer from '../footer'
-import Nav from '../nav'
 import { theme } from './defaultTheme'
 
 const Layout = ({ children }) => {
@@ -24,11 +23,8 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <Root>
-        <div>
-          <Header siteTitle={site.siteMetadata.title} />
-          <Nav />
-          <main>{children}</main>
-        </div>
+        <Header siteTitle={site.siteMetadata.title} />
+        <main>{children}</main>
         <Footer siteTitle={site.siteMetadata.title} />
       </Root>
     </ThemeProvider>

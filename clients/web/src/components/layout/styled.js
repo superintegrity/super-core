@@ -6,8 +6,12 @@ export const Root = styled.div`
   align-content: stretch;
   justify-content: center;
 
-  > div {
-    margin: 20px 20px 20px;
+  > header {
+    padding: 20px;
+  }
+
+  > main {
+    padding: 20px;
   }
 
   > footer {
