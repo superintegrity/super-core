@@ -1,2 +1,2 @@
-import HomePage from './home'
+import { HomePage } from '../components/home-page'
 export default HomePage

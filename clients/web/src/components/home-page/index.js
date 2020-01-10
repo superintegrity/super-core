@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import Layout from '../../components/layout'
-import SEO from '../../components/seo'
+import { Layout } from '../../components/layout'
+import { SEO } from '../../components/seo'
 import { Section } from './styled'
 
-const HomePage = () => (
+export const HomePage = () => (
   <Layout>
     <SEO title="Home" />
 
@@ -18,5 +18,3 @@ const HomePage = () => (
     </Section>
   </Layout>
 )
-
-export default HomePage

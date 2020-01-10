@@ -15,12 +15,12 @@
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.1.11",
     "gatsby-transformer-sharp": "^2.2.7",
-    "hook-click-outside": "^2.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
     "react-icons": "^3.8.0",
+    "react-use": "^13.14.3",
     "styled-components": "^4.3.2"
   },
   "devDependencies": {
@@ -35,8 +35,7 @@
     "dev": "gatsby develop",
     "build": "gatsby build",
     "start": "gatsby serve",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "test": "tsc"
+    "test": "npm run build && tsc"
   },
   "repository": {
     "type": "git",

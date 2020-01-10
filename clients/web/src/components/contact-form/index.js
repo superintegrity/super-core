@@ -8,7 +8,7 @@ import {
   Submit,
 } from './styled'
 
-const ContactForm = ({ toEmail }) => {
+export const ContactForm = ({ toEmail }) => {
   const [name, setName] = useState('')
   const [fromEmail, setFromEmail] = useState('')
   const [subject, setSubject] = useState('')
@@ -52,5 +52,3 @@ const ContactForm = ({ toEmail }) => {
     </Root>
   )
 }
-
-export default ContactForm

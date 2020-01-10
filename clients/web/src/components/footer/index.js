@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Root } from './styled'
 
-const Footer = ({ siteTitle }) => (
+export const Footer = ({ siteTitle }) => (
   <Root>
     © {new Date().getFullYear()} {siteTitle}
   </Root>
@@ -15,5 +15,3 @@ Footer.propTypes = {
 Footer.defaultProps = {
   siteTitle: ``,
 }
-
-export default Footer

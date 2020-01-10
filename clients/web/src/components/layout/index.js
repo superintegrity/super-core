@@ -5,11 +5,11 @@ import { ThemeProvider } from 'styled-components'
 import './reset.css'
 
 import { Root } from './styled'
-import Header from '../header'
-import Footer from '../footer'
+import { Header } from '../header'
+import { Footer } from '../footer'
 import { theme } from './defaultTheme'
 
-const Layout = ({ children }) => {
+export const Layout = ({ children }) => {
   const { site } = useStaticQuery(graphql`
     query {
       site {
@@ -34,5 +34,3 @@ const Layout = ({ children }) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
-
-export default Layout

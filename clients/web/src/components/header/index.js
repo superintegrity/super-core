@@ -2,10 +2,10 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { Root } from './styled'
-import Image from './images'
-import Nav from '../nav'
+import { Image } from './images'
+import { Nav } from '../nav'
 
-const Header = ({ siteTitle }) => (
+export const Header = ({ siteTitle }) => (
   <Root>
     <Link to="/">
       <Image id="logo" />
@@ -22,5 +22,3 @@ Header.propTypes = {
 Header.defaultProps = {
   siteTitle: ``,
 }
-
-export default Header

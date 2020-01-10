@@ -1,18 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { Root } from './styled'
 import { Link } from 'gatsby'
 import { IoIosMenu } from 'react-icons/io'
-import { useClickOutside } from 'hook-click-outside'
+import { useClickAway } from 'react-use'
 
-const Nav = () => {
+export const Nav = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const toggleMenu = () => setIsOpen(!isOpen)
 
-  const node = useClickOutside(toggleMenu)
+  const ref = useRef(null)
+  useClickAway(ref, () => {
+    setIsOpen(false)
+  })
 
   return (
-    <Root ref={node} isOpen={isOpen}>
-      <IoIosMenu size="32px" onClick={toggleMenu} />
+    <Root ref={ref} isOpen={isOpen}>
+      <IoIosMenu size="32px" onClick={() => setIsOpen(true)} />
       <ul>
         {menuItems.map(({ text, link }) => (
           <li>
@@ -44,5 +46,3 @@ const menuItems = [
     link: '/contact',
   },
 ]
-
-export default Nav

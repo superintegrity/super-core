@@ -1,10 +1,10 @@
 import React from 'react'
 
-import Layout from '../../components/layout'
-import SEO from '../../components/seo'
+import { Layout } from '../../components/layout'
+import { SEO } from '../../components/seo'
 import { Section } from './styled'
 
-const ServicesPage = () => (
+export const ServicesPage = () => (
   <Layout>
     <SEO title="Services" />
     <h1>Services.</h1>
@@ -71,5 +71,3 @@ const ServicesPage = () => (
     </Section>
   </Layout>
 )
-
-export default ServicesPage

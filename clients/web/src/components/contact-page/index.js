@@ -1,12 +1,12 @@
 import React from 'react'
 
-import Layout from '../../components/layout'
-import SEO from '../../components/seo'
+import { Layout } from '../../components/layout'
+import { SEO } from '../../components/seo'
 import { Section, MapBox, ContactBox } from './styled'
-import ContactForm from '../../components/contact-form'
+import { ContactForm } from '../../components/contact-form'
 import { useStaticQuery, graphql } from 'gatsby'
 
-const ContactPage = () => {
+export const ContactPage = () => {
   const { site } = useStaticQuery(graphql`
     query {
       site {
@@ -45,5 +45,3 @@ const ContactPage = () => {
     </Layout>
   )
 }
-
-export default ContactPage

@@ -2,7 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-const Image = ({ id }) => {
+export const Image = ({ id }) => {
   const images = useStaticQuery(graphql`
     fragment ImageFile on File {
       childImageSharp {
@@ -30,5 +30,3 @@ const Image = ({ id }) => {
 
   return <Img fluid={images[id].childImageSharp.fluid} />
 }
-
-export default Image

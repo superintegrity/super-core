@@ -1,11 +1,11 @@
 import React from 'react'
 
-import Layout from '../../components/layout'
-import SEO from '../../components/seo'
-import Image from './images'
+import { Layout } from '../../components/layout'
+import { SEO } from '../../components/seo'
+import { Image } from './images'
 import { AboutSection, StaffSection } from './styled'
 
-const AboutPage = () => (
+export const AboutPage = () => (
   <Layout>
     <SEO title="About" />
     <h1>About.</h1>
@@ -64,5 +64,3 @@ const staffs = [
       more about you.`,
   },
 ]
-
-export default AboutPage
