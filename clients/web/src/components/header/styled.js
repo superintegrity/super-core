@@ -4,14 +4,9 @@ export const Root = styled.header`
   align-content: flex-start;
   align-items: flex-start;
   margin-bottom: 20px;
-  position: relative;
   background-color: black;
   height: 100px;
-
-  > nav {
-    position: absolute;
-    right: 20px;
-  }
+  flex-flow: row;
 
   > a {
     color: ${({ theme }) => theme.main};

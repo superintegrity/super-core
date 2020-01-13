@@ -41,6 +41,7 @@ export const AboutPage = () => (
         <p>{description}</p>
       </StaffSection>
     ))}
+    <StaffSection></StaffSection>
   </Layout>
 )
 
@@ -54,13 +55,13 @@ const staffs = [
       great place for you to tell a story and let your users know a little
       more about you.`,
   },
-  {
-    id: 'kevinGoldschmidt',
-    name: 'Kevin Goldschmidt',
-    role: 'Partner',
-    description: `
-      I'm a paragraph. Click here to add your own text and edit me. I’m a
-      great place for you to tell a story and let your users know a little
-      more about you.`,
-  },
+  // {
+  //   id: 'kevinGoldschmidt',
+  //   name: 'Kevin Goldschmidt',
+  //   role: 'Partner',
+  //   description: `
+  //     I'm a paragraph. Click here to add your own text and edit me. I’m a
+  //     great place for you to tell a story and let your users know a little
+  //     more about you.`,
+  // },
 ]

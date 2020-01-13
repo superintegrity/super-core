@@ -2,7 +2,9 @@ import styled, { css } from 'styled-components/macro'
 
 export const Root = styled.nav`
   font-size: 0.9em;
+  display: flex;
   position: relative;
+  justify-content: flex-end;
 
   a {
     color: grey;
@@ -10,11 +12,12 @@ export const Root = styled.nav`
 
   > svg {
     color: white;
+    margin-top: 15px;
   }
 
-  > ul {
+  > .menu {
     display: none;
-    width: 110px;
+    width: 100px;
     background-color: white;
     position: absolute;
     right: 0;
@@ -27,6 +30,7 @@ export const Root = styled.nav`
     margin: 0;
     flex: 1;
     padding: 15px;
+    margin-top: 15px;
 
     ${/** @param {IProp} prop */ ({ isOpen }) =>
       isOpen &&
@@ -37,6 +41,37 @@ export const Root = styled.nav`
 
   .active {
     color: ${({ theme }) => theme.text};
+  }
+
+  @media all and (min-width: 768px) {
+    > .menu-icon {
+      display: none;
+    }
+
+    > .menu {
+      display: flex;
+      flex-flow: row wrap;
+      flex: 1 50%;
+      width: initial;
+      border: 0;
+      background-color: transparent;
+      position: initial;
+      justify-content: flex-end;
+      padding: 15px 0;
+      margin: 0;
+
+      li + li {
+        margin-left: 20px;
+      }
+
+      a {
+        color: white;
+      }
+
+      .active {
+        color: ${({ theme }) => theme.main};
+      }
+    }
   }
 `
 

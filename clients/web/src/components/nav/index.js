@@ -14,8 +14,12 @@ export const Nav = () => {
 
   return (
     <Root ref={ref} isOpen={isOpen}>
-      <IoIosMenu size="32px" onClick={() => setIsOpen(true)} />
-      <ul>
+      <IoIosMenu
+        className="menu-icon"
+        size="32px"
+        onClick={() => setIsOpen(true)}
+      />
+      <ul className="menu">
         {menuItems.map(({ text, link }) => (
           <li>
             <Link to={link} activeClassName="active">
@@ -30,19 +34,19 @@ export const Nav = () => {
 
 const menuItems = [
   {
-    text: '01 - Home',
+    text: 'Home',
     link: '/',
   },
   {
-    text: '02 - Services',
+    text: 'Services',
     link: '/services',
   },
   {
-    text: '03 - About',
+    text: 'About',
     link: '/about',
   },
   {
-    text: '04 - Contact',
+    text: 'Contact',
     link: '/contact',
   },
 ]
