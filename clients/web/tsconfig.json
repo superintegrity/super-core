@@ -28,7 +28,9 @@
     "noFallthroughCasesInSwitch": true,
     "types": [
       "node"
-    ]
+    ],
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true
   },
   "exclude": [
     "node_modules/",
