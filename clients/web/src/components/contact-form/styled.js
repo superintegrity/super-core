@@ -10,6 +10,10 @@ export const Root = styled.form`
 
     margin: 15px 10px 0 0;
     padding: 5px;
+
+    ::placeholder {
+      color: grey;
+    }
   }
 `
 
@@ -35,4 +39,7 @@ export const Submit = styled.button`
   border: 0;
   margin: 15px 10px 0 0;
   padding: 5px;
+  cursor: pointer;
+  background-color: ${({ theme }) => theme.color2};
+  border-radius: 4px;
 `

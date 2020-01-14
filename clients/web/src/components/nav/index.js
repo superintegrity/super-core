@@ -39,14 +39,14 @@ const menuItems = [
   },
   {
     text: 'Services',
-    link: '/services',
+    link: '/services/',
   },
   {
     text: 'About',
-    link: '/about',
+    link: '/about/',
   },
   {
     text: 'Contact',
-    link: '/contact',
+    link: '/contact/',
   },
 ]

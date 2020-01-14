@@ -1,8 +1,8 @@
 {
-  "name": "web",
+  "name": "@superintegrity/super-web",
   "description": "Super Integrity",
   "version": "0.1.0",
-  "author": "Jie Zhou",
+  "author": "engineforce@gmail.com",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.13.73",
@@ -39,10 +39,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/engineforce/super-integrity"
+    "url": "https://github.com/superintegrity/super-core"
   },
   "bugs": {
-    "url": "https://github.com/engineforce/super-integrity/issues"
+    "url": "https://github.com/superintegrity/super-core/issues"
   },
   "babelMacros": {
     "styledComponents": {

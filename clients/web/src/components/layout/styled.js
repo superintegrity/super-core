@@ -33,9 +33,5 @@ export const Root = styled.div`
         flex: 1;
       }
     }
-
-    > footer {
-      padding: 20px 30px;
-    }
   }
 `

@@ -8,6 +8,10 @@ export const Section = styled.div`
     border-radius: 5px;
   }
 
+  a {
+    color: ${({ theme }) => theme.color6};
+  }
+
   @media all and (min-width: 768px) {
     > div {
       flex: 1;
@@ -23,6 +27,8 @@ export const ContactBox = styled.div`
     margin: 5px 0;
     font-size: 1.1em;
   }
+
+  margin-bottom: 20px;
 `
 
 export const MapBox = styled.div`

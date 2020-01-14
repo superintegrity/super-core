@@ -13,15 +13,9 @@ export const Image = ({ id }) => {
     }
 
     query {
-      juliaErnst: file(
+      joZhou: file(
         sourceInstanceName: { eq: "about-images" }
-        relativePath: { eq: "julia-ernst.png" }
-      ) {
-        ...ImageFile
-      }
-      kevinGoldschmidt: file(
-        sourceInstanceName: { eq: "about-images" }
-        relativePath: { eq: "kevin-goldschmidt.png" }
+        relativePath: { eq: "jo-zhou.png" }
       ) {
         ...ImageFile
       }

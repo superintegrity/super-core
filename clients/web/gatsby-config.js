@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Super Integrity`,
     description: `Super Integrity`,
-    author: `Jie Zhou`,
+    author: `engineforce@gmail.com`,
     mapApiKey: `AIzaSyAVZcp3tZikbfWLKqysbMv2jeHfRogn7dw`,
   },
   plugins: [

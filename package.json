@@ -1,15 +1,17 @@
 {
-  "name": "super-integrity",
+  "name": "super-core",
   "version": "1.0.0",
   "description": "Super Integrity",
   "main": "index.js",
   "scripts": {
     "clean": "lerna clean --yes && rm -rf node_modules",
-    "install": "lerna bootstrap",
-    "test": "lerna run test --stream"
+    "bootstrap": "lerna bootstrap --concurrency ${CONCURRENCY:-2}",
+    "install": "npm run bootstrap",
+    "test": "lerna run test --stream --concurrency ${CONCURRENCY:-2}",
+    "deploy": "lerna run deploy --stream --concurrency ${CONCURRENCY:-2}"
   },
   "keywords": [],
-  "author": "Jie Zhou",
+  "author": "engineforce@gmail.com",
   "license": "MIT",
   "devDependencies": {
     "@types/styled-components": "^4.1.18",

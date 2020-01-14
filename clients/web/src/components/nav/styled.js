@@ -40,7 +40,8 @@ export const Root = styled.nav`
   }
 
   .active {
-    color: ${({ theme }) => theme.text};
+    color: ${({ theme }) => theme.main};
+    font-weight: bold;
   }
 
   @media all and (min-width: 768px) {

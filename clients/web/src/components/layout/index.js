@@ -9,7 +9,13 @@ import { Header } from '../header'
 import { Footer } from '../footer'
 import { theme } from './defaultTheme'
 
-export const Layout = ({ children }) => {
+/**
+ *
+ * @param {object} input
+ * @param {object} input.children
+ * @param {boolean=} input.disableNav
+ */
+export const Layout = ({ children, disableNav }) => {
   const { site } = useStaticQuery(graphql`
     query {
       site {
@@ -23,7 +29,7 @@ export const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <Root>
-        <Header siteTitle={site.siteMetadata.title} />
+        <Header disableNav={disableNav} siteTitle={site.siteMetadata.title} />
         <main>{children}</main>
         <Footer siteTitle={site.siteMetadata.title} />
       </Root>

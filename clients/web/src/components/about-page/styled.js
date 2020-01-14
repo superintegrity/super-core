@@ -7,6 +7,11 @@ export const AboutSection = styled.div`
     }
   }
 
+  p::first-letter {
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+
   @media all and (min-width: 768px) {
     > h3 {
       flex: 1;
@@ -28,6 +33,11 @@ export const StaffSection = styled.section`
   > h3 {
     color: ${({ theme }) => theme.main};
     font-size: 1em;
+  }
+
+  p::first-letter {
+    font-weight: bold;
+    font-size: 1.1em;
   }
 
   @media all and (min-width: 768px) {

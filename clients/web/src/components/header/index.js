@@ -5,13 +5,19 @@ import { Root } from './styled'
 import { Image } from './images'
 import { Nav } from '../nav'
 
-export const Header = ({ siteTitle }) => (
+/**
+ *
+ * @param {object} input
+ * @param {string} input.siteTitle
+ * @param {boolean=} input.disableNav
+ */
+export const Header = ({ siteTitle, disableNav }) => (
   <Root>
     <Link to="/">
       <Image id="logo" />
       <span>{siteTitle}</span>
     </Link>
-    <Nav />
+    {!disableNav && <Nav />}
   </Root>
 )
 

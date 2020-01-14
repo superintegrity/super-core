@@ -10,62 +10,29 @@ export const ServicesPage = () => (
     <h1>Services.</h1>
 
     <Section>
-      <h3>Business Continuity</h3>
+      <h3>SMSF</h3>
       <div>
         <p>
-          I'm a paragraph. Click here to add your own text and edit me. It’s
-          easy. Just click "Edit Text" or double click me to add your own
-          content and make changes to the font. Feel free to drag and drop me
-          anywhere you like on your page. I’m a great place for you to tell a
-          story and let your users know a little more about you.
+          Free SMSF Setup - No fees are charged by us – we only pass on the
+          legal document fees and costs for setup of company if a corporate
+          trustee is required.
         </p>
         <p>
-          This is a great space to write long text about your company and your
-          services. You can use this space to go into a little more detail about
-          your company. Talk about your team and what services you provide. Tell
-          your visitors the story of how you came up with the idea for your
-          business and what makes you different from your competitors.
+          Services after setup – We assist with opening bank account and
+          liaising with financial advisors to establish and maintain records of
+          investment portfolios.
         </p>
-      </div>
-    </Section>
-
-    <Section>
-      <h3>Enterprise Risk Management</h3>
-      <div>
         <p>
-          I'm a paragraph. Click here to add your own text and edit me. It’s
-          easy. Just click "Edit Text" or double click me to add your own
-          content and make changes to the font. Feel free to drag and drop me
-          anywhere you like on your page. I’m a great place for you to tell a
-          story and let your users know a little more about you.
+          SMSF Administration – We take care of your or your clients’ day-to-day
+          accounting and administration tasks. We can also attend to end of year
+          compliance work including tax returns and/or arranging an external
+          independent audit.
         </p>
-      </div>
-    </Section>
-
-    <Section>
-      <h3>Industries IT & Telecom</h3>
-      <div>
-        <ul>
-          <li>Communications & Entertainment</li>
-          <li>Marketing & Communications</li>
-          <li>​Financial & Professional Services</li>
-          <li>Architecture</li>
-          <li>Design & Engineering</li>
-          <li>Energy</li>
-          <li>Resources & Infrastructure</li>
-        </ul>
-      </div>
-    </Section>
-
-    <Section>
-      <h3>Specialized Advisory Services</h3>
-      <div>
         <p>
-          I'm a paragraph. Click here to add your own text and edit me. It’s
-          easy. Just click "Edit Text" or double click me to add your own
-          content and make changes to the font. Feel free to drag and drop me
-          anywhere you like on your page. I’m a great place for you to tell a
-          story and let your users know a little more about you.
+          SMSF Consulting Services – We provide factual advice to help you keep
+          up with legislation change and meet compliance requirement. We work
+          with financial advisors, accountants and trustees to clarify issues
+          and solve problems.
         </p>
       </div>
     </Section>

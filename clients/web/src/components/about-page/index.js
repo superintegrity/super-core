@@ -4,6 +4,7 @@ import { Layout } from '../../components/layout'
 import { SEO } from '../../components/seo'
 import { Image } from './images'
 import { AboutSection, StaffSection } from './styled'
+import { COMPLETED } from '../../libs/config'
 
 export const AboutPage = () => (
   <Layout>
@@ -11,31 +12,25 @@ export const AboutPage = () => (
     <h1>About.</h1>
 
     <AboutSection>
-      <h3>
-        Since our inception, <span>Super Integrity</span> has been totally
-        focused on building a strategic, quality search practice.
-      </h3>
+      <h3>Your Trustworthy SMSF Accountant</h3>
       <div>
         <p>
-          I'm a paragraph. Click here to add your own text and edit me. It’s
-          easy. Just click "Edit Text" or double click me to add your own
-          content and make changes to the font. Feel free to drag and drop me
-          anywhere you like on your page. I’m a great place for you to tell a
-          story and let your users know a little more about you.
-        </p>
-        <p>
-          This is a great space to write long text about your company and your
-          services. You can use this space to go into a little more detail about
-          your company. Talk about your team and what services you provide. Tell
-          your visitors the story of how you came up with the idea for your
-          business and what makes you different from your competitors.
+          We are CPAs and accredited SMSF specialist advisors. We work in SMSF
+          industry for decades. We don’t deal with investment or financial
+          products hence our advices are commission-free and independent. We
+          take pride in providing excellent services at low prices with our
+          ultimate business goal of saving your hard-earned money for your
+          retirement. When serving our clients, we maintain a practice of being
+          honest and a consistent and uncompromising adherence to strong moral
+          and professional values.{' '}
+          <strong>Integrity is the essence of everything successful.</strong>
         </p>
       </div>
     </AboutSection>
 
     {staffs.map(({ id, name, role, description }) => (
       <StaffSection>
-        <Image id={id} />
+        {COMPLETED && <Image id={id} />}
         <h2>{name}</h2>
         <h3>{role}</h3>
         <p>{description}</p>
@@ -47,21 +42,13 @@ export const AboutPage = () => (
 
 const staffs = [
   {
-    id: 'juliaErnst',
-    name: 'Julia Ernst',
+    id: 'joZhou',
+    name: 'Jo Zhou',
     role: 'Partner',
     description: `
-      I'm a paragraph. Click here to add your own text and edit me. I’m a
-      great place for you to tell a story and let your users know a little
-      more about you.`,
+      SMSF Specialist Advisor,
+      Tax Agent,
+      CPA
+    `,
   },
-  // {
-  //   id: 'kevinGoldschmidt',
-  //   name: 'Kevin Goldschmidt',
-  //   role: 'Partner',
-  //   description: `
-  //     I'm a paragraph. Click here to add your own text and edit me. I’m a
-  //     great place for you to tell a story and let your users know a little
-  //     more about you.`,
-  // },
 ]

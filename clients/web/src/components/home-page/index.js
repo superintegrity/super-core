@@ -10,11 +10,9 @@ export const HomePage = () => (
     <SEO title="Home" />
 
     <Section>
-      <h1>
-        Boutique <span>Risk Management</span> Consultancy Firm
-      </h1>
-      <h2>Providing Specialist Support to Your Organization</h2>
-      <Link to="/services">&#9755; See Our Services</Link>
+      <h1>SUPER INTEGRITY</h1>
+      <h2>Your Trustworthy SMSF Accountant</h2>
+      <Link to="/services/">&#9755; See Our Services</Link>
     </Section>
   </Layout>
 )

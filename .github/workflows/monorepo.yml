@@ -1,0 +1,62 @@
+name: Monorepo
+
+on: push
+
+env:
+  CI: 'true'
+  AWS_SDK_LOAD_CONFIG: 'true'
+  AWS_REGION: ap-southeast-2
+  AWS_DEFAULT_REGION: ap-southeast-2
+  RELEASE_VERSION: ${{ github.sha }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: install
+        run: |
+          npm ci
+
+      - name: Build and Test (non-master)
+        if: github.ref != 'refs/heads/master'
+        run: |
+          npm test -- --since origin/master
+
+      - name: Build and Test (master)
+        if: github.ref == 'refs/heads/master'
+        run: |
+          npm test -- --since $(git rev-parse HEAD~1)
+
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    needs: build
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: install
+        run: |
+          npm ci
+
+      - name: Deploy
+        env:
+          REALM: dev
+          ENV: staging
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          npm run deploy -- --since $(git rev-parse HEAD~1)
