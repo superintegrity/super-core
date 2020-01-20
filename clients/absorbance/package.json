@@ -1,8 +1,16 @@
 {
-  "name": "@superintegrity/super-web",
+  "name": "@superintegrity/absorbance",
   "description": "Super Integrity",
   "version": "0.1.0",
   "author": "engineforce@gmail.com",
+  "license": "MIT",
+  "scripts": {
+    "dev": "gatsby develop",
+    "build": "gatsby build",
+    "start": "gatsby serve",
+    "test": "npm run build && tsc",
+    "deploy": "export NODE_CONFIG_ENV=$ENV && npm run build && ./platform/bin/aws.js deploy --verbose --realm $REALM --env $ENV"
+  },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.18.21",
@@ -25,26 +33,15 @@
   },
   "devDependencies": {
     "@types/styled-components": "^4.4.2",
+    "aws-sdk": "^2.606.0",
+    "config": "^3.2.5",
+    "exec-sh": "^0.3.4",
     "prettier": "^1.19.1",
     "typescript": "^3.7.4"
   },
   "keywords": [
     "gatsby"
   ],
-  "license": "MIT",
-  "scripts": {
-    "dev": "gatsby develop",
-    "build": "gatsby build",
-    "start": "gatsby serve",
-    "test": "npm run build && tsc"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/superintegrity/super-core"
-  },
-  "bugs": {
-    "url": "https://github.com/superintegrity/super-core/issues"
-  },
   "babelMacros": {
     "styledComponents": {
       "ssr": true
