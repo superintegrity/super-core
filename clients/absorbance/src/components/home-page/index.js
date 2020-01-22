@@ -11,7 +11,7 @@ export const HomePage = () => (
 
     <Section>
       <h1>SUPER INTEGRITY</h1>
-      <h2>Your Trustworthy SMSF Accountant</h2>
+      <h2>Your Trustworthy SMSF Specialist</h2>
       <Link to="/services/">&#9755; See Our Services</Link>
     </Section>
   </Layout>

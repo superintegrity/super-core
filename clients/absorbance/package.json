@@ -5,9 +5,9 @@
   "author": "engineforce@gmail.com",
   "license": "MIT",
   "scripts": {
-    "dev": "gatsby develop",
-    "build": "gatsby build",
-    "start": "gatsby serve",
+    "dev": "export NODE_CONFIG_ENV=$ENV && gatsby develop",
+    "build": "export NODE_CONFIG_ENV=$ENV && gatsby build",
+    "start": "export NODE_CONFIG_ENV=$ENV && gatsby serve",
     "test": "npm run build && tsc",
     "deploy": "export NODE_CONFIG_ENV=$ENV && npm run build && ./platform/bin/aws.js deploy --verbose --realm $REALM --env $ENV"
   },
@@ -15,6 +15,7 @@
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.18.21",
     "gatsby-image": "^2.2.38",
+    "gatsby-plugin-env-variables": "^1.0.1",
     "gatsby-plugin-manifest": "^2.2.37",
     "gatsby-plugin-offline": "^2.2.7",
     "gatsby-plugin-react-helmet": "^3.1.21",

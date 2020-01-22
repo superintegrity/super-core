@@ -8,7 +8,7 @@ const buildtimeEnvConfig = Object.keys(nodeConfig).reduce(
 
     return accumulator
   },
-  /** @type {Record<string, string | undefined>} */ ({})
+  /** @type {Record<string, string | undefined>} */ ({}),
 )
 
 /**
@@ -37,7 +37,7 @@ function getEnv(overrides) {
       }
       return accumulator
     },
-    /** @type {Record<string, string | undefined>} */ ({})
+    /** @type {Record<string, string | undefined>} */ ({}),
   )
 }
 
@@ -45,9 +45,12 @@ function getEnv(overrides) {
  * @param {Record<string, any>=} overrides
  */
 function loadEnv(overrides) {
-  Object.entries(getEnv(overrides)).forEach(([key, value]) => {
+  const env = getEnv(overrides)
+  Object.entries(env).forEach(([key, value]) => {
     process.env[key] = value
   })
+
+  return env
 }
 
 module.exports = { getEnv, loadEnv }

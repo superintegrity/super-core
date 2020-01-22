@@ -12,7 +12,7 @@ export const AboutPage = () => (
     <h1>About.</h1>
 
     <AboutSection>
-      <h3>Your Trustworthy SMSF Accountant</h3>
+      <h3>Your Trustworthy SMSF Specialist</h3>
       <div>
         <p>
           We are CPAs and accredited SMSF specialist advisors. We work in SMSF
@@ -29,7 +29,7 @@ export const AboutPage = () => (
     </AboutSection>
 
     {staffs.map(({ id, name, role, description }) => (
-      <StaffSection>
+      <StaffSection key={id}>
         {COMPLETED && <Image id={id} />}
         <h2>{name}</h2>
         <h3>{role}</h3>
@@ -41,14 +41,14 @@ export const AboutPage = () => (
 )
 
 const staffs = [
-  {
-    id: 'joZhou',
-    name: 'Jo Zhou',
-    role: 'Partner',
-    description: `
-      SMSF Specialist Advisor,
-      Tax Agent,
-      CPA
-    `,
-  },
+  // {
+  //   id: 'joZhou',
+  //   name: 'Jo Zhou',
+  //   role: 'Partner',
+  //   description: `
+  //     SMSF Specialist Advisor,
+  //     Tax Agent,
+  //     CPA
+  //   `,
+  // },
 ]

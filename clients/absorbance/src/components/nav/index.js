@@ -21,7 +21,7 @@ export const Nav = () => {
       />
       <ul className="menu">
         {menuItems.map(({ text, link }) => (
-          <li>
+          <li key={text}>
             <Link to={link} activeClassName="active">
               {text}
             </Link>

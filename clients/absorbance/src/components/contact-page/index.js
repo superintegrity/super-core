@@ -18,7 +18,7 @@ export const ContactPage = () => {
     }
   `)
 
-  const address = '10/40 Montclair Avenue, Glen Waverley 3150'
+  const address = 'Suite 2.17/203-205 Blackburn Road, Mount Waverley VIC 3149'
   const email = 'jo_lilinth@hotmail.com'
   const mobile = '0430 777 699'
   return (

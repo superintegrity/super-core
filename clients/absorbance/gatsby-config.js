@@ -1,9 +1,16 @@
+const { loadEnv } = require('./config')
+
+const env = loadEnv({
+  RELEASE_DATE: new Date(),
+  RELEASE_VERSION: process.env.RELEASE_VERSION || new Date().getTime(),
+})
+
 module.exports = {
   siteMetadata: {
     title: `Super Integrity`,
     description: `Super Integrity`,
     author: `engineforce@gmail.com`,
-    mapApiKey: `AIzaSyAVZcp3tZikbfWLKqysbMv2jeHfRogn7dw`,
+    mapApiKey: process.env.MAP_API_KEY,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -42,6 +49,12 @@ module.exports = {
         google: {
           families: ['Libre Baskerville'],
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-env-variables`,
+      options: {
+        whitelist: Object.keys(env),
       },
     },
   ],
