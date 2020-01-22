@@ -37,7 +37,7 @@ jobs:
 
           sceptre --version || true
           pip3 install sceptre
-          sceptre --version
+          python3 -m sceptre --version
 
 
           # pip3 install aws-sam-cli
