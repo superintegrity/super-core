@@ -140,6 +140,7 @@ const makeUndeploy = ({ exec }) =>
       'delete-stack',
       '--stack-name',
       `si-${realm}-${env}-absorbance`,
+      `--capabilities CAPABILITY_IAM`,
     ])
   }
 
