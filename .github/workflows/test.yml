@@ -35,15 +35,10 @@ jobs:
           # sudo apt update
           # sudo apt-get install python3-setuptools
 
-          sceptre --version || true
-          pip3 install sceptre
-          pip3 list -v
-          python3 -m sceptre --version || true
-
-
           pip3 install aws-sam-cli
-          pip3 list -v          
-          python3 -m sam --version || true
+          pip3 list -v
+          export PATH=/home/runner/.local/bin:$PATH
+          sam --version || true
 
 # pip 9.0.1 from /usr/lib/python2.7/dist-packages (python 2.7)
 # pip 9.0.1 from /usr/lib/python3/dist-packages (python 3.6)
