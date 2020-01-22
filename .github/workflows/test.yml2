@@ -1,0 +1,38 @@
+name: Test
+
+on: push
+
+env:
+  CI: 'true'
+  AWS_SDK_LOAD_CONFIG: 'true'
+  AWS_REGION: ap-southeast-2
+  AWS_DEFAULT_REGION: ap-southeast-2
+  RELEASE_VERSION: ${{ github.sha }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: install
+        run: |
+          whoami
+          pip --version
+          pip3 --version
+
+          pip3 install --upgrade setuptools pip
+          python3 -m site
+          pip3 install wheel
+          echo $PATH
+
+          pip3 install aws-sam-cli
+          pip3 list -v
+          export PATH=/home/runner/.local/bin:$PATH
+          echo $PATH
+
+          sam --version
+
+# pip 9.0.1 from /usr/lib/python2.7/dist-packages (python 2.7)
+# pip 9.0.1 from /usr/lib/python3/dist-packages (python 3.6)
