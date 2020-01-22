@@ -1,0 +1,24 @@
+name: Test
+
+on: push
+
+env:
+  CI: 'true'
+  AWS_SDK_LOAD_CONFIG: 'true'
+  AWS_REGION: ap-southeast-2
+  AWS_DEFAULT_REGION: ap-southeast-2
+  RELEASE_VERSION: ${{ github.sha }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: install
+        run: |
+          pip --version || true
+          pip3 --version || (sudo apt update && sudo apt install python3-pip)
+          pip3 install aws-sam-cli
+          sam --version

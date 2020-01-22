@@ -1,6 +1,10 @@
 name: Monorepo
 
-on: push
+# Paul Debug
+on:
+  push:
+    paths-ignore:
+      - '.github/**/*'
 
 env:
   CI: 'true'
@@ -50,12 +54,24 @@ jobs:
 
       - name: install
         run: |
+          pip --version || true
+          pip3 --version || (sudo apt update && sudo apt install python3-pip)
+          pip3 install aws-sam-cli
           npm ci
 
-      - name: Deploy
+      - name: Deploy to dev staging
         env:
           REALM: dev
           ENV: staging
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          npm run deploy -- --since $(git rev-parse HEAD~1)
+
+      - name: Deploy to prod green
+        env:
+          REALM: prod
+          ENV: green
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
