@@ -10,30 +10,30 @@ env:
   RELEASE_VERSION: ${{ github.sha }}
 
 jobs:
-   build:
-     runs-on: ubuntu-latest
-  
-     steps:
-       - uses: actions/checkout@v1
-  
-       - name: Use Node.js 12.x
-         uses: actions/setup-node@v1
-         with:
-           node-version: 12.x
-  
-       - name: install
-         run: |
-           npm ci
-  
-       - name: Build and Test (non-master)
-         if: github.ref != 'refs/heads/master'
-         run: |
-           npm test -- --since origin/master
-  
-       - name: Build and Test (master)
-         if: github.ref == 'refs/heads/master'
-         run: |
-           npm test -- --since $(git rev-parse HEAD~1)
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: install
+        run: |
+          npm ci
+
+      - name: Build and Test (non-master)
+        if: github.ref != 'refs/heads/master'
+        run: |
+          npm test -- --since origin/master
+
+      - name: Build and Test (master)
+        if: github.ref == 'refs/heads/master'
+        run: |
+          npm test -- --since $(git rev-parse HEAD~1)
 
   deploy:
     runs-on: ubuntu-latest
@@ -55,7 +55,7 @@ jobs:
           pip3 install aws-sam-cli
           export PATH=/home/runner/.local/bin:$PATH
           sam --version
-          
+
           npm ci
 
       - name: Deploy to dev staging
