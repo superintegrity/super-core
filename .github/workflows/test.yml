@@ -22,7 +22,7 @@ jobs:
           pip --version
           pip3 --version
           # curl https://bootstrap.pypa.io/get-pip.py | sudo python3
-          pip3 install --upgrade setuptools
+          pip3 install --upgrade setuptools pip
           # pip3 --version
           # which pip3
           # which python3
@@ -37,13 +37,13 @@ jobs:
 
           sceptre --version || true
           pip3 install sceptre
-          python3 -m sceptre --version
+          pip3 list -v
+          python3 -m sceptre --version || true
 
 
-          # pip3 install aws-sam-cli
-          # pip3 list --user
-          # echo $PATH
-          # sam --version
+          pip3 install aws-sam-cli
+          pip3 list -v          
+          python3 -m sam --version || true
 
 # pip 9.0.1 from /usr/lib/python2.7/dist-packages (python 2.7)
 # pip 9.0.1 from /usr/lib/python3/dist-packages (python 3.6)
