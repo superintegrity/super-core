@@ -21,13 +21,21 @@ jobs:
           whoami
           pip --version
           pip3 --version
-          python -m site
+          which pip3
+          which python3
+          python3 -m site
           sudo apt update
           sudo apt-get install python3-setuptools
-          pip3 install aws-sam-cli --user
-          pip3 list --user
-          echo $PATH
-          sam --version
+
+          sceptre --version
+          pip3 install sceptre --user
+          sceptre --version
+
+
+          # pip3 install aws-sam-cli --user
+          # pip3 list --user
+          # echo $PATH
+          # sam --version
 
 # pip 9.0.1 from /usr/lib/python2.7/dist-packages (python 2.7)
 # pip 9.0.1 from /usr/lib/python3/dist-packages (python 3.6)
