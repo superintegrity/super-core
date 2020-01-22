@@ -21,8 +21,8 @@ jobs:
           whoami
           pip --version
           pip3 --version
-          # curl https://bootstrap.pypa.io/get-pip.py | python3 --user
-          # pip3 install --upgrade setuptools pip
+          # curl https://bootstrap.pypa.io/get-pip.py | sudo python3
+          pip3 install --upgrade setuptools
           # pip3 --version
           # which pip3
           # which python3
@@ -40,7 +40,7 @@ jobs:
           sceptre --version
 
 
-          # pip3 install aws-sam-cli --user
+          # pip3 install aws-sam-cli
           # pip3 list --user
           # echo $PATH
           # sam --version
