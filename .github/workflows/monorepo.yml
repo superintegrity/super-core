@@ -65,8 +65,9 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
+          export PATH=/home/runner/.local/bin:$PATH
           sam --version
-          npm run deploy -- --since $(git rev-parse HEAD~1)
+          # npm run deploy -- --since $(git rev-parse HEAD~1)
 
       - name: Deploy to prod green
         env:
@@ -75,5 +76,6 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
+          export PATH=/home/runner/.local/bin:$PATH
           sam --version
-          npm run deploy -- --since $(git rev-parse HEAD~1)
+          # npm run deploy -- --since $(git rev-parse HEAD~1)
