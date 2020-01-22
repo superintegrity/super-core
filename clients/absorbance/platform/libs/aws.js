@@ -42,6 +42,8 @@ const makeDeploy = ({ exec }) =>
       'sam',
       'deploy',
       '--no-fail-on-empty-changeset',
+      `--capabilities CAPABILITY_IAM`,
+
       '--template-file',
       require.resolve('../template.yaml'),
       '--stack-name',
@@ -140,7 +142,6 @@ const makeUndeploy = ({ exec }) =>
       'delete-stack',
       '--stack-name',
       `si-${realm}-${env}-absorbance`,
-      `--capabilities CAPABILITY_IAM`,
     ])
   }
 
