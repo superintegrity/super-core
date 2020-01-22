@@ -6,6 +6,7 @@ import './reset.css'
 
 import { Root } from './styled'
 import { Header } from '../header'
+import { Main } from '../main'
 import { Footer } from '../footer'
 import { theme } from './defaultTheme'
 
@@ -30,7 +31,7 @@ export const Layout = ({ children, disableNav }) => {
     <ThemeProvider theme={theme}>
       <Root>
         <Header disableNav={disableNav} siteTitle={site.siteMetadata.title} />
-        <main>{children}</main>
+        <Main>{children}</Main>
         <Footer siteTitle={site.siteMetadata.title} />
       </Root>
     </ThemeProvider>

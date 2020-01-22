@@ -1,11 +1,19 @@
 import styled from 'styled-components/macro'
 
-export const Root = styled.header`
+export const StyledHeader = styled.header`
+  background-color: black;
+  margin-bottom: 20px;
+  height: 100px;
+  justify-content: center;
+
+  /* @media all and (min-width: 768px) {
+    flex: 0;
+  } */
+`
+
+export const StyledHeaderBody = styled.div`
   align-content: flex-start;
   align-items: flex-start;
-  margin-bottom: 20px;
-  background-color: black;
-  height: 100px;
   flex-flow: row;
 
   > a {
@@ -28,5 +36,9 @@ export const Root = styled.header`
       flex: none;
       width: 80px;
     }
+  }
+
+  @media all and (min-width: 768px) {
+    flex: 0 0 700px;
   }
 `

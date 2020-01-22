@@ -7,6 +7,11 @@ export const AboutSection = styled.div`
     }
   }
 
+  p {
+    margin-bottom: 8px;
+    text-align: justify;
+  }
+
   p::first-letter {
     font-weight: bold;
     font-size: 1.1em;

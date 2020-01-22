@@ -7,11 +7,7 @@ export const Root = styled.div`
   justify-content: center;
 
   > header {
-    padding: 20px;
-  }
-
-  > main {
-    padding: 20px;
+    padding-top: 20px;
   }
 
   > footer {

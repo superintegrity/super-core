@@ -1,7 +1,7 @@
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Root } from './styled'
+import { StyledHeader, StyledHeaderBody } from './styled'
 import { Image } from './images'
 import { Nav } from '../nav'
 
@@ -12,13 +12,15 @@ import { Nav } from '../nav'
  * @param {boolean=} input.disableNav
  */
 export const Header = ({ siteTitle, disableNav }) => (
-  <Root>
-    <Link to="/">
-      <Image id="logo" />
-      <span>{siteTitle}</span>
-    </Link>
-    {!disableNav && <Nav />}
-  </Root>
+  <StyledHeader>
+    <StyledHeaderBody>
+      <Link to="/">
+        <Image id="logo" />
+        <span>{siteTitle}</span>
+      </Link>
+      {!disableNav && <Nav />}
+    </StyledHeaderBody>
+  </StyledHeader>
 )
 
 Header.propTypes = {

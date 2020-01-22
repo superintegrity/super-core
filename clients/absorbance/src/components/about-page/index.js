@@ -12,7 +12,7 @@ export const AboutPage = () => (
     <h1>About.</h1>
 
     <AboutSection>
-      <h3>Your Trustworthy SMSF Specialist</h3>
+      <h3>Your Trustworthy SMSF Specialists</h3>
       <div>
         <p>
           We are CPAs and accredited SMSF specialist advisors. We work in SMSF
