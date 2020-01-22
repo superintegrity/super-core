@@ -22,12 +22,13 @@ jobs:
           pip --version
           pip3 --version
           # curl https://bootstrap.pypa.io/get-pip.py | python3 --user
-          pip3 install --upgrade setuptools pip
-          pip3 --version
-          which pip3
-          which python3
+          # pip3 install --upgrade setuptools pip
+          # pip3 --version
+          # which pip3
+          # which python3
           python3 -m site
           pip3 install wheel
+          # python3 setup.py bdist_wheel
           pip3 list -v
           echo $PATH
 
