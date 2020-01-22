@@ -24,7 +24,7 @@ jobs:
 
           pip3 install --upgrade setuptools pip
           python3 -m site
-          # pip3 install wheel
+          pip3 install wheel
           echo $PATH
 
           pip3 install aws-sam-cli
