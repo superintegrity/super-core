@@ -27,6 +27,7 @@ jobs:
           which pip3
           which python3
           python3 -m site
+          pip3 install wheel
           # sudo apt update
           # sudo apt-get install python3-setuptools
 
