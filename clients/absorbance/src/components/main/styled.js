@@ -5,7 +5,12 @@ export const StyledMain = styled.main`
 `
 
 export const StyledMainBody = styled.div`
+  margin: 0 20px 20px;
+
   @media all and (min-width: 768px) {
-    flex: 0 0 700px;
+    flex: 1 0 700px;
+    max-width: 900px;
+
+    margin: 0 50px 20px;
   }
 `

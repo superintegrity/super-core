@@ -29,10 +29,14 @@ export const ContactPage = () => {
       <Section>
         <ContactBox>
           <h3>{address}​</h3>
+          {COMPLETED && (
+            <h3>
+              Email: <a href={`mailto:${email}`}>{email}</a>​
+            </h3>
+          )}
           <h3>
-            <a href={`mailto:${email}`}>{email}</a>​
+            Tel: <a href={`tel:${mobile}`}>{mobile}</a>
           </h3>
-          <h3>Tel: {mobile}</h3>
 
           {COMPLETED && <ContactForm toEmail={email} />}
         </ContactBox>

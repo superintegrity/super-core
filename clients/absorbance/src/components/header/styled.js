@@ -2,7 +2,7 @@ import styled from 'styled-components/macro'
 
 export const StyledHeader = styled.header`
   background-color: black;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   height: 100px;
   justify-content: center;
 
@@ -15,6 +15,8 @@ export const StyledHeaderBody = styled.div`
   align-content: flex-start;
   align-items: flex-start;
   flex-flow: row;
+
+  margin: 0 20px;
 
   > a {
     color: ${({ theme }) => theme.main};
@@ -39,6 +41,8 @@ export const StyledHeaderBody = styled.div`
   }
 
   @media all and (min-width: 768px) {
-    flex: 0 0 700px;
+    flex: 1 0 700px;
+    max-width: 900px;
+    margin: 0 50px;
   }
 `
