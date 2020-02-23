@@ -19,8 +19,7 @@ export const ContactPage = () => {
   `)
 
   const address = 'Suite 2.17/203-205 Blackburn Road, Mount Waverley VIC 3149'
-  const email = 'jo_lilinth@hotmail.com'
-  const mobile = '0430 777 699'
+  const email = 'info@superintegrity.com.au'
   return (
     <Layout>
       <SEO title="Contact" />
@@ -29,14 +28,14 @@ export const ContactPage = () => {
       <Section>
         <ContactBox>
           <h3>{address}​</h3>
-          {COMPLETED && (
-            <h3>
-              Email: <a href={`mailto:${email}`}>{email}</a>​
-            </h3>
-          )}
+
           <h3>
-            Tel: <a href={`tel:${mobile}`}>{mobile}</a>
+            Email: <a href={`mailto:${email}`}>{email}</a>​
           </h3>
+
+          {/* <h3>
+            Tel: <a href={`tel:${mobile}`}>{mobile}</a>
+          </h3> */}
 
           {COMPLETED && <ContactForm toEmail={email} />}
         </ContactBox>
