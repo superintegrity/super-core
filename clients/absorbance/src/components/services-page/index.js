@@ -13,9 +13,10 @@ export const ServicesPage = () => (
       <h3>SMSF</h3>
       <div>
         <p>
-          Free SMSF Setup - No fees are charged by us – we only pass on the
-          legal document fees and costs for setup of company if a corporate
-          trustee is required.
+          SMSF Setup - for a fee starting as low as $500, we can help you
+          establish your SMSF and obtain all the required legal documents. We
+          also help you manage your SMSF to keep it legally compliant for a
+          hassle free SMSF audit process later.
         </p>
         <p>
           Services after setup – We assist with opening bank account and

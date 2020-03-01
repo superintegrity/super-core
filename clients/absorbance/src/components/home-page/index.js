@@ -12,7 +12,7 @@ export const HomePage = () => (
     <Section>
       <h1>SUPER INTEGRITY</h1>
       <h2>Your Trustworthy SMSF Specialists</h2>
-      <Link to="/services/">&#9755; See Our Services</Link>
+      <Link to="/services/">See Our Services</Link>
     </Section>
   </Layout>
 )
