@@ -13,9 +13,10 @@ export const ServicesPage = () => (
       <h3>SMSF</h3>
       <div>
         <p>
-          SMSF Setup - We can help you establish your SMSF and obtain all the
-          required legal documents. We also help you manage your SMSF to keep it
-          legally compliant for a hassle free SMSF audit process later.
+          SMSF Setup – We offer administration services to facilitate SMSF
+          establishment process. We can help you obtain all the required
+          documentation and guide you through the process step by step to ensure
+          its legal compliance.
         </p>
         <p>
           Services after setup – We assist with opening bank account and
