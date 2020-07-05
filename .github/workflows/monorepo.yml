@@ -32,6 +32,9 @@ jobs:
 
       - name: Build and Test (master)
         if: github.ref == 'refs/heads/master'
+        env:
+          REALM: dev
+          ENV: staging
         run: |
           npm test -- --since $(git rev-parse HEAD~1)
 
