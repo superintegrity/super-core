@@ -1,3 +1,3 @@
 # absorbance
 
-Main web project with gatsby
+Main web project with gatsby.
