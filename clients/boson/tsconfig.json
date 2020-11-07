@@ -15,13 +15,17 @@
     "sourceMap": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
   },
   "include": [
     "src/**/*"
   ],
   "exclude": [
     "node_modules/*",
-    ".svelte"
+    ".svelte",
+    ".svelte/*"
   ]
 }
