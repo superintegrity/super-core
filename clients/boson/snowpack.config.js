@@ -2,4 +2,7 @@
 module.exports = {
   extends: '@sveltejs/snowpack-config',
   plugins: ['@snowpack/plugin-typescript'],
+  mount: {
+    'src/modules': '/_app/modules',
+  },
 }
