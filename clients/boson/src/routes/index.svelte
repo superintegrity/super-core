@@ -1,17 +1,12 @@
 <script>
   import { Counter } from '../modules/presentational'
+  import { DefaultLayout } from '../modules/default-layout'
 </script>
 
 <style>
   :root {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
       Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-
-  main {
-    text-align: center;
-    padding: 1em;
-    margin: 0 auto;
   }
 
   h1 {
@@ -41,7 +36,7 @@
   }
 </style>
 
-<main>
+<DefaultLayout>
   <h1>Hello world!</h1>
 
   <Counter count={11} />
@@ -50,4 +45,4 @@
     <a href="https://svelte.dev">svelte.dev</a>
     to learn how to build Svelte apps.
   </p>
-</main>
+</DefaultLayout>

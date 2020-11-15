@@ -47,6 +47,7 @@
   },
   "dependencies": {
     "core-js": "^3.7.0",
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.20",
+    "reset-css": "^5.0.1"
   }
 }
