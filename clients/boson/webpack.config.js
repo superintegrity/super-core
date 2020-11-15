@@ -57,13 +57,27 @@ module.exports = async () => {
     },
     module: {
       rules: [
-        // {
-        //   test: /\.m?js$/,
-        //   exclude: /node_modules\/(?!camelcase)/,
-        //   use: {
-        //     loader: 'babel-loader',
-        //   },
-        // },
+        {
+          test: /\.m?js$/,
+          exclude: /node_modules\/(?!camelcase)/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                [
+                  '@babel/preset-env',
+                  {
+                    // targets: '> 2%',
+                    forceAllTransforms: true,
+                    useBuiltIns: 'usage',
+                    corejs: { version: 3, proposals: true },
+                  },
+                ],
+              ],
+              plugins: [['@babel/plugin-transform-runtime']],
+            },
+          },
+        },
         {
           test: /\.css$/i,
           use: [MiniCssExtractPlugin.loader, 'css-loader'],

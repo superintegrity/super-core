@@ -4,5 +4,5 @@
   }
 </style>
 
-<scrip lang="ts" />
+<scrip />
 <h1>Header 1</h1>

@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { decrement, increment } from '../../count'
 
   // import camelCase from 'camelcase'

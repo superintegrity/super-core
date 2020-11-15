@@ -1,5 +1,11 @@
 <script>
   import Counter from '../modules/presentational/components/Counter.svelte'
+
+  /**
+   *
+   * @param {number} ms
+   */
+  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 </script>
 
 <style>

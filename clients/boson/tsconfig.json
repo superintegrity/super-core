@@ -15,12 +15,33 @@
       */
     "sourceMap": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "checkJs": true,
+    //
+    // skipDefaultLibCheck and skipLibCheck greatly improved performance and
+    // avoid type conflict between libraries
+    //
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    //
+    // Added settings
+    //
     "allowJs": true,
-    "noEmit": true
+    "checkJs": true,
+    "noEmit": true,
+    "incremental": true,
+    "allowSyntheticDefaultImports": true,
+    "alwaysStrict": true,
+    "pretty": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "allowUnreachableCode": false,
   },
   "include": [
     "platform/**/*",
