@@ -1,5 +1,5 @@
 <script>
-  import { decrement, increment } from '../../count'
+  import { decrement, increment } from '../../../count'
 
   // import camelCase from 'camelcase'
   export let count = 0

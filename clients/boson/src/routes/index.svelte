@@ -1,11 +1,5 @@
 <script>
-  import Counter from '../modules/presentational/components/Counter.svelte'
-
-  /**
-   *
-   * @param {number} ms
-   */
-  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+  import { Counter } from '../modules/presentational'
 </script>
 
 <style>
@@ -50,7 +44,7 @@
 <main>
   <h1>Hello world!</h1>
 
-  <Counter count={0} />
+  <Counter count={11} />
   <p>
     Visit the
     <a href="https://svelte.dev">svelte.dev</a>
