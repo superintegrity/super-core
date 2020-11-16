@@ -13,8 +13,8 @@
 
 <ul class="root">
   <NavItem url="/">Home</NavItem>
-  <NavItem url="/service">Services</NavItem>
+  <!-- <NavItem url="/service">Services</NavItem>
   <NavItem url="/about">About</NavItem>
   <NavItem url="/blog">Blog</NavItem>
-  <NavItem url="/contact">Contact</NavItem>
+  <NavItem url="/contact">Contact</NavItem> -->
 </ul>

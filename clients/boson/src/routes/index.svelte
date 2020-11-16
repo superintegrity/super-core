@@ -33,6 +33,7 @@
 
 <DefaultLayout>
   <h1>Hello world!</h1>
+  <h2>Test heading 2</h2>
 
   <Counter count={11} />
   <p>
