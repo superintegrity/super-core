@@ -5,7 +5,15 @@ export default {
   component: NavBar,
 }
 
-export const Default = () => ({
+export const Default = () => SelectedHome()
+
+export const SelectedHome = () => ({
   Component: NavBar,
-  props: {},
+})
+
+export const SelectedAbout = () => ({
+  Component: NavBar,
+  props: {
+    currentUrl: '/about',
+  },
 })

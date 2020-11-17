@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Counter } from '../modules/presentational'
   import { DefaultLayout } from '../modules/default-layout'
 </script>
@@ -31,7 +31,7 @@
   }
 </style>
 
-<DefaultLayout>
+<DefaultLayout currentUrl="/">
   <h1>Hello world!</h1>
   <h2>Test heading 2</h2>
 

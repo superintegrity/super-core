@@ -7,11 +7,13 @@ export default {
   component: NavItem,
 }
 
-export const Default = () => {
+export const Default = () => NotSelected()
+
+export const NotSelected = () => {
   const slotContainerId = `s-${uuidv4().substr(0, 8)}`
 
   setTimeout(() => {
-    setSlot(slotContainerId, `<strong>Home</strong>`)
+    setSlot(slotContainerId, `<strong>About Us</strong>`)
     setWrapper(`<ul></ul>`)
   })
 
@@ -27,7 +29,7 @@ export const Selected = () => {
   const slotContainerId = `s-${uuidv4().substr(0, 8)}`
 
   setTimeout(() => {
-    setSlot(slotContainerId, `<strong>About Us</strong>`)
+    setSlot(slotContainerId, `<strong>Home</strong>`)
     setWrapper(`<ul></ul>`)
   })
 

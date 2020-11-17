@@ -14,7 +14,9 @@
     "@babel/core": "^7.12.3",
     "@babel/plugin-transform-runtime": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
+    "@babel/preset-typescript": "^7.12.1",
     "@snowpack/plugin-babel": "^2.1.4",
+    "@snowpack/plugin-typescript": "^1.1.0",
     "@storybook/addon-actions": "^6.0.28",
     "@storybook/addon-essentials": "^6.0.28",
     "@storybook/addon-links": "^6.0.28",
@@ -40,7 +42,6 @@
     "svelte-check": "^1.1.11",
     "svelte-loader": "^2.13.6",
     "svelte-preprocess": "^4.0.0",
-    "tslib": "^2.0.0",
     "typescript": "^4.0.0",
     "uuid": "^8.3.1",
     "webpack": "4.43.0",
@@ -50,6 +51,7 @@
   "dependencies": {
     "core-js": "^3.7.0",
     "lodash": "^4.17.20",
-    "reset-css": "^5.0.1"
+    "reset-css": "^5.0.1",
+    "uri-js": "^4.4.0"
   }
 }

@@ -7,16 +7,23 @@
 
 <style>
   a {
-    color: rgba(0, 0, 0, 0.9);
+    color: rgba(0, 0, 0, 0.5);
     text-decoration: none;
+    font-weight: 400;
+    letter-spacing: 1px;
+
+    display: inline-block;
+    padding: 15px 10px 60px;
   }
 
   a.selected {
-    background-color: gray;
+    color: rgb(41, 43, 44);
+    background-color: rgb(231, 233, 234);
+    border-bottom: 2px solid #03cce6;
   }
 </style>
 
-<li class="root">
+<li class="root" class:selected>
   <a href={url} id={slotContainerId} class:selected>
     <slot />
   </a>
