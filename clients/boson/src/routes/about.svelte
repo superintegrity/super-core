@@ -1,3 +1,7 @@
+<DefaultLayout currentUrl="/about">
+  <h1>About</h1>
+</DefaultLayout>
+
 <script lang="ts">
   import { DefaultLayout } from '../modules/default-layout'
 </script>
@@ -8,7 +12,3 @@
     color: red;
   }
 </style>
-
-<DefaultLayout currentUrl="/about">
-  <h1>About</h1>
-</DefaultLayout>

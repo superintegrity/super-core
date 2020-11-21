@@ -1,3 +1,13 @@
+<ul class="root">
+  {#each routes as route}
+    <NavItem
+      url="{route.url}"
+      selected="{parse(currentUrl).path === route.url}">
+      {route.title}
+    </NavItem>
+  {/each}
+</ul>
+
 <script lang="ts">
   import NavItem from '../nav-item/NavItem.svelte'
   import { parse } from 'uri-js'
@@ -25,6 +35,10 @@
       url: '/contact',
       title: 'Contact',
     },
+    {
+      url: '/debug/app',
+      title: 'Debug App',
+    },
   ]
 </script>
 
@@ -35,11 +49,3 @@
     justify-content: space-between;
   }
 </style>
-
-<ul class="root">
-  {#each routes as route}
-    <NavItem url={route.url} selected={parse(currentUrl).path === route.url}>
-      {route.title}
-    </NavItem>
-  {/each}
-</ul>

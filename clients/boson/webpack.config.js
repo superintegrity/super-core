@@ -1,7 +1,7 @@
 const path = require('path')
 const fs = require('fs')
 const { promisify } = require('util')
-const { zip } = require('lodash')
+const { zip, omit } = require('lodash')
 const glob = require('glob')
 const cheerio = require('cheerio')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
@@ -33,7 +33,7 @@ module.exports = async () => {
           mainScriptPath,
           './build' + entryScript,
         )}'
-        
+
         start({
           target: document.body,
         })
@@ -100,6 +100,10 @@ module.exports = async () => {
           filename: filePath.replace('./build/', ''),
           templateContent: htmlFile$.html(),
           entry: mainScriptName,
+          mainStyleInfos: htmlInfos.map((info) => ({
+            mainScriptName: info.mainScriptName,
+            mainStyle: info.mainStyle,
+          })),
         })
       }),
       ...(process.env.ANALYZE === 'true'
@@ -129,14 +133,7 @@ async function overwriteInjectStylesFiles() {
   const injectStylesFilePaths = await globAsync('./build/**/inject_styles*.js')
 
   injectStylesFilePaths.forEach((filePath) => {
-    fs.writeFileSync(
-      filePath,
-      `
-        export default function () {
-          return Promise.resolve([])
-        }
-      `,
-    )
+    fs.copyFileSync(require.resolve('./platform/inject-styles.js'), filePath)
   })
 }
 
@@ -146,22 +143,42 @@ async function getHtmlInfos() {
     fs.readFileSync(filePath, 'utf-8'),
   )
   const htmlFile$ = htmlFileContents.map((content) => cheerio.load(content))
+
+  // E.g., <link rel="modulepreload" href="/_app/about-569a562c.js" />
   /** @type {string[]} */
   const mainScripts = htmlFile$.map(
     ($) => $('link[rel="modulepreload"]').get(2).attribs['href'],
   )
+
+  // E.g., <link rel="modulepreload" href="/_app/entry-80816452.js" />
   /** @type {string[]} */
   const entryScripts = htmlFile$.map(
     ($) => $('link[rel="modulepreload"]').get(0).attribs['href'],
   )
+
+  // E.g.,
+  //    <link rel="stylesheet" href="/_app/DefaultLayout-9f7f541d.css" />
+  //    <link rel="stylesheet" href="/_app/about-7fff0589.css" />
   const allStylesList = htmlFile$.map(($) =>
     $('link[rel="stylesheet"]')
       .toArray()
       .map((e) => e.attribs['href']),
   )
+
+  const mainStyles = allStylesList
+    .map((s) => s.slice().reverse())
+    .map((styles) =>
+      styles.find((s) => {
+        var first = s.replace('/_app/', '').charAt(0)
+        return first === first.toLowerCase() && first !== first.toUpperCase()
+      }),
+    )
+
+  // E.g., about-index, contact-index
   const mainScriptNames = htmlFilePaths.map((filePath) =>
     filePath.replace('./build/', '').replace('.html', '').replace(/\//g, '-'),
   )
+
   const mainScriptPath = htmlFilePaths.map((filePath) =>
     filePath.replace('.html', '.js'),
   )
@@ -172,6 +189,7 @@ async function getHtmlInfos() {
     htmlFile$,
     mainScripts,
     allStylesList,
+    mainStyles,
     mainScriptNames,
     entryScripts,
     mainScriptPath,
@@ -182,6 +200,7 @@ async function getHtmlInfos() {
       htmlFile$,
       mainScript,
       allStyles,
+      mainStyle,
       mainScriptName,
       entryScript,
       mainScriptPath,
@@ -191,6 +210,7 @@ async function getHtmlInfos() {
       htmlFile$,
       mainScript,
       allStyles,
+      mainStyle,
       mainScriptName,
       entryScript,
       mainScriptPath,

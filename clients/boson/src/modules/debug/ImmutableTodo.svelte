@@ -1,3 +1,13 @@
+<!-- the text will flash red whenever the `todo` object changes -->
+<div bind:this="{div}" on:click>{todo.done ? '=' : ''} {todo.text}</div>
+
+<!-->
+  div {
+    cursor: pointer;
+    line-height: 1.5;
+  }
+</!-->
+
 <!-- 
   This is not needed, because I have enabled this globally via @sveltejs+snowpack-config
   <svelte:options immutable={true}/> 
@@ -16,12 +26,8 @@
   })
 </script>
 
-<!-- the text will flash red whenever the `todo` object changes -->
-<div bind:this="{div}" on:click>{todo.done ? '=' : ''} {todo.text}</div>
-
-<!-->
+<style>
   div {
-    cursor: pointer;
-    line-height: 1.5;
+    margin: 10px;
   }
-</!-->
+</style>

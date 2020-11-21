@@ -1,3 +1,18 @@
+<button
+  on:click="{() => {
+    count = increment(count)
+  }}">
+  Clicks:
+  {count}
+</button>
+
+<button
+  on:click="{() => {
+    count = decrement(count)
+  }}">
+  Decrement
+</button>
+
 <script lang="ts">
   import { decrement, increment } from '../../../count'
 
@@ -35,18 +50,3 @@
     background-color: rgba(255, 62, 0, 0.2);
   }
 </style>
-
-<button
-  on:click={() => {
-    count = increment(count)
-  }}>
-  Clicks:
-  {count}
-</button>
-
-<button
-  on:click={() => {
-    count = decrement(count)
-  }}>
-  Decrement
-</button>

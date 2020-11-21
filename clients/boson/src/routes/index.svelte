@@ -1,3 +1,15 @@
+<DefaultLayout currentUrl="/">
+  <h1>Hello world!</h1>
+  <h2>Test heading 2</h2>
+
+  <Counter count="{11}" />
+  <p>
+    Visit the
+    <a href="https://svelte.dev">svelte.dev</a>
+    to learn how to build Svelte apps.
+  </p>
+</DefaultLayout>
+
 <script lang="ts">
   import { Counter } from '../modules/presentational'
   import { DefaultLayout } from '../modules/default-layout'
@@ -30,15 +42,3 @@
     }
   }
 </style>
-
-<DefaultLayout currentUrl="/">
-  <h1>Hello world!</h1>
-  <h2>Test heading 2</h2>
-
-  <Counter count={11} />
-  <p>
-    Visit the
-    <a href="https://svelte.dev">svelte.dev</a>
-    to learn how to build Svelte apps.
-  </p>
-</DefaultLayout>

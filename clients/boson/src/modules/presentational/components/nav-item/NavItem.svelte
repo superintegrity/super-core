@@ -1,7 +1,12 @@
+<li class="root" class:selected>
+  <a href="{url}" id="{slotContainerId}" class:selected>
+    <slot />
+  </a>
+</li>
+
 <script lang="ts">
   export let url = '/'
   export let selected = false
-
   export let slotContainerId: string | undefined = undefined
 </script>
 
@@ -22,9 +27,3 @@
     border-bottom: 2px solid #03cce6;
   }
 </style>
-
-<li class="root" class:selected>
-  <a href={url} id={slotContainerId} class:selected>
-    <slot />
-  </a>
-</li>
