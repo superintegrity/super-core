@@ -1,3 +1,6 @@
+/**
+ * @param {HTMLElement} element
+ */
 export default function flash(element) {
   requestAnimationFrame(() => {
     element.style.transition = 'none'

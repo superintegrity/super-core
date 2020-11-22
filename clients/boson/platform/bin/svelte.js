@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-/** @type {import("assert")} */
-const assert = require('assert')
 const Yargs = require('yargs/yargs')
 const { flow } = require('lodash')
 const { copyImages } = require('../src/svelte')
