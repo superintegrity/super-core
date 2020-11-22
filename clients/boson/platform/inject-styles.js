@@ -1,21 +1,12 @@
 /**
- * @param {string[]} _files
+ * @param {string[]} files
  */
-export default function (_files) {
-  if (!window.SuperIntegrity.cssFileMap) {
-    return
-  }
-
-  let files = Object.entries(window.SuperIntegrity.cssFileMap)
-    .filter(([key, _value]) => {
-      return _files.includes(key)
-    })
-    .map(([_key, value]) => value)
-
+export default function (files) {
   return Promise.all(
     files.map(function (file) {
       return new Promise(function (fulfil, reject) {
         var url = `/${file}`
+
         /** @type {HTMLLinkElement | null}  */
         var link = document.querySelector(
           'link[rel=stylesheet][href="' + url + '"]',

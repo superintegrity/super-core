@@ -6,6 +6,7 @@ const glob = require('glob')
 const cheerio = require('cheerio')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
+const CopyPlugin = require('copy-webpack-plugin')
 const { HtmlPlugin } = require('./platform/webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -18,28 +19,7 @@ module.exports = async () => {
 
   await overwriteInjectStylesFiles()
 
-  htmlInfos.forEach(({ mainScriptPath, entryScript, allStyles }) => {
-    fs.writeFileSync(
-      mainScriptPath,
-      `
-        ${allStyles
-          .map(
-            (style) =>
-              `import '${getRelativePath(mainScriptPath, './build' + style)}'`,
-          )
-          .join('\n')}
-        
-        import { start } from '${getRelativePath(
-          mainScriptPath,
-          './build' + entryScript,
-        )}'
-
-        start({
-          target: document.body,
-        })
-    `,
-    )
-  })
+  createMainScripts(htmlInfos)
 
   return {
     entry: htmlInfos.reduce((acc, { mainScriptPath, mainScriptName }) => {
@@ -78,23 +58,33 @@ module.exports = async () => {
             },
           },
         },
-        {
-          test: /\.css$/i,
-          use: [MiniCssExtractPlugin.loader, 'css-loader'],
-        },
+        // No need, will copy css files to dist/ as is
+        // using copy-webpack-plugin
+        // {
+        //   test: /\.css$/i,
+        //   use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        // },
       ],
     },
     plugins: [
+      new CopyPlugin({
+        patterns: [
+          { from: 'build/_app/**/*.css', flatten: true },
+          { from: 'build/**/*.ico', flatten: true },
+        ],
+      }),
       new MiniCssExtractPlugin({
         filename: '[name].[contenthash].css',
         // chunkFilename: '[name].[contenthash].css',
       }),
       ...htmlInfos.map(({ filePath, htmlFile$, mainScriptName }) => {
-        htmlFile$('head').html(`
-          <meta charset="utf-8" />
-          <link rel="icon" href="/favicon.ico" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-        `)
+        htmlFile$('link[rel="modulepreload"]').remove()
+        htmlFile$('script[type="module"]').remove()
+
+        htmlFile$('link[rel="stylesheet"]').each(function () {
+          var oldHref = htmlFile$(this).attr('href')
+          htmlFile$(this).attr('href', oldHref.replace('/_app', ''))
+        })
 
         return new HtmlPlugin({
           filename: filePath.replace('./build/', ''),
@@ -115,6 +105,37 @@ module.exports = async () => {
         : []),
     ],
   }
+}
+
+function createMainScripts(htmlInfos) {
+  htmlInfos.forEach(({ mainScriptPath, entryScript, allStyles }) => {
+    fs.writeFileSync(
+      mainScriptPath,
+      `
+        /* No need, will copy css files to dist/ as is 
+           using copy-webpack-plugin
+          ${allStyles
+            .map(
+              (style) =>
+                `import '${getRelativePath(
+                  mainScriptPath,
+                  './build' + style,
+                )}'`,
+            )
+            .join('\n')}
+        */
+        
+        import { start } from '${getRelativePath(
+          mainScriptPath,
+          './build' + entryScript,
+        )}'
+
+        start({
+          target: document.body,
+        })
+    `,
+    )
+  })
 }
 
 function getRelativePath(from, to) {
@@ -142,24 +163,24 @@ async function getHtmlInfos() {
   const htmlFileContents = htmlFilePaths.map((filePath) =>
     fs.readFileSync(filePath, 'utf-8'),
   )
-  const htmlFile$ = htmlFileContents.map((content) => cheerio.load(content))
+  const htmlFiles$ = htmlFileContents.map((content) => cheerio.load(content))
 
   // E.g., <link rel="modulepreload" href="/_app/about-569a562c.js" />
   /** @type {string[]} */
-  const mainScripts = htmlFile$.map(
+  const mainScripts = htmlFiles$.map(
     ($) => $('link[rel="modulepreload"]').get(2).attribs['href'],
   )
 
   // E.g., <link rel="modulepreload" href="/_app/entry-80816452.js" />
   /** @type {string[]} */
-  const entryScripts = htmlFile$.map(
+  const entryScripts = htmlFiles$.map(
     ($) => $('link[rel="modulepreload"]').get(0).attribs['href'],
   )
 
   // E.g.,
   //    <link rel="stylesheet" href="/_app/DefaultLayout-9f7f541d.css" />
   //    <link rel="stylesheet" href="/_app/about-7fff0589.css" />
-  const allStylesList = htmlFile$.map(($) =>
+  const allStylesList = htmlFiles$.map(($) =>
     $('link[rel="stylesheet"]')
       .toArray()
       .map((e) => e.attribs['href']),
@@ -186,7 +207,7 @@ async function getHtmlInfos() {
   const htmlInfos = zip(
     htmlFilePaths,
     htmlFileContents,
-    htmlFile$,
+    htmlFiles$,
     mainScripts,
     allStylesList,
     mainStyles,
