@@ -7,7 +7,7 @@ const cheerio = require('cheerio')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 const CopyPlugin = require('copy-webpack-plugin')
-const { HtmlPlugin } = require('./platform/webpack')
+const { HtmlPlugin } = require('./platform/src/webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const assert = require('assert')
@@ -71,6 +71,12 @@ module.exports = async () => {
         patterns: [
           { from: 'build/_app/**/*.css', flatten: true },
           { from: 'build/**/*.ico', flatten: true },
+          {
+            from: 'build/**/*.png',
+            transformPath(targetPath, absolutePath) {
+              return targetPath.replace('build/', '')
+            },
+          },
         ],
       }),
       new MiniCssExtractPlugin({
@@ -154,7 +160,10 @@ async function overwriteInjectStylesFiles() {
   const injectStylesFilePaths = await globAsync('./build/**/inject_styles*.js')
 
   injectStylesFilePaths.forEach((filePath) => {
-    fs.copyFileSync(require.resolve('./platform/inject-styles.js'), filePath)
+    fs.copyFileSync(
+      require.resolve('./platform/src/inject-styles.js'),
+      filePath,
+    )
   })
 }
 
