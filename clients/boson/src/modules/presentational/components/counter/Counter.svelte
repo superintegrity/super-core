@@ -13,19 +13,13 @@
   Decrement
 </button>
 
+<img src="{logoSrc}" alt="logo" />
+
 <script lang="ts">
   import { decrement, increment } from '../../../count'
+  import logoSrc from './images/logo.png'
 
-  // import camelCase from 'camelcase'
   export let count = 0
-
-  const delay = (ms: number) =>
-    new Promise((resolve) => setTimeout(resolve, ms))
-  setTimeout(async () => {
-    console.log('*****  paul debug 81')
-    await delay(2000)
-    console.log('*****  paul debug 82')
-  })
 </script>
 
 <style>
@@ -48,5 +42,9 @@
 
   button:active {
     background-color: rgba(255, 62, 0, 0.2);
+  }
+
+  img {
+    width: 300px;
   }
 </style>
