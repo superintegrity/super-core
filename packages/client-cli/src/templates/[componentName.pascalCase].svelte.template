@@ -1,0 +1,13 @@
+<div class="root">
+  <%= componentName.pascalCase %>
+</div>
+
+<script lang="ts">
+  console.log('<%= componentName.pascalCase %>')
+</script>
+
+<style>
+  .root {
+    background-color: red;
+  }
+</style>

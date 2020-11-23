@@ -1,9 +1,10 @@
 {
-  "name": "svelte-next-ts-2",
+  "name": "@super-integrity/boson",
   "version": "0.0.1",
   "scripts": {
     "postinstall": "patch-package",
     "dev": "svelte dev",
+    "dev:ux": "open ../../.tmp/superintegrity-design/index.html",
     "test": "npm run lint && npm run build",
     "build:clean": "npm run clean && npm run build",
     "build": "npm run copy-images && svelte build && webpack",
@@ -12,7 +13,7 @@
     "lint": "tsc && npm run svelte-check",
     "svelte-check": "svelte-check",
     "storybook": "start-storybook -p 6006 --no-dll",
-    "build-storybook": "build-storybook --no-dll"
+    "storybook:build": "build-storybook --no-dll"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",

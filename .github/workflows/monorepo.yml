@@ -23,6 +23,7 @@ jobs:
 
       - name: install
         run: |
+          npm i -g lerna
           npm ci
 
       - name: Build and Test (non-master)
