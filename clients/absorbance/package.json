@@ -8,7 +8,8 @@
     "dev": "export NODE_CONFIG_ENV=$ENV && gatsby develop",
     "build": "export NODE_CONFIG_ENV=$ENV && gatsby build",
     "start": "export NODE_CONFIG_ENV=$ENV && gatsby serve",
-    "test": "npm run build && tsc",
+    "test": "npm run lint && npm run build",
+    "lint": "tsc",
     "deploy": "export NODE_CONFIG_ENV=$ENV && npm run build && ./platform/bin/aws.js deploy --verbose --realm $REALM --env $ENV"
   },
   "dependencies": {
@@ -39,7 +40,7 @@
     "config": "^3.2.5",
     "exec-sh": "^0.3.4",
     "prettier": "^1.19.1",
-    "typescript": "^3.7.4"
+    "typescript": "^4.1.2"
   },
   "keywords": [
     "gatsby"

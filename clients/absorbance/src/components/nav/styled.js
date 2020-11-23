@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components/macro'
 
+//@ts-expect-error
 export const Root = styled.nav`
   font-size: 0.9em;
   display: flex;

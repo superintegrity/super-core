@@ -7,6 +7,7 @@
     "clean": "lerna clean --yes && rm -rf node_modules",
     "bootstrap": "lerna bootstrap --concurrency ${CONCURRENCY:-2}",
     "install": "npm run bootstrap",
+    "lint": "lerna run lint --stream --concurrency ${CONCURRENCY:-2}",
     "test": "lerna run test --stream --concurrency ${CONCURRENCY:-2}",
     "deploy": "lerna run deploy --stream --concurrency ${CONCURRENCY:-2}"
   },

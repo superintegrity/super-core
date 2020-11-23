@@ -18,10 +18,10 @@ export default function (files) {
           document.head.appendChild(link)
         }
         if (link.sheet) {
-          fulfil()
+          fulfil({})
         } else {
           link.onload = function () {
-            return fulfil()
+            return fulfil({})
           }
           link.onerror = reject
         }

@@ -23,6 +23,9 @@
     "noImplicitThis": true,
     "noImplicitReturns": true,
     "allowUnreachableCode": false,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
     // skipDefaultLibCheck and skipLibCheck greatly improved performance and
     // avoid type conflict between libraries
     "skipDefaultLibCheck": true,
