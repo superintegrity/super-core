@@ -1,1 +1,2 @@
-export * from './<%= componentName.pascalCase %>.svelte'
+import <%= componentName.pascalCase %> from './<%= componentName.pascalCase %>.svelte'
+export { <%= componentName.pascalCase %> }

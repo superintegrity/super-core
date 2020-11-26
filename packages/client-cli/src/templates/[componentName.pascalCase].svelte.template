@@ -1,4 +1,4 @@
-<div class="root">
+<div class="root {$$props.class}">
   <%= componentName.pascalCase %>
 </div>
 

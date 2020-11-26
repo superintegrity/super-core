@@ -1,8 +1,6 @@
-<ul class="root">
+<ul class="root {$$props.class}">
   {#each routes as route}
-    <NavItem
-      url="{route.url}"
-      selected="{parse(currentUrl).path === route.url}">
+    <NavItem url={route.url} selected={parse(currentUrl).path === route.url}>
       {route.title}
     </NavItem>
   {/each}

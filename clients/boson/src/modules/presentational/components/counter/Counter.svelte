@@ -1,23 +1,20 @@
 <button
-  on:click="{() => {
+  on:click={() => {
     count = increment(count)
-  }}">
+  }}>
   Clicks:
   {count}
 </button>
 
 <button
-  on:click="{() => {
+  on:click={() => {
     count = decrement(count)
-  }}">
+  }}>
   Decrement
 </button>
 
-<img src="{logoSrc}" alt="logo" />
-
 <script lang="ts">
   import { decrement, increment } from '../../../count'
-  import logoSrc from './images/logo.png'
 
   export let count = 0
 </script>

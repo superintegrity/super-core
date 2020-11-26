@@ -1,5 +1,5 @@
-<li class="root" class:selected>
-  <a href="{url}" id="{slotContainerId}" class:selected>
+<li class="root {$$props.class}" class:selected>
+  <a href={url} id={slotContainerId} class:selected>
     <slot />
   </a>
 </li>

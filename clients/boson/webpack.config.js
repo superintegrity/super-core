@@ -114,23 +114,24 @@ module.exports = async () => {
 }
 
 function createMainScripts(htmlInfos) {
+  // It failed to handle <link href="https://fonts.googleapis.com/css2?family=Poppins
+  /* No need, will copy css files to dist/ as is 
+      using copy-webpack-plugin
+    ${allStyles
+      .map(
+        (style) =>
+          `import '${getRelativePath(
+            mainScriptPath,
+            './build' + style,
+          )}'`,
+      )
+      .join('\n')}
+  */
+
   htmlInfos.forEach(({ mainScriptPath, entryScript, allStyles }) => {
     fs.writeFileSync(
       mainScriptPath,
       `
-        /* No need, will copy css files to dist/ as is 
-           using copy-webpack-plugin
-          ${allStyles
-            .map(
-              (style) =>
-                `import '${getRelativePath(
-                  mainScriptPath,
-                  './build' + style,
-                )}'`,
-            )
-            .join('\n')}
-        */
-        
         import { start } from '${getRelativePath(
           mainScriptPath,
           './build' + entryScript,
