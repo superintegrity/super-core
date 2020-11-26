@@ -23,12 +23,40 @@
       detailUrl="/contact"
       icon={tv} />
   </section>
+
+  <section>
+    <H1>Services</H1>
+    <div class="info-boxes">
+      <InfoBox
+        class="info-box"
+        icon={laptop}
+        heading="Responsive"
+        content="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit." />
+      <InfoBox
+        class="info-box"
+        icon={laptop}
+        heading="Responsive"
+        content="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit." />
+      <InfoBox
+        class="info-box"
+        icon={laptop}
+        heading="Responsive"
+        content="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit." />
+      <InfoBox
+        class="info-box"
+        icon={laptop}
+        heading="Responsive"
+        content="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit." />
+    </div>
+  </section>
 </DefaultLayout>
 
 <script lang="ts">
   import { DefaultLayout } from '../default-layout'
   import { InfoCard } from '../presentational/components/info-card'
-  import { trophy, thumbsUp, tv } from 'svelte-awesome/icons'
+  import { trophy, thumbsUp, tv, laptop } from 'svelte-awesome/icons'
+  import { H1 } from '../presentational/components/headings'
+  import { InfoBox } from '../presentational/components/info-box'
 </script>
 
 <style>
@@ -49,6 +77,20 @@
   }
 
   .info-cards :global(.info-card) {
+    flex: 1;
+    min-width: 20rem;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .info-boxes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .info-boxes :global(.info-box) {
     flex: 1;
     min-width: 20rem;
     margin-top: 20px;
