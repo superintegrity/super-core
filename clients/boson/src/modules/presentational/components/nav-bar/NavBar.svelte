@@ -33,10 +33,6 @@
       url: '/contact',
       title: 'Contact',
     },
-    {
-      url: '/debug/app',
-      title: 'Debug App',
-    },
   ]
 </script>
 

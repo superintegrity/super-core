@@ -1,4 +1,4 @@
-<div class="root {$$props.class}">
+<div class="root {$$props.class || ''}">
   <img src={SuperIntegrityIcon} alt="logo" />
 </div>
 
@@ -6,7 +6,11 @@
   import SuperIntegrityIcon from './images/super-integrity.png'
 </script>
 
-<style>
+<style type="text/scss">
+  .root {
+    margin: auto;
+  }
+
   img {
     width: 50px;
   }

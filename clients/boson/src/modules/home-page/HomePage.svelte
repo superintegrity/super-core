@@ -1,4 +1,7 @@
 <DefaultLayout currentUrl="/">
+  <section class="banner">
+    <Carousel />
+  </section>
   <section class="info-cards">
     <InfoCard
       class="info-card"
@@ -22,8 +25,8 @@
       icon={tv} />
   </section>
 
-  <section>
-    <H1>Services</H1>
+  <section class="services">
+    <H1 class="h1">Services</H1>
     <div class="info-boxes">
       <InfoBox
         class="info-box"
@@ -55,34 +58,48 @@
   import { trophy, thumbsUp, tv, laptop } from 'svelte-awesome/icons'
   import { H1 } from '../presentational/components/headings'
   import { InfoBox } from '../presentational/components/info-box'
+  import { Carousel } from '../presentational/components/carousel'
 </script>
 
-<style>
-  .info-cards {
+<style type="text/scss">
+  .banner {
+    margin-top: 16px;
+  }
+
+  section.info-cards {
+    margin-top: 80px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+
+    :global(.info-card) {
+      flex: 1;
+      min-width: 20rem;
+      margin-top: 20px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
   }
 
-  .info-cards :global(.info-card) {
-    flex: 1;
-    min-width: 20rem;
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
+  section.services {
+    margin-top: 80px;
+
+    :global(.h1) {
+      text-align: center;
+    }
   }
 
   .info-boxes {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-  }
 
-  .info-boxes :global(.info-box) {
-    flex: 1;
-    min-width: 20rem;
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
+    :global(.info-box) {
+      flex: 1;
+      min-width: 20rem;
+      margin-top: 20px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
   }
 </style>

@@ -76,6 +76,28 @@ module.exports = async () => {
             transformPath(targetPath, absolutePath) {
               return targetPath.replace('build/', '')
             },
+            noErrorOnMissing: true,
+          },
+          {
+            from: 'build/**/*.jpg',
+            transformPath(targetPath, absolutePath) {
+              return targetPath.replace('build/', '')
+            },
+            noErrorOnMissing: true,
+          },
+          {
+            from: 'build/**/*.jpeg',
+            transformPath(targetPath, absolutePath) {
+              return targetPath.replace('build/', '')
+            },
+            noErrorOnMissing: true,
+          },
+          {
+            from: 'build/**/*.svg',
+            transformPath(targetPath, absolutePath) {
+              return targetPath.replace('build/', '')
+            },
+            noErrorOnMissing: true,
           },
         ],
       }),

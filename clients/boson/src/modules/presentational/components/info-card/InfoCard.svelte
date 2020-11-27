@@ -35,7 +35,7 @@
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background: #03cce6;
+    background: rgb(153, 139, 107);
     text-align: center;
 
     color: white;
