@@ -1,0 +1,16 @@
+<h1 class="root {$$props.class}">
+  <slot>{children || ''}</slot>
+</h1>
+
+<script lang="ts">
+  export let children: string | undefined = ''
+</script>
+
+<style>
+  h1 {
+    font-size: 1.3em;
+    color: #ffffff;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+</style>
