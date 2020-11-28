@@ -24,6 +24,6 @@
   a.selected {
     color: rgb(41, 43, 44);
     background-color: rgb(231, 233, 234);
-    border-bottom: 2px solid rgb(153, 139, 107);
+    border-bottom: 2px solid var(--theme-primary-main);
   }
 </style>

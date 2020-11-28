@@ -1,22 +1,33 @@
-<main>
-  <header>
-    <Logo />
-    <NavBar class="nav" currentUrl={currentUrl} />
-  </header>
-  <slot />
-  <footer>
-    <AboutSummaryBox class="summary-box" />
-    <ContactSummaryBox class="summary-box" />
-  </footer>
-</main>
+<svelte:component this={ThemeWrapper} themes={themes}>
+  <main>
+    <header>
+      <Logo />
+      <NavBar class="nav" currentUrl={currentUrl} />
+    </header>
+    <slot />
+    <footer>
+      <AboutSummaryBox class="summary-box" />
+      <ContactSummaryBox class="summary-box" />
+    </footer>
+  </main>
+</svelte:component>
 
 <script lang="ts">
   import 'reset-css/reset.css'
+  import './layout.css'
   import { NavBar } from '../presentational'
   import AboutSummaryBox from '../presentational/components/about-summary-box/AboutSummaryBox.svelte'
   import ContactSummaryBox from '../presentational/components/contact-summary-box/ContactSummaryBox.svelte'
   import { Logo } from '../presentational/components/logo'
-  import './layout.css'
+  import { themes } from './themes'
+
+  import { onMount } from 'svelte'
+  let ThemeWrapper: typeof import('svelte-themer').ThemeWrapper
+
+  onMount(async () => {
+    const module = await import('svelte-themer')
+    ThemeWrapper = module.ThemeWrapper
+  })
 
   export let currentUrl: string | undefined
 </script>

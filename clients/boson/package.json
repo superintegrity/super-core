@@ -4,7 +4,7 @@
   "scripts": {
     "postinstall": "patch-package",
     "dev": "svelte dev",
-    "dev:ux": "open ../../.tmp/superintegrity-design/index.html",
+    "dev:ux": "open ../../.tmp/_super_integrity/design/index.html",
     "test": "npm run lint && npm run build",
     "build:clean": "npm run clean && npm run build",
     "build": "npm run copy-images && svelte build && webpack",
@@ -64,6 +64,7 @@
     "svelte-image": "^0.2.7",
     "svelte-loader": "^2.13.6",
     "svelte-preprocess": "^4.0.0",
+    "svelte-themer": "^0.3.3",
     "typescript": "^4.1.2",
     "uuid": "^8.3.1",
     "webpack": "4.43.0",

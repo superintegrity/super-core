@@ -27,7 +27,7 @@
   }
 
   .icon {
-    color: rgb(153, 139, 107);
+    color: var(--theme-primary-main);
   }
 
   h1 {
