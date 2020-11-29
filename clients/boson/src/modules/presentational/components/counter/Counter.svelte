@@ -40,8 +40,4 @@
   button:active {
     background-color: rgba(255, 62, 0, 0.2);
   }
-
-  img {
-    width: 300px;
-  }
 </style>

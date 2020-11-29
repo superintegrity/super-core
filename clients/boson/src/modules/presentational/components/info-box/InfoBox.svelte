@@ -27,7 +27,7 @@
   }
 
   .icon {
-    color: var(--theme-primary-main);
+    color: var(--theme-primary-main, #03cce6);
   }
 
   h1 {

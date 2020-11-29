@@ -1,5 +1,5 @@
-<svelte:component this={ThemeWrapper} themes={themes}>
-  <main>
+<Context>
+  <main class="root {$$props.class || ''}">
     <header>
       <Logo />
       <NavBar class="nav" currentUrl={currentUrl} />
@@ -10,24 +10,14 @@
       <ContactSummaryBox class="summary-box" />
     </footer>
   </main>
-</svelte:component>
+</Context>
 
 <script lang="ts">
-  import 'reset-css/reset.css'
-  import './layout.css'
   import { NavBar } from '../presentational'
   import AboutSummaryBox from '../presentational/components/about-summary-box/AboutSummaryBox.svelte'
   import ContactSummaryBox from '../presentational/components/contact-summary-box/ContactSummaryBox.svelte'
   import { Logo } from '../presentational/components/logo'
-  import { themes } from './themes'
-
-  import { onMount } from 'svelte'
-  let ThemeWrapper: typeof import('svelte-themer').ThemeWrapper
-
-  onMount(async () => {
-    const module = await import('svelte-themer')
-    ThemeWrapper = module.ThemeWrapper
-  })
+  import Context from './Context.svelte'
 
   export let currentUrl: string | undefined
 </script>
@@ -47,7 +37,7 @@
   }
 
   footer {
-    margin-top: 80px;
+    margin-top: 100px;
     padding: 4rem 2rem;
     background-color: #0e0f10;
 

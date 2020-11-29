@@ -1,7 +1,14 @@
 <DefaultLayout currentUrl="/">
-  <section class="banner">
+  <div class="banner">
     <Carousel />
+  </div>
+
+  <section class="summary">
+    <PageSummary
+      heading="We help our customer to build Digital World"
+      content="Maecenas quis neque libero. Class aptent taciti.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Pellentesque convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget pulvinar neque pharetra ac." />
   </section>
+
   <section class="info-cards">
     <InfoCard
       class="info-card"
@@ -59,31 +66,41 @@
   import { H1 } from '../presentational/components/headings'
   import { InfoBox } from '../presentational/components/info-box'
   import { Carousel } from '../presentational/components/carousel'
+  import PageSummary from '../presentational/components/page-summary/PageSummary.svelte'
 </script>
 
 <style type="text/scss">
-  .banner {
+  section {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1024px;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  div.banner {
     margin-top: 16px;
+    display: block;
   }
 
   section.info-cards {
-    margin-top: 80px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-around;
 
     :global(.info-card) {
-      flex: 1;
-      min-width: 20rem;
+      width: 18rem;
       margin-top: 20px;
-      margin-left: 10px;
-      margin-right: 10px;
+    }
+
+    :global(.info-card + .info-card) {
+      margin-left: 20px;
     }
   }
 
   section.services {
-    margin-top: 80px;
-
     :global(.h1) {
       text-align: center;
     }
@@ -93,13 +110,13 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-left: -20px;
 
     :global(.info-box) {
       flex: 1;
       min-width: 20rem;
       margin-top: 20px;
-      margin-left: 10px;
-      margin-right: 10px;
+      margin-left: 20px;
     }
   }
 </style>

@@ -35,7 +35,7 @@
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background: var(--theme-primary-main);
+    background: var(--theme-primary-main, #03cce6);
     text-align: center;
 
     color: white;

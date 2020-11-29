@@ -1,9 +1,9 @@
 <h1 class="root {$$props.class}">
-  <slot>{children || ''}</slot>
+  <slot>{children}</slot>
 </h1>
 
 <script lang="ts">
-  export let children: string | undefined = undefined
+  export let children: string = ''
 </script>
 
 <style>

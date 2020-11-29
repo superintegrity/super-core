@@ -1,5 +1,10 @@
-<div class="root {$$props.class}">
-  <svelte:component this={Carousel} perPage={1} autoplay={3000} duration={500}>
+<div class="root {$$props.class}" on:mouseenter={enter} on:mouseleave={leave}>
+  <svelte:component
+    this={Carousel}
+    perPage={1}
+    autoplay={3000}
+    duration={500}
+    bind:this={carousel}>
     <span class="control" slot="left-control">
       <ChevronLeftIcon />
     </span>
@@ -15,8 +20,13 @@
 </div>
 
 <script lang="ts">
+  import type {
+    default as SvelteCarousel,
+    ICarousel,
+  } from '@beyonk/svelte-carousel'
+
   import { onMount } from 'svelte'
-  let Carousel: typeof import('@beyonk/svelte-carousel').default
+  let Carousel: typeof SvelteCarousel
 
   onMount(async () => {
     const module = await import('@beyonk/svelte-carousel')
@@ -27,6 +37,16 @@
   import banner2Src from './images/banner2.jpg'
   import banner3Src from './images/banner3.jpg'
   import banner4Src from './images/banner4.jpg'
+
+  let carousel: ICarousel
+
+  function enter() {
+    carousel.pause()
+  }
+
+  function leave() {
+    carousel.resume()
+  }
 </script>
 
 <style type="text/scss">

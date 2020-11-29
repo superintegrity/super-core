@@ -13,5 +13,13 @@ declare module '@beyonk/svelte-carousel' {
     threshold?: number
     rtl?: boolean
   }
-  export default function (props: IProps): any
+
+  export interface ICarousel extends Svelte2TsxComponent<any, any, any> {
+    left(): void
+    right(): void
+    go(slideNumber: number): void
+    pause()
+    resume()
+  }
+  export default function (props: IProps): ICarousel
 }

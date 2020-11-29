@@ -1,6 +1,5 @@
-import { setWrapper, setSlot } from '../../../storybook'
+import { setWrapper } from '../../../storybook'
 import NavItem from './NavItem.svelte'
-import { v4 as uuidv4 } from 'uuid'
 
 export default {
   title: 'Presentational/NavItem',
@@ -10,33 +9,27 @@ export default {
 export const Default = () => NotSelected()
 
 export const NotSelected = () => {
-  const slotContainerId = `s-${uuidv4().substr(0, 8)}`
-
   setTimeout(() => {
-    setSlot(slotContainerId, `<strong>About Us</strong>`)
     setWrapper(`<ul></ul>`)
   })
 
   return {
     Component: NavItem,
     props: {
-      slotContainerId,
+      children: 'About Us',
     },
   }
 }
 
 export const Selected = () => {
-  const slotContainerId = `s-${uuidv4().substr(0, 8)}`
-
   setTimeout(() => {
-    setSlot(slotContainerId, `<strong>Home</strong>`)
     setWrapper(`<ul></ul>`)
   })
 
   return {
     Component: NavItem,
     props: {
-      slotContainerId,
+      children: 'Home',
       selected: true,
     },
   }
