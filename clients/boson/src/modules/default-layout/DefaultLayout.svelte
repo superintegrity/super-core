@@ -31,7 +31,7 @@
     justify-content: center;
 
     :global(.nav) {
-      margin-left: 200px;
+      margin-left: 20%;
       flex: 1;
     }
   }

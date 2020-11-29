@@ -9,27 +9,29 @@
       content="Maecenas quis neque libero. Class aptent taciti.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Pellentesque convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget pulvinar neque pharetra ac." />
   </section>
 
-  <section class="info-cards">
-    <InfoCard
-      class="info-card"
-      heading="Stylish Design"
-      content="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit."
-      detailUrl="/about"
-      icon={trophy} />
+  <section>
+    <div class="info-cards">
+      <InfoCard
+        class="info-card"
+        heading="Stylish Design"
+        content="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit."
+        detailUrl="/about"
+        icon={trophy} />
 
-    <InfoCard
-      class="info-card"
-      heading="Excellent Support"
-      content="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit."
-      detailUrl="/service"
-      icon={thumbsUp} />
+      <InfoCard
+        class="info-card"
+        heading="Excellent Support"
+        content="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit."
+        detailUrl="/service"
+        icon={thumbsUp} />
 
-    <InfoCard
-      class="info-card"
-      heading="Responsive"
-      content="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit."
-      detailUrl="/contact"
-      icon={tv} />
+      <InfoCard
+        class="info-card"
+        heading="Responsive"
+        content="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit."
+        detailUrl="/contact"
+        icon={tv} />
+    </div>
   </section>
 
   <section class="services">
@@ -57,6 +59,27 @@
         content="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit." />
     </div>
   </section>
+
+  <section class="blogs">
+    <H1 class="h1">Blogs</H1>
+    <div class="blog-cards">
+      <BlogCard
+        class="blog-card"
+        imageSrc={g1Src}
+        heading="Responsive"
+        summary="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit." />
+      <BlogCard
+        class="blog-card"
+        imageSrc={g4Src}
+        heading="Responsive"
+        summary="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit." />
+      <BlogCard
+        class="blog-card"
+        imageSrc={g7Src}
+        heading="Responsive"
+        summary="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit." />
+    </div>
+  </section>
 </DefaultLayout>
 
 <script lang="ts">
@@ -66,7 +89,12 @@
   import { H1 } from '../presentational/components/headings'
   import { InfoBox } from '../presentational/components/info-box'
   import { Carousel } from '../presentational/components/carousel'
-  import PageSummary from '../presentational/components/page-summary/PageSummary.svelte'
+  import { PageSummary } from '../presentational/components/page-summary'
+  import { BlogCard } from '../presentational/components/blog-card'
+
+  import g1Src from './images/g1.jpg'
+  import g4Src from './images/g4.jpg'
+  import g7Src from './images/g7.jpg'
 </script>
 
 <style type="text/scss">
@@ -84,7 +112,7 @@
     display: block;
   }
 
-  section.info-cards {
+  .info-cards {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -103,6 +131,7 @@
   section.services {
     :global(.h1) {
       text-align: center;
+      margin-bottom: 40px;
     }
   }
 
@@ -117,6 +146,19 @@
       min-width: 20rem;
       margin-top: 20px;
       margin-left: 20px;
+    }
+  }
+
+  section.blogs {
+    :global(.h1) {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+  }
+
+  .blog-cards {
+    :global(.blog-card) {
+      margin-top: 20px;
     }
   }
 </style>
