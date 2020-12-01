@@ -23,7 +23,7 @@
 <style>
   .root {
     background-color: #f5f5f5;
-    padding: 4em 2em;
+    padding: 3em 2em;
   }
 
   .icon {
@@ -31,14 +31,14 @@
   }
 
   h1 {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     color: #333;
     margin: 1em 0;
     font-weight: 600;
   }
 
   p {
-    font-size: 0.9em;
+    font-size: 0.9rem;
     color: #777777;
     line-height: 2em;
     letter-spacing: 1px;

@@ -50,7 +50,6 @@
     font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: 1px;
-
     margin-top: 20px;
   }
 
@@ -71,7 +70,7 @@
     border-color: #ccc;
     border-radius: 0.25rem;
     color: #fff;
-    font-size: 0.9em;
+    font-size: 0.9rem;
     letter-spacing: 1px;
     text-decoration: none;
 

@@ -17,26 +17,27 @@
 
 <style>
   .root :global(.summary-h1) {
-    margin-bottom: 20px;
+    margin-bottom: 10%;
   }
 
   h2 {
     color: #7dd7e2;
     font-weight: 400;
-    font-size: 0.9em;
+    font-size: 0.9rem;
     margin: 0.7em 0;
   }
 
   p {
     color: #bfbfbf;
     font-weight: 400;
-    font-size: 0.9em;
+    font-size: 0.9rem;
+    line-height: 1.3em;
   }
 
   p.phone,
   p.email {
     color: #bfbfbf;
-    font-size: 13px;
+    font-size: 0.8rem;
     font-weight: 600;
     text-decoration: none;
   }

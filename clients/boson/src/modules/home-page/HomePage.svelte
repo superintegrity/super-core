@@ -10,91 +10,26 @@
   </section>
 
   <section>
-    <div class="info-cards">
-      <InfoCard
-        class="info-card"
-        heading="Stylish Design"
-        content="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit."
-        detailUrl="/about"
-        icon={trophy} />
-
-      <InfoCard
-        class="info-card"
-        heading="Excellent Support"
-        content="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit."
-        detailUrl="/service"
-        icon={thumbsUp} />
-
-      <InfoCard
-        class="info-card"
-        heading="Responsive"
-        content="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit."
-        detailUrl="/contact"
-        icon={tv} />
-    </div>
+    <KeyPointsContent />
   </section>
 
-  <section class="services">
-    <H1 class="h1">Services</H1>
-    <div class="info-boxes">
-      <InfoBox
-        class="info-box"
-        icon={laptop}
-        heading="Responsive"
-        content="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit." />
-      <InfoBox
-        class="info-box"
-        icon={laptop}
-        heading="Responsive"
-        content="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit." />
-      <InfoBox
-        class="info-box"
-        icon={laptop}
-        heading="Responsive"
-        content="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit." />
-      <InfoBox
-        class="info-box"
-        icon={laptop}
-        heading="Responsive"
-        content="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit." />
-    </div>
+  <section>
+    <ServicesContent />
   </section>
 
   <section class="blogs">
-    <H1 class="h1">Blogs</H1>
-    <div class="blog-cards">
-      <BlogCard
-        class="blog-card"
-        imageSrc={g1Src}
-        heading="Responsive"
-        summary="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit." />
-      <BlogCard
-        class="blog-card"
-        imageSrc={g4Src}
-        heading="Responsive"
-        summary="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit." />
-      <BlogCard
-        class="blog-card"
-        imageSrc={g7Src}
-        heading="Responsive"
-        summary="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit." />
-    </div>
+    <BlogsContent />
   </section>
 </DefaultLayout>
 
 <script lang="ts">
   import { DefaultLayout } from '../default-layout'
-  import { InfoCard } from '../presentational/components/info-card'
-  import { trophy, thumbsUp, tv, laptop } from 'svelte-awesome/icons'
-  import { H1 } from '../presentational/components/headings'
-  import { InfoBox } from '../presentational/components/info-box'
   import { Carousel } from '../presentational/components/carousel'
   import { PageSummary } from '../presentational/components/page-summary'
-  import { BlogCard } from '../presentational/components/blog-card'
 
-  import g1Src from './images/g1.jpg'
-  import g4Src from './images/g4.jpg'
-  import g7Src from './images/g7.jpg'
+  import { ServicesContent } from './services-content'
+  import { KeyPointsContent } from './key-points-content'
+  import { BlogsContent } from './blogs-content'
 </script>
 
 <style type="text/scss">
@@ -109,56 +44,5 @@
 
   div.banner {
     margin-top: 16px;
-    display: block;
-  }
-
-  .info-cards {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-
-    :global(.info-card) {
-      width: 18rem;
-      margin-top: 20px;
-    }
-
-    :global(.info-card + .info-card) {
-      margin-left: 20px;
-    }
-  }
-
-  section.services {
-    :global(.h1) {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-  }
-
-  .info-boxes {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-left: -20px;
-
-    :global(.info-box) {
-      flex: 1;
-      min-width: 20rem;
-      margin-top: 20px;
-      margin-left: 20px;
-    }
-  }
-
-  section.blogs {
-    :global(.h1) {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-  }
-
-  .blog-cards {
-    :global(.blog-card) {
-      margin-top: 20px;
-    }
   }
 </style>

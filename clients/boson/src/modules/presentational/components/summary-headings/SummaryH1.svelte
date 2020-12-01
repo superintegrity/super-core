@@ -8,7 +8,7 @@
 
 <style>
   h1 {
-    font-size: 1.3em;
+    font-size: 1.3rem;
     color: #ffffff;
     letter-spacing: 1px;
     font-weight: 600;

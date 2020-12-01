@@ -17,7 +17,7 @@
 
   p {
     color: #bfbfbf;
-    font-size: 0.9em;
+    font-size: 0.9rem;
     line-height: 2em;
     letter-spacing: 1px;
     font-weight: 300;
