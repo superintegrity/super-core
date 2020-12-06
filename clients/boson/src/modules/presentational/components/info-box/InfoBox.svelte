@@ -1,4 +1,4 @@
-<div class="root {$$props.class}">
+<div class="root {$$props.class}" data-aos="zoom-in">
   <div class="icon">
     <svelte:component this={Icon} data={icon} scale={3} />
   </div>

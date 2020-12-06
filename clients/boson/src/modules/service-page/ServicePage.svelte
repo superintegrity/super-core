@@ -1,10 +1,11 @@
-<DefaultLayout currentUrl="/">
+<DefaultLayout currentUrl="/service">
   <div class="banner">
-    <Carousel />
+    <div class="overlay" />
+    <img src={serviceImageSrc} alt="banner" />
   </div>
-
   <section>
     <PageSummary
+      imageSrc={summaryImageSrc}
       heading="We help our customer to build Digital World"
       content="Maecenas quis neque libero. Class aptent taciti.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Pellentesque convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget pulvinar neque pharetra ac." />
   </section>
@@ -12,24 +13,14 @@
   <section>
     <KeyPointsContent />
   </section>
-
-  <section>
-    <ServicesContent />
-  </section>
-
-  <section>
-    <BlogsContent />
-  </section>
 </DefaultLayout>
 
 <script lang="ts">
   import { DefaultLayout } from '../default-layout'
-  import { Carousel } from '../presentational/components/carousel'
   import { PageSummary } from '../presentational/components/page-summary'
-
-  import { ServicesContent } from './services-content'
+  import summaryImageSrc from './images/summary.png'
   import { KeyPointsContent } from './key-points-content'
-  import { BlogsContent } from './blogs-content'
+  import serviceImageSrc from './images/service.jpg'
 </script>
 
 <style type="text/scss">
@@ -40,5 +31,26 @@
     max-width: 1250px;
     padding-left: 5%;
     padding-right: 5%;
+  }
+
+  .banner {
+    position: relative;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0.3;
+  }
+
+  img {
+    width: 100%;
+    height: 220px;
+    object-position: center top;
+    object-fit: cover;
   }
 </style>

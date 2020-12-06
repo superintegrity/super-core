@@ -9,10 +9,18 @@
       <ChevronLeftIcon />
     </span>
 
-    <div class="slide-content"><img src={banner1Src} alt="Banner 1" /></div>
-    <div class="slide-content"><img src={banner2Src} alt="Banner 2" /></div>
-    <div class="slide-content"><img src={banner3Src} alt="Banner 3" /></div>
-    <div class="slide-content"><img src={banner4Src} alt="Banner 4" /></div>
+    <div class="slide-content">
+      <img src={banner1Src} alt="Banner 1" style="height:{height}" />
+    </div>
+    <div class="slide-content">
+      <img src={banner2Src} alt="Banner 2" style="height:{height}" />
+    </div>
+    <div class="slide-content">
+      <img src={banner3Src} alt="Banner 3" style="height:{height}" />
+    </div>
+    <div class="slide-content">
+      <img src={banner4Src} alt="Banner 4" style="height:{height}" />
+    </div>
     <span class="control" slot="right-control">
       <ChevronRightIcon />
     </span>
@@ -38,6 +46,7 @@
   import banner3Src from './images/banner3.jpg'
   import banner4Src from './images/banner4.jpg'
 
+  export let height = '680px'
   let carousel: ICarousel
 
   function enter() {
@@ -51,6 +60,9 @@
 
 <style type="text/scss">
   .root {
+    // height: 680px;
+    // overflow: hidden;
+
     :global(ul) {
       margin-top: -100px !important;
     }
@@ -72,6 +84,8 @@
 
   .slide-content {
     img {
+      object-position: center top;
+      object-fit: cover;
       width: 100%;
     }
   }

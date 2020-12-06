@@ -1,8 +1,12 @@
 <div
   class="root {$$props.class || ''}"
   use:containerQuery={DEFAULT_BREAKPOINT_INFOS}>
-  <h1>{heading}</h1>
-  <p>{content}</p>
+  <h1 data-aos="fade-right">{heading}</h1>
+
+  <div class="content" data-aos="fade-left">
+    {#if imageSrc}<img src={imageSrc} alt="content" />{/if}
+    <p>{content}</p>
+  </div>
 </div>
 
 <script lang="ts">
@@ -13,6 +17,7 @@
 
   export let heading: string
   export let content: string
+  export let imageSrc: string | undefined = undefined
 </script>
 
 <style type="text/scss">
@@ -23,14 +28,22 @@
     font-weight: 600;
   }
 
-  p {
-    font-size: 0.9rem;
-    color: #777777;
-    line-height: 2em;
-    letter-spacing: 1px;
-    font-weight: 300;
+  .content {
+    margin-top: 2em;
 
-    margin-top: 5%;
+    img {
+      width: 100%;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: #777777;
+      line-height: 2em;
+      letter-spacing: 1px;
+      font-weight: 300;
+
+      margin-top: 2em;
+    }
   }
 
   .bp-medium {
@@ -44,7 +57,7 @@
       flex: 2;
     }
 
-    p {
+    .content {
       margin-left: 5%;
       margin-top: 0;
       flex: 3;

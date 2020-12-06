@@ -1,7 +1,5 @@
-<DefaultLayout currentUrl="/service">
-  <h1>Services</h1>
-</DefaultLayout>
+<ServicePage />
 
 <script lang="ts">
-  import { DefaultLayout } from '../modules/default-layout'
+  import { ServicePage } from '../modules/service-page'
 </script>

@@ -1,14 +1,5 @@
-<DefaultLayout currentUrl="/about">
-  <h1>About</h1>
-</DefaultLayout>
+<AboutPage />
 
 <script lang="ts">
-  import { DefaultLayout } from '../modules/default-layout'
+  import { AboutPage } from '../modules/about-page'
 </script>
-
-<style>
-  h1 {
-    font-size: 2rem;
-    color: red;
-  }
-</style>

@@ -1,15 +1,15 @@
 <Context>
+  <header>
+    <Logo />
+    <NavBar class="nav" currentUrl={currentUrl} />
+  </header>
   <main class="root {$$props.class || ''}">
-    <header>
-      <Logo />
-      <NavBar class="nav" currentUrl={currentUrl} />
-    </header>
     <slot />
-    <footer>
-      <AboutSummaryBox class="summary-box" />
-      <ContactSummaryBox class="summary-box" />
-    </footer>
   </main>
+  <footer>
+    <AboutSummaryBox class="summary-box" />
+    <ContactSummaryBox class="summary-box" />
+  </footer>
 </Context>
 
 <script lang="ts">
@@ -38,14 +38,17 @@
 
   footer {
     margin-top: 100px;
-    padding: 4rem 2rem;
+    padding: 3em 3% 0;
     background-color: #0e0f10;
 
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
 
     :global(.summary-box) {
+      min-width: 10rem;
       max-width: 13rem;
+      margin-bottom: 3em;
     }
   }
 </style>
