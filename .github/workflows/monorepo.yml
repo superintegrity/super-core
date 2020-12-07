@@ -60,6 +60,7 @@ jobs:
           export PATH=/home/runner/.local/bin:$PATH
           sam --version
 
+          npm i -g lerna
           npm ci
 
       - name: Deploy to dev staging

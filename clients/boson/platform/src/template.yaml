@@ -1,0 +1,140 @@
+# https://github.com/sjevs/cloudformation-s3-static-website-with-cloudfront-and-route-53/blob/master/s3-static-website-with-cloudfront-and-route-53.yaml
+Transform: 'AWS::Serverless-2016-10-31'
+
+Parameters:
+  Env:
+    Type: String
+  DomainName:
+    Type: String
+    AllowedPattern: (?!-)[a-zA-Z0-9-.]{1,63}(?<!-)
+    ConstraintDescription: must be a valid DNS zone name.
+  AcmCertificateArn:
+    Type: String
+    AllowedPattern: 'arn:aws:acm:.*'
+  IsMainCloudfront:
+    Type: String
+
+Conditions:
+  Is-MainCloudfront:
+    'Fn::Equals':
+      - Ref: IsMainCloudfront
+      - '1'
+
+Resources:
+  WebsiteBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub boson-${Env}.${DomainName}
+      AccessControl: PublicRead
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: 404.html
+    # DeletionPolicy: Retain
+
+  WebsiteBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref 'WebsiteBucket'
+      PolicyDocument:
+        Statement:
+          - Sid: PublicReadForGetBucketObjects
+            Effect: Allow
+            Principal: '*'
+            Action: s3:GetObject
+            Resource: !Join ['', ['arn:aws:s3:::', !Ref 'WebsiteBucket', /*]]
+
+  WebsiteCloudfront:
+    Type: AWS::CloudFront::Distribution
+    DependsOn:
+      - WebsiteBucket
+    Properties:
+      DistributionConfig:
+        Comment: Cloudfront Distribution pointing to S3 bucket
+        Origins:
+          - DomainName:
+              !Select [2, !Split ['/', !GetAtt WebsiteBucket.WebsiteURL]]
+            Id: S3Origin
+            CustomOriginConfig:
+              HTTPPort: '80'
+              HTTPSPort: '443'
+              OriginProtocolPolicy: http-only
+        Enabled: true
+        HttpVersion: 'http2'
+        Aliases:
+          - !Sub boson-${Env}.${DomainName}
+          - 'Fn::If':
+              - Is-MainCloudfront
+              - !Sub ${DomainName}
+              - !Ref 'AWS::NoValue'
+          - 'Fn::If':
+              - Is-MainCloudfront
+              - !Sub www.${DomainName}
+              - !Ref 'AWS::NoValue'
+        DefaultCacheBehavior:
+          AllowedMethods:
+            - GET
+            - HEAD
+          Compress: true
+          TargetOriginId: S3Origin
+          ForwardedValues:
+            QueryString: false
+            Cookies:
+              Forward: none
+          ViewerProtocolPolicy: redirect-to-https
+        PriceClass: PriceClass_All
+        ViewerCertificate:
+          AcmCertificateArn: !Ref AcmCertificateArn
+          SslSupportMethod: sni-only
+          MinimumProtocolVersion: TLSv1.1_2016
+
+  WebsiteDNSName:
+    Type: AWS::Route53::RecordSetGroup
+    Properties:
+      HostedZoneName: !Join ['', [!Ref 'DomainName', .]]
+      RecordSets:
+        - Name: !Sub boson-${Env}.${DomainName}
+          Type: A
+          AliasTarget:
+            # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html#cfn-route53-aliastarget-hostedzoneid
+            HostedZoneId: Z2FDTNDATAQYW2
+            DNSName: !GetAtt [WebsiteCloudfront, DomainName]
+
+  WebsiteMainDNSName:
+    Type: AWS::Route53::RecordSetGroup
+    Condition: Is-MainCloudfront
+    Properties:
+      HostedZoneName: !Join ['', [!Ref 'DomainName', .]]
+      RecordSets:
+        - Name: !Sub ${DomainName}
+          Type: A
+          AliasTarget:
+            # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html#cfn-route53-aliastarget-hostedzoneid
+            HostedZoneId: Z2FDTNDATAQYW2
+            DNSName: !GetAtt [WebsiteCloudfront, DomainName]
+
+  WebsiteWwwDNSName:
+    Type: AWS::Route53::RecordSetGroup
+    Condition: Is-MainCloudfront
+    Properties:
+      HostedZoneName: !Join ['', [!Ref 'DomainName', .]]
+      RecordSets:
+        - Name: !Sub www.${DomainName}
+          Type: A
+          AliasTarget:
+            # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html#cfn-route53-aliastarget-hostedzoneid
+            HostedZoneId: Z2FDTNDATAQYW2
+            DNSName: !GetAtt [WebsiteCloudfront, DomainName]
+
+Outputs:
+  BucketName:
+    Value: !Ref 'WebsiteBucket'
+    Description: Name of S3 bucket to hold website content
+  CloudfrontEndpoint:
+    Value: !GetAtt [WebsiteCloudfront, DomainName]
+    Description: Endpoint for Cloudfront distribution
+  CloudfrontDistributionId:
+    Value: !Ref WebsiteCloudfront
+    Description: Distribution ID for Cloudfront distribution
+  FullDomain:
+    Value: !Sub boson-${Env}.${DomainName}
+    Description: Full DomainName
