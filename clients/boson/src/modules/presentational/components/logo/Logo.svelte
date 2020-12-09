@@ -3,12 +3,12 @@
 </div>
 
 <script lang="ts">
-  import SuperIntegrityIcon from './images/super-integrity.png'
+  import SuperIntegrityIcon from './images/super-integrity-small.png'
 </script>
 
 <style type="text/scss">
   .root {
-    margin: auto;
+    margin: 10px;
   }
 
   img {

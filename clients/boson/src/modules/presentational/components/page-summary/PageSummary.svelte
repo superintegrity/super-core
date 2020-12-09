@@ -1,9 +1,9 @@
 <div
   class="root {$$props.class || ''}"
   use:containerQuery={DEFAULT_BREAKPOINT_INFOS}>
-  <h1 data-aos="fade-right">{heading}</h1>
+  <h1>{heading}</h1>
 
-  <div class="content" data-aos="fade-left">
+  <div class="content">
     {#if imageSrc}<img src={imageSrc} alt="content" />{/if}
     <p>{content}</p>
   </div>

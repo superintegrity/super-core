@@ -29,6 +29,8 @@
     margin-bottom: 16px;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
 
     :global(.nav) {
       margin-left: 20%;

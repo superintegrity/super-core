@@ -10,16 +10,16 @@
     </span>
 
     <div class="slide-content">
-      <img src={banner1Src} alt="Banner 1" style="height:{height}" />
+      <img src={banner1Src} alt="Banner 1" style="max-height:{maxHeight};" />
     </div>
     <div class="slide-content">
-      <img src={banner2Src} alt="Banner 2" style="height:{height}" />
+      <img src={banner2Src} alt="Banner 2" style="max-height:{maxHeight};" />
     </div>
     <div class="slide-content">
-      <img src={banner3Src} alt="Banner 3" style="height:{height}" />
+      <img src={banner3Src} alt="Banner 3" style="max-height:{maxHeight};" />
     </div>
     <div class="slide-content">
-      <img src={banner4Src} alt="Banner 4" style="height:{height}" />
+      <img src={banner4Src} alt="Banner 4" style="max-height:{maxHeight};" />
     </div>
     <span class="control" slot="right-control">
       <ChevronRightIcon />
@@ -46,7 +46,7 @@
   import banner3Src from './images/banner3.jpg'
   import banner4Src from './images/banner4.jpg'
 
-  export let height = '680px'
+  export let maxHeight = '680px'
   let carousel: ICarousel
 
   function enter() {
@@ -60,9 +60,6 @@
 
 <style type="text/scss">
   .root {
-    // height: 680px;
-    // overflow: hidden;
-
     :global(ul) {
       margin-top: -100px !important;
     }
@@ -87,6 +84,7 @@
       object-position: center top;
       object-fit: cover;
       width: 100%;
+      min-height: 300px;
     }
   }
 </style>

@@ -1,4 +1,4 @@
-<div class="root {$$props.class || ''}" data-aos="fade-left">
+<div class="root {$$props.class || ''}" data-aos="zoom-in">
   <div class="root-child image"><img src={imageSrc} alt="blog" /></div>
   <div class="root-child content">
     <h1>{heading}</h1>
