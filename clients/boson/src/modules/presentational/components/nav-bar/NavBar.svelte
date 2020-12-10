@@ -1,7 +1,11 @@
 <div
   class="root {$$props.class || ''}"
   use:containerQuery={DEFAULT_BREAKPOINT_INFOS}
-  bind:clientWidth>
+  bind:clientWidth
+  use:clickOutside
+  on:clickOutside={() => {
+    menuShown = bpClasses.includes('bp-medium') ? true : false
+  }}>
   <button
     class="menu"
     on:click={() => {
@@ -9,19 +13,21 @@
     }}>
     <svelte:component this={Icon} data={bars} scale={2} />
   </button>
-  <ul class:shown={menuShown}>
-    {#each routes as route}
-      <NavItem
-        class={getActiveBreakpointNames({
-          breakpointInfos: DEFAULT_BREAKPOINT_INFOS,
-          clientWidth,
-        })}
-        url={route.url}
-        selected={parse(currentUrl).path === route.url}>
-        {route.title}
-      </NavItem>
-    {/each}
-  </ul>
+
+  {#if menuShown}
+    <ul
+      transition:slide={{ delay: 0, duration: shouldAnimate ? 300 : 0 }}
+      class:shown={menuShown}>
+      {#each routes as route}
+        <NavItem
+          class={bpClasses}
+          url={route.url}
+          selected={parse(currentUrl).path === route.url}>
+          {route.title}
+        </NavItem>
+      {/each}
+    </ul>
+  {/if}
 </div>
 
 <script lang="ts">
@@ -42,11 +48,25 @@
     DEFAULT_BREAKPOINT_INFOS,
     getActiveBreakpointNames,
   } from '../../../container-query'
+  import { slide } from 'svelte/transition'
+  import { clickOutside } from '../../libs/clickOutsideAction'
 
   export let currentUrl = '/'
 
+  let clientWidth: number
+  let bpClasses: string[] = []
   let menuShown = false
-  let clientWidth = 0
+  let shouldAnimate = false
+
+  $: {
+    bpClasses = getActiveBreakpointNames({
+      breakpointInfos: DEFAULT_BREAKPOINT_INFOS,
+      clientWidth,
+    })
+
+    menuShown = bpClasses.includes('bp-medium')
+    shouldAnimate = !bpClasses.includes('bp-medium')
+  }
 
   const routes: IRoute[] = [
     {
@@ -78,6 +98,7 @@
     flex-direction: column;
     align-items: flex-end;
     align-content: flex-end;
+    position: relative;
   }
 
   .menu {
@@ -102,6 +123,12 @@
     width: 100%;
     display: none;
     flex-direction: column;
+    position: absolute;
+    background-color: white;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    top: 62px;
+    z-index: 999;
 
     &.shown {
       display: flex;
@@ -118,6 +145,8 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
+      position: relative;
+      top: 0;
     }
   }
 </style>
