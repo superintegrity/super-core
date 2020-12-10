@@ -1,7 +1,5 @@
-<DefaultLayout currentUrl="/contact">
-  <h1>Contact</h1>
-</DefaultLayout>
+<ContactPage />
 
 <script lang="ts">
-  import { DefaultLayout } from '../modules/default-layout'
+  import { ContactPage } from '../modules/contact-page'
 </script>

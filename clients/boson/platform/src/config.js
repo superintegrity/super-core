@@ -22,7 +22,6 @@ const DEFAULT = {
     'arn:aws:acm:us-east-1:345048411356:certificate/5905f093-b68b-4e2f-ac84-b8edfbea9e9a',
   HOSTED_ZONE_ID: 'Z362QOY9A0NIWG',
   IS_MAIN_CLOUDFRONT: false,
-  MAP_API_KEY: `AIzaSyAVZcp3tZikbfWLKqysbMv2jeHfRogn7dw`,
   REALM: process.env.REALM,
   ENV: process.env.ENV,
 }
