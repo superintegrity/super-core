@@ -1,18 +1,15 @@
 <script lang="ts">
   import { DefaultLayout } from '../default-layout'
   import { PageSummary } from '../presentational/components/page-summary'
+  import { Banner } from '../presentational/components/banner'
   import summaryImageSrc from './images/summary.png'
   import { KeyPointsContent } from './key-points-content'
-  import aboutImageSrc from './images/about.jpg'
 
   export let currentUrl = '/about'
 </script>
 
 <DefaultLayout currentUrl={currentUrl}>
-  <div class="banner">
-    <div class="overlay" />
-    <img src={aboutImageSrc} alt="banner" />
-  </div>
+  <Banner />
   <section>
     <PageSummary
       imageSrc={summaryImageSrc}
@@ -33,26 +30,5 @@
     max-width: 1250px;
     padding-left: 5%;
     padding-right: 5%;
-  }
-
-  .banner {
-    position: relative;
-  }
-
-  .overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: black;
-    opacity: 0.3;
-  }
-
-  img {
-    width: 100%;
-    height: 220px;
-    object-position: center top;
-    object-fit: cover;
   }
 </style>

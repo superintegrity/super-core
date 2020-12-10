@@ -1,12 +1,12 @@
-<div class="root {$$props.class || ''}">
-  <%= componentName.pascalCase %>
-</div>
-
 <script lang="ts">
   console.log('<%= componentName.pascalCase %>')
 </script>
 
-<style type="text/scss">
+<div class="root {$$props.class || ''}">
+  <%= componentName.pascalCase %>
+</div>
+
+<style lang="scss">
   .root {
     background-color: red;
   }
