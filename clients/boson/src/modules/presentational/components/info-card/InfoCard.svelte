@@ -1,4 +1,4 @@
-<section class="root {$$props.class}" data-aos="zoom-in">
+<section class="root {$$props.class || ''}" data-aos="zoom-in">
   <div class="icon">
     <svelte:component this={Icon} data={icon} scale={2.5} />
   </div>
@@ -22,7 +22,7 @@
   export let detailUrl: string
 </script>
 
-<style>
+<style lang="scss">
   .root {
     display: flex;
     flex-direction: column;

@@ -1,4 +1,7 @@
-<div class="root {$$props.class}" on:mouseenter={enter} on:mouseleave={leave}>
+<div
+  class="root {$$props.class || ''}"
+  on:mouseenter={enter}
+  on:mouseleave={leave}>
   <svelte:component
     this={Carousel}
     perPage={1}
@@ -58,7 +61,7 @@
   }
 </script>
 
-<style type="text/scss">
+<style lang="scss">
   .root {
     :global(ul) {
       margin-top: -100px !important;

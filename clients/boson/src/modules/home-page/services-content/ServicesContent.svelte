@@ -1,4 +1,6 @@
-<div class="root {$$props.class}" use:containerQuery={DEFAULT_BREAKPOINT_INFOS}>
+<div
+  class="root {$$props.class || ''}"
+  use:containerQuery={DEFAULT_BREAKPOINT_INFOS}>
   <H1 class="h1">Services</H1>
   <div class="info-boxes">
     <InfoBox

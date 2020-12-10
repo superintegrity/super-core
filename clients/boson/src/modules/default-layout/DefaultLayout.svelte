@@ -22,7 +22,7 @@
   export let currentUrl: string | undefined
 </script>
 
-<style type="text/scss">
+<style lang="scss">
   header {
     margin-left: 16px;
     margin-right: 16px;

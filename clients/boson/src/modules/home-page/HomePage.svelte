@@ -32,7 +32,7 @@
   import { BlogsContent } from './blogs-content'
 </script>
 
-<style type="text/scss">
+<style lang="scss">
   section {
     margin-top: 100px;
     margin-left: auto;

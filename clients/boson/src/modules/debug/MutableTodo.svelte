@@ -1,5 +1,5 @@
 <!-- the text will flash red whenever the `todo` object changes -->
-<div bind:this="{div}" on:click>{todo.done ? '=' : ''} {todo.text}</div>
+<div bind:this={div} on:click>{todo.done ? '=' : ''} {todo.text}</div>
 
 <script lang="ts">
   import { afterUpdate } from 'svelte'
@@ -15,7 +15,7 @@
   })
 </script>
 
-<style>
+<style lang="scss">
   div {
     cursor: pointer;
     line-height: 1.5;

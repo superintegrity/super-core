@@ -1,5 +1,5 @@
 <!-- the text will flash red whenever the `todo` object changes -->
-<div bind:this="{div}" on:click>{todo.done ? '=' : ''} {todo.text}</div>
+<div bind:this={div} on:click>{todo.done ? '=' : ''} {todo.text}</div>
 
 <!-->
   div {
@@ -26,7 +26,7 @@
   })
 </script>
 
-<style>
+<style lang="scss">
   div {
     margin: 10px;
   }

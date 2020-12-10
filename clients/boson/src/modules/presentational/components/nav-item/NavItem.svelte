@@ -1,4 +1,4 @@
-<li class="root {$$props.class}" class:selected>
+<li class="root {$$props.class || ''}">
   <a href={url} class:selected>
     <slot>{children}</slot>
   </a>

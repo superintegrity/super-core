@@ -20,7 +20,7 @@
   export let imageSrc: string | undefined = undefined
 </script>
 
-<style type="text/scss">
+<style lang="scss">
   h1 {
     font-size: 1.2rem;
     line-height: 1.5em;

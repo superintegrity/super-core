@@ -34,7 +34,7 @@
   } from '../../container-query'
 </script>
 
-<style type="text/scss">
+<style lang="scss">
   .root {
     :global(.h1) {
       font-size: 1.6rem;

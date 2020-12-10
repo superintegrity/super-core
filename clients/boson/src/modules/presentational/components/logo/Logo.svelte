@@ -6,7 +6,7 @@
   import SuperIntegrityIcon from './images/super-integrity-small.png'
 </script>
 
-<style type="text/scss">
+<style lang="scss">
   .root {
     margin: 10px;
   }

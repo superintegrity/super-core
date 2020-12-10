@@ -1,4 +1,4 @@
-<div class="root {$$props.class}" data-aos="zoom-in">
+<div class="root {$$props.class || ''}" data-aos="zoom-in">
   <div class="icon">
     <svelte:component this={Icon} data={icon} scale={3} />
   </div>
@@ -20,7 +20,7 @@
   export let content: string
 </script>
 
-<style>
+<style lang="scss">
   .root {
     background-color: #f5f5f5;
     padding: 3em 2em;

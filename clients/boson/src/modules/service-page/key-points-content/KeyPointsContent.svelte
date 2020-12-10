@@ -28,7 +28,7 @@
   import { trophy, thumbsUp, tv } from 'svelte-awesome/icons'
 </script>
 
-<style type="text/scss">
+<style lang="scss">
   .info-cards {
     display: flex;
     flex-direction: row;

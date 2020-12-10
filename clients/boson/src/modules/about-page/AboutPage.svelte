@@ -23,7 +23,7 @@
   import aboutImageSrc from './images/about.jpg'
 </script>
 
-<style type="text/scss">
+<style lang="scss">
   section {
     margin-top: 100px;
     margin-left: auto;

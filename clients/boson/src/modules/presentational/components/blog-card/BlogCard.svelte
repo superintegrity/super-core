@@ -14,7 +14,7 @@
   export let summary: string
 </script>
 
-<style type="text/scss">
+<style lang="scss">
   .root {
     display: flex;
     flex-wrap: wrap;

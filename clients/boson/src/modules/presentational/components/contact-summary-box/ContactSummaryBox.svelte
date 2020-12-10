@@ -1,4 +1,4 @@
-<div class="root {$$props.class}">
+<div class="root {$$props.class || ''}">
   <SummaryH1 class="summary-h1">Contact Us</SummaryH1>
 
   <h2>Address:</h2>
@@ -15,7 +15,7 @@
   import { SummaryH1 } from '../summary-headings'
 </script>
 
-<style>
+<style lang="scss">
   .root :global(.summary-h1) {
     margin-bottom: 10%;
   }

@@ -19,7 +19,7 @@
   export let count = 0
 </script>
 
-<style>
+<style lang="scss">
   button {
     font-family: inherit;
     font-size: inherit;

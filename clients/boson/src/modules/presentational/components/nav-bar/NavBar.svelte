@@ -1,4 +1,6 @@
-<div class="root {$$props.class}" use:containerQuery={DEFAULT_BREAKPOINT_INFOS}>
+<div
+  class="root {$$props.class || ''}"
+  use:containerQuery={DEFAULT_BREAKPOINT_INFOS}>
   <button
     class="menu"
     on:click={() => {
