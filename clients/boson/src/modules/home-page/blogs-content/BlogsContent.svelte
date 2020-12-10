@@ -1,3 +1,16 @@
+<script lang="ts">
+  import { H1 } from '../../presentational/components/headings'
+  import { BlogCard } from '../../presentational/components/blog-card'
+
+  import g1Src from './images/g1.jpg'
+  import g4Src from './images/g4.jpg'
+  import g7Src from './images/g7.jpg'
+  import {
+    containerQuery,
+    DEFAULT_BREAKPOINT_INFOS,
+  } from '../../container-query'
+</script>
+
 <div
   class="root {$$props.class || ''}"
   use:containerQuery={DEFAULT_BREAKPOINT_INFOS}>
@@ -20,19 +33,6 @@
       summary="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit." />
   </div>
 </div>
-
-<script lang="ts">
-  import { H1 } from '../../presentational/components/headings'
-  import { BlogCard } from '../../presentational/components/blog-card'
-
-  import g1Src from './images/g1.jpg'
-  import g4Src from './images/g4.jpg'
-  import g7Src from './images/g7.jpg'
-  import {
-    containerQuery,
-    DEFAULT_BREAKPOINT_INFOS,
-  } from '../../container-query'
-</script>
 
 <style lang="scss">
   .root {

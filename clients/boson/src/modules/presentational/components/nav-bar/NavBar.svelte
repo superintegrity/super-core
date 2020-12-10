@@ -1,35 +1,3 @@
-<div
-  class="root {$$props.class || ''}"
-  use:containerQuery={DEFAULT_BREAKPOINT_INFOS}
-  bind:clientWidth
-  use:clickOutside
-  on:clickOutside={() => {
-    menuShown = bpClasses.includes('bp-medium') ? true : false
-  }}>
-  <button
-    class="menu"
-    on:click={() => {
-      menuShown = !menuShown
-    }}>
-    <svelte:component this={Icon} data={bars} scale={2} />
-  </button>
-
-  {#if menuShown}
-    <ul
-      transition:slide={{ delay: 0, duration: shouldAnimate ? 300 : 0 }}
-      class:shown={menuShown}>
-      {#each routes as route}
-        <NavItem
-          class={bpClasses}
-          url={route.url}
-          selected={parse(currentUrl).path === route.url}>
-          {route.title}
-        </NavItem>
-      {/each}
-    </ul>
-  {/if}
-</div>
-
 <script lang="ts">
   import { onMount } from 'svelte'
   let Icon: typeof import('svelte-awesome').default
@@ -91,6 +59,38 @@
     },
   ]
 </script>
+
+<div
+  class="root {$$props.class || ''}"
+  use:containerQuery={DEFAULT_BREAKPOINT_INFOS}
+  bind:clientWidth
+  use:clickOutside
+  on:clickOutside={() => {
+    menuShown = bpClasses.includes('bp-medium') ? true : false
+  }}>
+  <button
+    class="menu"
+    on:click={() => {
+      menuShown = !menuShown
+    }}>
+    <svelte:component this={Icon} data={bars} scale={2} />
+  </button>
+
+  {#if menuShown}
+    <ul
+      transition:slide={{ delay: 0, duration: shouldAnimate ? 300 : 0 }}
+      class:shown={menuShown}>
+      {#each routes as route}
+        <NavItem
+          class={bpClasses}
+          url={route.url}
+          selected={parse(currentUrl).path === route.url}>
+          {route.title}
+        </NavItem>
+      {/each}
+    </ul>
+  {/if}
+</div>
 
 <style lang="scss">
   .root {

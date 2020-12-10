@@ -1,10 +1,3 @@
-<DefaultLayout currentUrl="/contact">
-  <section>
-    <h1>Contact Us</h1>
-    <iframe title="address" src={mapSrc} />
-  </section>
-</DefaultLayout>
-
 <script lang="ts">
   import { DefaultLayout } from '../default-layout'
   import { getConfig } from '../config'
@@ -18,6 +11,13 @@
     mapMarker,
   )}`
 </script>
+
+<DefaultLayout currentUrl="/contact">
+  <section>
+    <h1>Contact Us</h1>
+    <iframe title="address" src={mapSrc} />
+  </section>
+</DefaultLayout>
 
 <style lang="scss">
   section {

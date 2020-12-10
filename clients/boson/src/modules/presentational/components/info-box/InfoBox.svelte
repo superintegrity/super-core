@@ -1,11 +1,3 @@
-<div class="root {$$props.class || ''}" data-aos="zoom-in">
-  <div class="icon">
-    <svelte:component this={Icon} data={icon} scale={3} />
-  </div>
-  <h1>{heading}</h1>
-  <p>{content}</p>
-</div>
-
 <script lang="ts">
   import { onMount } from 'svelte'
   let Icon: typeof import('svelte-awesome').default
@@ -19,6 +11,14 @@
   export let heading: string
   export let content: string
 </script>
+
+<div class="root {$$props.class || ''}" data-aos="zoom-in">
+  <div class="icon">
+    <svelte:component this={Icon} data={icon} scale={3} />
+  </div>
+  <h1>{heading}</h1>
+  <p>{content}</p>
+</div>
 
 <style lang="scss">
   .root {

@@ -1,3 +1,11 @@
+<script lang="ts">
+  import { DefaultLayout } from '../default-layout'
+  import { PageSummary } from '../presentational/components/page-summary'
+  import summaryImageSrc from './images/summary.png'
+  import { KeyPointsContent } from './key-points-content'
+  import serviceImageSrc from './images/service.jpg'
+</script>
+
 <DefaultLayout currentUrl="/service">
   <div class="banner">
     <div class="overlay" />
@@ -14,14 +22,6 @@
     <KeyPointsContent />
   </section>
 </DefaultLayout>
-
-<script lang="ts">
-  import { DefaultLayout } from '../default-layout'
-  import { PageSummary } from '../presentational/components/page-summary'
-  import summaryImageSrc from './images/summary.png'
-  import { KeyPointsContent } from './key-points-content'
-  import serviceImageSrc from './images/service.jpg'
-</script>
 
 <style lang="scss">
   section {

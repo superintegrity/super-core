@@ -1,12 +1,3 @@
-<section class="root {$$props.class || ''}" data-aos="zoom-in">
-  <div class="icon">
-    <svelte:component this={Icon} data={icon} scale={2.5} />
-  </div>
-  <h1>{heading}</h1>
-  <p>{content}</p>
-  <a href={detailUrl}>View details</a>
-</section>
-
 <script lang="ts">
   import { onMount } from 'svelte'
   let Icon: typeof import('svelte-awesome').default
@@ -21,6 +12,15 @@
   export let content: string
   export let detailUrl: string
 </script>
+
+<section class="root {$$props.class || ''}" data-aos="zoom-in">
+  <div class="icon">
+    <svelte:component this={Icon} data={icon} scale={2.5} />
+  </div>
+  <h1>{heading}</h1>
+  <p>{content}</p>
+  <a href={detailUrl}>View details</a>
+</section>
 
 <style lang="scss">
   .root {

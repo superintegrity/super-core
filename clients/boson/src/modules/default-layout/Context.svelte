@@ -1,5 +1,3 @@
-<slot />
-
 <script lang="ts">
   import 'reset-css/reset.css'
   import './layout.css'
@@ -18,3 +16,5 @@
     }, 3000)
   })
 </script>
+
+<slot />

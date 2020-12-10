@@ -1,3 +1,13 @@
+<script lang="ts">
+  import { DefaultLayout } from '../default-layout'
+  import { Carousel } from '../presentational/components/carousel'
+  import { PageSummary } from '../presentational/components/page-summary'
+
+  import { ServicesContent } from './services-content'
+  import { KeyPointsContent } from './key-points-content'
+  import { BlogsContent } from './blogs-content'
+</script>
+
 <DefaultLayout currentUrl="/">
   <div class="banner">
     <Carousel />
@@ -21,16 +31,6 @@
     <BlogsContent />
   </section>
 </DefaultLayout>
-
-<script lang="ts">
-  import { DefaultLayout } from '../default-layout'
-  import { Carousel } from '../presentational/components/carousel'
-  import { PageSummary } from '../presentational/components/page-summary'
-
-  import { ServicesContent } from './services-content'
-  import { KeyPointsContent } from './key-points-content'
-  import { BlogsContent } from './blogs-content'
-</script>
 
 <style lang="scss">
   section {

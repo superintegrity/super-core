@@ -1,3 +1,13 @@
+<script lang="ts">
+  import { laptop } from 'svelte-awesome/icons'
+  import {
+    containerQuery,
+    DEFAULT_BREAKPOINT_INFOS,
+  } from '../../container-query'
+  import { H1 } from '../../presentational/components/headings'
+  import { InfoBox } from '../../presentational/components/info-box'
+</script>
+
 <div
   class="root {$$props.class || ''}"
   use:containerQuery={DEFAULT_BREAKPOINT_INFOS}>
@@ -25,16 +35,6 @@
       content="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit." />
   </div>
 </div>
-
-<script lang="ts">
-  import { laptop } from 'svelte-awesome/icons'
-  import {
-    containerQuery,
-    DEFAULT_BREAKPOINT_INFOS,
-  } from '../../container-query'
-  import { H1 } from '../../presentational/components/headings'
-  import { InfoBox } from '../../presentational/components/info-box'
-</script>
 
 <style lang="scss">
   .root {

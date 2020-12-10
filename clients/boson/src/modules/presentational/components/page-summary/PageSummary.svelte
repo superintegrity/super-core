@@ -1,14 +1,3 @@
-<div
-  class="root {$$props.class || ''}"
-  use:containerQuery={DEFAULT_BREAKPOINT_INFOS}>
-  <h1>{heading}</h1>
-
-  <div class="content">
-    {#if imageSrc}<img src={imageSrc} alt="content" />{/if}
-    <p>{content}</p>
-  </div>
-</div>
-
 <script lang="ts">
   import {
     containerQuery,
@@ -19,6 +8,17 @@
   export let content: string
   export let imageSrc: string | undefined = undefined
 </script>
+
+<div
+  class="root {$$props.class || ''}"
+  use:containerQuery={DEFAULT_BREAKPOINT_INFOS}>
+  <h1>{heading}</h1>
+
+  <div class="content">
+    {#if imageSrc}<img src={imageSrc} alt="content" />{/if}
+    <p>{content}</p>
+  </div>
+</div>
 
 <style lang="scss">
   h1 {

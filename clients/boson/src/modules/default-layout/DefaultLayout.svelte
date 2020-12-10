@@ -1,3 +1,13 @@
+<script lang="ts">
+  import { NavBar } from '../presentational'
+  import AboutSummaryBox from '../presentational/components/about-summary-box/AboutSummaryBox.svelte'
+  import ContactSummaryBox from '../presentational/components/contact-summary-box/ContactSummaryBox.svelte'
+  import { Logo } from '../presentational/components/logo'
+  import Context from './Context.svelte'
+
+  export let currentUrl: string | undefined
+</script>
+
 <Context>
   <header>
     <Logo />
@@ -11,16 +21,6 @@
     <ContactSummaryBox class="summary-box" />
   </footer>
 </Context>
-
-<script lang="ts">
-  import { NavBar } from '../presentational'
-  import AboutSummaryBox from '../presentational/components/about-summary-box/AboutSummaryBox.svelte'
-  import ContactSummaryBox from '../presentational/components/contact-summary-box/ContactSummaryBox.svelte'
-  import { Logo } from '../presentational/components/logo'
-  import Context from './Context.svelte'
-
-  export let currentUrl: string | undefined
-</script>
 
 <style lang="scss">
   header {

@@ -1,3 +1,13 @@
+<script lang="ts">
+  import { DefaultLayout } from '../default-layout'
+  import { PageSummary } from '../presentational/components/page-summary'
+  import summaryImageSrc from './images/summary.png'
+  import { KeyPointsContent } from './key-points-content'
+  import aboutImageSrc from './images/about.jpg'
+
+  export let currentUrl = '/about'
+</script>
+
 <DefaultLayout currentUrl={currentUrl}>
   <div class="banner">
     <div class="overlay" />
@@ -14,16 +24,6 @@
     <KeyPointsContent />
   </section>
 </DefaultLayout>
-
-<script lang="ts">
-  import { DefaultLayout } from '../default-layout'
-  import { PageSummary } from '../presentational/components/page-summary'
-  import summaryImageSrc from './images/summary.png'
-  import { KeyPointsContent } from './key-points-content'
-  import aboutImageSrc from './images/about.jpg'
-
-  export let currentUrl = '/about'
-</script>
 
 <style lang="scss">
   section {

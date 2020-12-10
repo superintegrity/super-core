@@ -1,3 +1,9 @@
+<script lang="ts">
+  import { decrement, increment } from '../../../count'
+
+  export let count = 0
+</script>
+
 <button
   on:click={() => {
     count = increment(count)
@@ -12,12 +18,6 @@
   }}>
   Decrement
 </button>
-
-<script lang="ts">
-  import { decrement, increment } from '../../../count'
-
-  export let count = 0
-</script>
 
 <style lang="scss">
   button {

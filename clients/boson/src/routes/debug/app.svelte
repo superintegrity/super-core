@@ -1,19 +1,3 @@
-<DefaultLayout currentUrl="/debug/app">
-  <h2>Immutable</h2>
-  {#each todos as todo}
-    <ImmutableTodo todo="{todo}" on:click="{() => toggle(todo.id)}" />
-  {/each}
-
-  <h2>Mutable</h2>
-  {#each todos as todo}
-    <MutableTodo todo="{todo}" on:click="{() => toggle(todo.id)}" />
-  {/each}
-
-  <hr />
-
-  <button on:click="{addTodo}">+</button>
-</DefaultLayout>
-
 <script lang="ts">
   import ImmutableTodo from '../../modules/debug/ImmutableTodo.svelte'
   import type { ITodo } from '../../modules/debug/ITodo'
@@ -50,3 +34,19 @@
     })
   }
 </script>
+
+<DefaultLayout currentUrl="/debug/app">
+  <h2>Immutable</h2>
+  {#each todos as todo}
+    <ImmutableTodo todo={todo} on:click={() => toggle(todo.id)} />
+  {/each}
+
+  <h2>Mutable</h2>
+  {#each todos as todo}
+    <MutableTodo todo={todo} on:click={() => toggle(todo.id)} />
+  {/each}
+
+  <hr />
+
+  <button on:click={addTodo}>+</button>
+</DefaultLayout>

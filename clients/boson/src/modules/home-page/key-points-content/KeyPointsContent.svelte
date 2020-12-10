@@ -1,3 +1,8 @@
+<script lang="ts">
+  import { InfoCard } from '../../presentational/components/info-card'
+  import { trophy, thumbsUp, tv } from 'svelte-awesome/icons'
+</script>
+
 <div class="root {$$props.class || ''}">
   <div class="info-cards">
     <InfoCard
@@ -22,11 +27,6 @@
       icon={tv} />
   </div>
 </div>
-
-<script lang="ts">
-  import { InfoCard } from '../../presentational/components/info-card'
-  import { trophy, thumbsUp, tv } from 'svelte-awesome/icons'
-</script>
 
 <style lang="scss">
   .info-cards {

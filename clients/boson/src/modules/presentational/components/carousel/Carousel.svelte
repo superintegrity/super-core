@@ -1,3 +1,34 @@
+<script lang="ts">
+  import type {
+    default as SvelteCarousel,
+    ICarousel,
+  } from '@beyonk/svelte-carousel'
+
+  import { onMount } from 'svelte'
+  let Carousel: typeof SvelteCarousel
+
+  onMount(async () => {
+    const module = await import('@beyonk/svelte-carousel')
+    Carousel = module.default
+  })
+  import { ChevronLeftIcon, ChevronRightIcon } from 'svelte-feather-icons'
+  import banner1Src from './images/banner1.jpg'
+  import banner2Src from './images/banner2.jpg'
+  import banner3Src from './images/banner3.jpg'
+  import banner4Src from './images/banner4.jpg'
+
+  export let maxHeight = '680px'
+  let carousel: ICarousel
+
+  function enter() {
+    carousel.pause()
+  }
+
+  function leave() {
+    carousel.resume()
+  }
+</script>
+
 <div
   class="root {$$props.class || ''}"
   on:mouseenter={enter}
@@ -29,37 +60,6 @@
     </span>
   </svelte:component>
 </div>
-
-<script lang="ts">
-  import type {
-    default as SvelteCarousel,
-    ICarousel,
-  } from '@beyonk/svelte-carousel'
-
-  import { onMount } from 'svelte'
-  let Carousel: typeof SvelteCarousel
-
-  onMount(async () => {
-    const module = await import('@beyonk/svelte-carousel')
-    Carousel = module.default
-  })
-  import { ChevronLeftIcon, ChevronRightIcon } from 'svelte-feather-icons'
-  import banner1Src from './images/banner1.jpg'
-  import banner2Src from './images/banner2.jpg'
-  import banner3Src from './images/banner3.jpg'
-  import banner4Src from './images/banner4.jpg'
-
-  export let maxHeight = '680px'
-  let carousel: ICarousel
-
-  function enter() {
-    carousel.pause()
-  }
-
-  function leave() {
-    carousel.resume()
-  }
-</script>
 
 <style lang="scss">
   .root {

@@ -1,3 +1,7 @@
+<script lang="ts">
+  import { SummaryH1 } from '../summary-headings'
+</script>
+
 <div class="root {$$props.class || ''}">
   <SummaryH1 class="summary-h1">Contact Us</SummaryH1>
 
@@ -10,10 +14,6 @@
   <h2>Email:</h2>
   <p class="email">info@superintegrity.com.au</p>
 </div>
-
-<script lang="ts">
-  import { SummaryH1 } from '../summary-headings'
-</script>
 
 <style lang="scss">
   .root :global(.summary-h1) {

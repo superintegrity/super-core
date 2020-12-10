@@ -1,11 +1,3 @@
-<div class="root {$$props.class || ''}" data-aos="zoom-in">
-  <div class="root-child image"><img src={imageSrc} alt="blog" /></div>
-  <div class="root-child content">
-    <h1>{heading}</h1>
-    <p>{truncate(summary, { length: 128, separator: ' ' })}</p>
-  </div>
-</div>
-
 <script lang="ts">
   import truncate from 'lodash/truncate'
 
@@ -13,6 +5,14 @@
   export let heading: string
   export let summary: string
 </script>
+
+<div class="root {$$props.class || ''}" data-aos="zoom-in">
+  <div class="root-child image"><img src={imageSrc} alt="blog" /></div>
+  <div class="root-child content">
+    <h1>{heading}</h1>
+    <p>{truncate(summary, { length: 128, separator: ' ' })}</p>
+  </div>
+</div>
 
 <style lang="scss">
   .root {
