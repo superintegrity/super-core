@@ -11,15 +11,10 @@ export function containerQuery(node, breakpointInfos) {
   const onResize = () => {
     const { clientWidth } = node
 
-    const activeBreakpointNames = Object.entries(breakpointInfos).reduce(
-      (acc, [key, value]) => {
-        if (clientWidth >= value) {
-          acc.push(key)
-        }
-        return acc
-      },
-      /** @type {string[]} */ ([]),
-    )
+    const activeBreakpointNames = getActiveBreakpointNames({
+      breakpointInfos,
+      clientWidth,
+    })
 
     const inactiveBreakpointNames = Object.keys(breakpointInfos).filter(
       (name) => !activeBreakpointNames.includes(name),
@@ -46,4 +41,18 @@ export function containerQuery(node, breakpointInfos) {
       removeResizeListener()
     },
   }
+}
+
+/**
+ * @param {object} input
+ * @param {Record<string, number>} input.breakpointInfos
+ * @param {number} input.clientWidth
+ */
+export function getActiveBreakpointNames({ breakpointInfos, clientWidth }) {
+  return Object.entries(breakpointInfos).reduce((acc, [key, value]) => {
+    if (clientWidth >= value) {
+      acc.push(key)
+    }
+    return acc
+  }, /** @type {string[]} */ ([]))
 }

@@ -1,7 +1,5 @@
-<DefaultLayout currentUrl="/blog">
-  <h1>Blogs</h1>
-</DefaultLayout>
+<AboutPage currentUrl="/blog" />
 
 <script lang="ts">
-  import { DefaultLayout } from '../modules/default-layout'
+  import { AboutPage } from '../modules/about-page'
 </script>

@@ -1,6 +1,7 @@
 <div
   class="root {$$props.class || ''}"
-  use:containerQuery={DEFAULT_BREAKPOINT_INFOS}>
+  use:containerQuery={DEFAULT_BREAKPOINT_INFOS}
+  bind:clientWidth>
   <button
     class="menu"
     on:click={() => {
@@ -10,7 +11,13 @@
   </button>
   <ul class:shown={menuShown}>
     {#each routes as route}
-      <NavItem url={route.url} selected={parse(currentUrl).path === route.url}>
+      <NavItem
+        class={getActiveBreakpointNames({
+          breakpointInfos: DEFAULT_BREAKPOINT_INFOS,
+          clientWidth,
+        })}
+        url={route.url}
+        selected={parse(currentUrl).path === route.url}>
         {route.title}
       </NavItem>
     {/each}
@@ -33,11 +40,14 @@
   import {
     containerQuery,
     DEFAULT_BREAKPOINT_INFOS,
+    getActiveBreakpointNames,
   } from '../../../container-query'
 
   export let currentUrl = '/'
 
   let menuShown = false
+  let clientWidth = 0
+
   const routes: IRoute[] = [
     {
       url: '/',

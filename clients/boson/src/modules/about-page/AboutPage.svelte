@@ -1,4 +1,4 @@
-<DefaultLayout currentUrl="/about">
+<DefaultLayout currentUrl={currentUrl}>
   <div class="banner">
     <div class="overlay" />
     <img src={aboutImageSrc} alt="banner" />
@@ -21,6 +21,8 @@
   import summaryImageSrc from './images/summary.png'
   import { KeyPointsContent } from './key-points-content'
   import aboutImageSrc from './images/about.jpg'
+
+  export let currentUrl = '/about'
 </script>
 
 <style lang="scss">
