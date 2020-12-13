@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { DefaultLayout } from '../default-layout'
-  import { PageSummary } from '../presentational/components/page-summary'
-  import { Banner } from '../presentational/components/banner'
+  import { DefaultLayout } from '../../modules/default-layout'
+  import { PageSummary } from '../../modules/presentational/components/page-summary'
+  import { Banner } from '../../modules/presentational/components/banner'
   import summaryImageSrc from './images/summary.png'
   import { KeyPointsContent } from './key-points-content'
 </script>

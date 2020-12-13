@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { AboutPage } from '../modules/about-page'
+  import { AboutPage } from '../pages/about-page'
 </script>
 
 <AboutPage />

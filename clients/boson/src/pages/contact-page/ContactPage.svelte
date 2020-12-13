@@ -1,8 +1,12 @@
 <script lang="ts">
-  import { DefaultLayout } from '../default-layout'
-  import { Banner } from '../presentational/components/banner'
-  import { getConfig } from '../config'
-  import { containerQuery, DEFAULT_BREAKPOINT_INFOS } from '../container-query'
+  import { DefaultLayout } from '../../modules/default-layout'
+  import { Banner } from '../../modules/presentational/components/banner'
+  import { getConfig } from '../../modules/config'
+  import {
+    containerQuery,
+    DEFAULT_BREAKPOINT_INFOS,
+  } from '../../modules/container-query'
+  import { ContactsContent } from './contacts-content'
 
   const { MAP_API_KEY } = getConfig()
   // const address = 'Suite 2.17/203-205 Blackburn Road, Mount Waverley VIC 3149'
@@ -23,6 +27,10 @@
     <section class="map">
       <h1>Contact Us</h1>
       <iframe title="address" src={mapSrc} />
+    </section>
+
+    <section class="contact-cards">
+      <ContactsContent />
     </section>
   </div>
 </DefaultLayout>

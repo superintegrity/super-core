@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { H1 } from '../../presentational/components/headings'
-  import { BlogCard } from '../../presentational/components/blog-card'
+  import { H1 } from '../../../modules/presentational/components/headings'
+  import { BlogCard } from '../../../modules/presentational/components/blog-card'
 
   import g1Src from './images/g1.jpg'
   import g4Src from './images/g4.jpg'
@@ -8,7 +8,7 @@
   import {
     containerQuery,
     DEFAULT_BREAKPOINT_INFOS,
-  } from '../../container-query'
+  } from '../../../modules/container-query'
 </script>
 
 <div

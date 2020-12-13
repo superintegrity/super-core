@@ -1,7 +1,7 @@
 import BlogsContent from './BlogsContent.svelte'
 
 export default {
-  title: 'Home/BlogsContent',
+  title: 'Page/Home/BlogsContent',
   component: BlogsContent,
 }
 

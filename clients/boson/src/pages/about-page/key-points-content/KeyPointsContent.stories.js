@@ -1,7 +1,7 @@
 import KeyPointsContent from './KeyPointsContent.svelte'
 
 export default {
-  title: 'About/KeyPointsContent',
+  title: 'Page/About/KeyPointsContent',
   component: KeyPointsContent,
 }
 

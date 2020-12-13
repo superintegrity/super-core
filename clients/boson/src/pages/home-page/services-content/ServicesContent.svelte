@@ -3,9 +3,9 @@
   import {
     containerQuery,
     DEFAULT_BREAKPOINT_INFOS,
-  } from '../../container-query'
-  import { H1 } from '../../presentational/components/headings'
-  import { InfoBox } from '../../presentational/components/info-box'
+  } from '../../../modules/container-query'
+  import { H1 } from '../../../modules/presentational/components/headings'
+  import { InfoBox } from '../../../modules/presentational/components/info-box'
 </script>
 
 <div

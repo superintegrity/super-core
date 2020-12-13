@@ -13,5 +13,6 @@ module.exports = {
   ],
   mount: {
     'src/modules': '/_app/modules',
+    'src/pages': '/_app/pages',
   },
 }

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { InfoCard } from '../../presentational/components/info-card'
+  import { InfoCard } from '../../../modules/presentational/components/info-card'
   import { trophy, thumbsUp, tv } from 'svelte-awesome/icons'
 </script>
 

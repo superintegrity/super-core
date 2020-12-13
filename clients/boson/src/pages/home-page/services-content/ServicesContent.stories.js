@@ -1,7 +1,7 @@
 import ServicesContent from './ServicesContent.svelte'
 
 export default {
-  title: 'Home/ServicesContent',
+  title: 'Page/Home/ServicesContent',
   component: ServicesContent,
 }
 

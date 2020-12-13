@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ContactPage } from '../modules/contact-page'
+  import { ContactPage } from '../pages/contact-page'
 </script>
 
 <ContactPage />

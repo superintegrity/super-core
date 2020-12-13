@@ -1,24 +1,34 @@
 <script lang="ts">
-  import { DefaultLayout } from '../default-layout'
-  import { PageSummary } from '../presentational/components/page-summary'
-  import { Banner } from '../presentational/components/banner'
-  import summaryImageSrc from './images/summary.png'
-  import { KeyPointsContent } from './key-points-content'
+  import { DefaultLayout } from '../../modules/default-layout'
+  import { Carousel } from '../../modules/presentational/components/carousel'
+  import { PageSummary } from '../../modules/presentational/components/page-summary'
 
-  export let currentUrl = '/about'
+  import { ServicesContent } from './services-content'
+  import { KeyPointsContent } from './key-points-content'
+  import { BlogsContent } from './blogs-content'
 </script>
 
-<DefaultLayout currentUrl={currentUrl}>
-  <Banner />
+<DefaultLayout currentUrl="/">
+  <div class="banner">
+    <Carousel />
+  </div>
+
   <section>
     <PageSummary
-      imageSrc={summaryImageSrc}
       heading="We help our customer to build Digital World"
       content="Maecenas quis neque libero. Class aptent taciti.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Pellentesque convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget pulvinar neque pharetra ac." />
   </section>
 
   <section>
     <KeyPointsContent />
+  </section>
+
+  <section>
+    <ServicesContent />
+  </section>
+
+  <section>
+    <BlogsContent />
   </section>
 </DefaultLayout>
 
