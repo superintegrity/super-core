@@ -31,8 +31,8 @@
     margin-left: -20px;
 
     :global(.contact-card) {
-      min-width: 18em;
-      max-width: 20em;
+      flex: 1;
+      min-width: 18rem;
       margin-top: 20px;
       margin-left: 20px;
     }

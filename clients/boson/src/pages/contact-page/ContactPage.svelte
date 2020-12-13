@@ -46,6 +46,14 @@
     flex-direction: column;
     align-items: center;
     align-content: center;
+
+    padding-left: 5%;
+    padding-right: 5%;
+
+    &.map {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   h1 {
