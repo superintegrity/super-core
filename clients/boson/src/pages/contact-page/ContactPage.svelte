@@ -9,8 +9,6 @@
   import { ContactsContent } from './contacts-content'
 
   const { MAP_API_KEY } = getConfig()
-  // const address = 'Suite 2.17/203-205 Blackburn Road, Mount Waverley VIC 3149'
-  // const email = 'info@superintegrity.com.au'
   const mapMarker = '203-205 Blackburn Road, Mount Waverley VIC 3149'
 
   const mapSrc = `https://www.google.com/maps/embed/v1/place?key=${MAP_API_KEY}&q=${encodeURIComponent(

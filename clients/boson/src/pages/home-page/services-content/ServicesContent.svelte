@@ -12,27 +12,24 @@
   class="root {$$props.class || ''}"
   use:containerQuery={DEFAULT_BREAKPOINT_INFOS}>
   <H1 class="h1">Services</H1>
+
   <div class="info-boxes">
     <InfoBox
       class="info-box"
       icon={laptop}
-      heading="Responsive"
-      content="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit." />
+      heading="SMSF Setup"
+      content="We offer administration services to facilitate SMSF establishment process. We can help you obtain all the required documentation and guide you through the process step by step to ensure its legal compliance." />
+
     <InfoBox
       class="info-box"
       icon={laptop}
-      heading="Responsive"
-      content="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit." />
+      heading="SMSF Administration"
+      content="We take care of your or your clients’ day-to-day accounting and administration tasks. We can also attend to end of year compliance work including full set of financial statements, tax return and arranging an independent annual audit." />
     <InfoBox
       class="info-box"
       icon={laptop}
-      heading="Responsive"
-      content="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit." />
-    <InfoBox
-      class="info-box"
-      icon={laptop}
-      heading="Responsive"
-      content="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit." />
+      heading="SMSF Consulting Services"
+      content="We provide factual information advice to help you keep up with legislation changes and meet compliance requirement. We work with financial advisors, accountants, trustees and auditors to clarify issues and solve problems." />
   </div>
 </div>
 

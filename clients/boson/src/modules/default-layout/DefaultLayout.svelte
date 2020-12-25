@@ -28,13 +28,14 @@
     margin-right: 16px;
     margin-bottom: 16px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
     align-content: flex-start;
 
     :global(.nav) {
       margin-left: 20%;
       flex: 1;
+      max-width: 600px;
     }
   }
 

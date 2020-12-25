@@ -5,7 +5,6 @@
 
   import { ServicesContent } from './services-content'
   import { KeyPointsContent } from './key-points-content'
-  import { BlogsContent } from './blogs-content'
 </script>
 
 <DefaultLayout currentUrl="/">
@@ -15,8 +14,8 @@
 
   <section>
     <PageSummary
-      heading="We help our customer to build Digital World"
-      content="Maecenas quis neque libero. Class aptent taciti.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Pellentesque convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget pulvinar neque pharetra ac." />
+      heading="Support for every aspect of your SMSF"
+      content="We can help you establish your SMSF, manage its day-to-day running and stay on top of the super and tax laws. We prepare SMSF financial statements, tax return and arrange the independent audit. We also help look after other administration tasks including monitoring contribution caps and pension minimum / maximum payment limits. " />
   </section>
 
   <section>
@@ -27,9 +26,9 @@
     <ServicesContent />
   </section>
 
-  <section>
+  <!-- <section>
     <BlogsContent />
-  </section>
+  </section> -->
 </DefaultLayout>
 
 <style lang="scss">

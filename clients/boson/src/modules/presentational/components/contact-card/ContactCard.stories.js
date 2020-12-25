@@ -35,7 +35,7 @@ export const Location = () => {
     Component: ContactCard,
     props: {
       heading: 'Location',
-      content: 'Suite 2.17/203-205 Blackburn Road, Mount Waverley VIC 3149',
+      children: 'Suite 2.17/203-205 Blackburn Road, Mount Waverley VIC 3149',
       icon: mapMarker,
     },
   }

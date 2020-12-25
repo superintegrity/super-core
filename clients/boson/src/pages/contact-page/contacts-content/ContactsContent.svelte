@@ -1,24 +1,21 @@
 <script lang="ts">
-  import { phone, envelope, mapMarker } from 'svelte-awesome/icons'
+  import { envelope, mapMarker } from 'svelte-awesome/icons'
   import { ContactCard } from '../../../modules/presentational/components/contact-card'
+  import { getConfig } from '../../../modules/config'
+
+  const { ADDRESS, EMAIL } = getConfig()
 </script>
 
 <div class="root {$$props.class || ''}">
-  <ContactCard
-    class="contact-card"
-    heading="Phone Number"
-    content="0430 777 699"
-    icon={phone} />
-  <ContactCard
-    class="contact-card"
-    heading="Email Address"
-    content="info@superintegrity.com.au"
-    icon={envelope} />
-  <ContactCard
-    class="contact-card"
-    heading="Location"
-    content="Suite 2.17/203-205 Blackburn Road, Mount Waverley VIC 3149"
-    icon={mapMarker} />
+  <!-- <ContactCard class="contact-card" heading="Phone Number" icon={phone}>
+    {PHONE_NUMBER}
+  </ContactCard> -->
+  <ContactCard class="contact-card" heading="Email Address" icon={envelope}>
+    <a href="mailto:{EMAIL}">{EMAIL}</a>
+  </ContactCard>
+  <ContactCard class="contact-card" heading="Location" icon={mapMarker}>
+    {ADDRESS}
+  </ContactCard>
 </div>
 
 <style lang="scss">
@@ -35,6 +32,11 @@
       min-width: 18rem;
       margin-top: 20px;
       margin-left: 20px;
+    }
+
+    a {
+      color: #083940;
+      text-decoration: none;
     }
   }
 </style>

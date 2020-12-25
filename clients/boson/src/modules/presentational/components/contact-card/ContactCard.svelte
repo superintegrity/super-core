@@ -9,7 +9,7 @@
 
   export let icon: any
   export let heading: string
-  export let content: string
+  export let children: string = ''
 </script>
 
 <div class="root {$$props.class || ''}">
@@ -17,7 +17,9 @@
     <svelte:component this={Icon} data={icon} scale={1.8} />
   </div>
   <h1>{heading}</h1>
-  <p>{content}</p>
+  <p>
+    <slot>{children}</slot>
+  </p>
 </div>
 
 <style lang="scss">

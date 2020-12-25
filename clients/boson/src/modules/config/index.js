@@ -2,6 +2,7 @@ import { assert } from '../assert'
 
 /**
  * @param {string=} env
+ * @returns {typeof DEFAULT}
  */
 export const getConfig = (env) => {
   assert(
@@ -17,6 +18,8 @@ export const getConfig = (env) => {
 
 const DEFAULT = {
   MAP_API_KEY: `AIzaSyAVZcp3tZikbfWLKqysbMv2jeHfRogn7dw`,
+  ADDRESS: 'Suite 2.17/203-205 Blackburn Road, Mount Waverley VIC 3149',
+  EMAIL: 'info@superintegrity.com.au',
 }
 
 /** @type {Record<string, any>} */

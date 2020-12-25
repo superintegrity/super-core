@@ -50,10 +50,6 @@
       title: 'About',
     },
     {
-      url: '/blog',
-      title: 'Blog',
-    },
-    {
       url: '/contact',
       title: 'Contact',
     },

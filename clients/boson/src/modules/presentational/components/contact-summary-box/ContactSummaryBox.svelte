@@ -1,18 +1,21 @@
 <script lang="ts">
   import { SummaryH1 } from '../summary-headings'
+  import { getConfig } from '../../../config'
+
+  const { ADDRESS, EMAIL } = getConfig()
 </script>
 
 <div class="root {$$props.class || ''}">
   <SummaryH1 class="summary-h1">Contact Us</SummaryH1>
 
   <h2>Address:</h2>
-  <p>No.27 - 5549436 street lorem ipsum, ipsum City, Country</p>
+  <p>{ADDRESS}</p>
 
-  <h2>Phone:</h2>
-  <p class="phone">0408 123 456</p>
+  <!-- <h2>Phone:</h2>
+  <p class="phone">{PHONE_NUMBER}</p> -->
 
   <h2>Email:</h2>
-  <p class="email">info@superintegrity.com.au</p>
+  <p class="email"><a href="mailto:{EMAIL}">{EMAIL}</a></p>
 </div>
 
 <style lang="scss">
@@ -39,6 +42,10 @@
     color: #bfbfbf;
     font-size: 0.8rem;
     font-weight: 600;
-    text-decoration: none;
+
+    a {
+      color: #bfbfbf;
+      text-decoration: none;
+    }
   }
 </style>
