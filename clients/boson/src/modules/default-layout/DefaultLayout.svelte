@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { NavBar } from '../presentational'
+  import { NavBar } from '../presentational/components/nav-bar'
   import AboutSummaryBox from '../presentational/components/about-summary-box/AboutSummaryBox.svelte'
   import ContactSummaryBox from '../presentational/components/contact-summary-box/ContactSummaryBox.svelte'
   import { Logo } from '../presentational/components/logo'

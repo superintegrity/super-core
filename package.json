@@ -4,17 +4,15 @@
   "description": "Super Integrity",
   "main": "index.js",
   "scripts": {
-    "clean": "lerna clean --yes && rm -rf node_modules",
-    "bootstrap": "lerna bootstrap --concurrency ${CONCURRENCY:-2}",
-    "install": "npm run bootstrap",
-    "lint": "lerna run lint --stream --concurrency ${CONCURRENCY:-2}",
-    "test": "lerna run test --stream --concurrency ${CONCURRENCY:-2}",
-    "deploy": "lerna run deploy --stream --concurrency ${CONCURRENCY:-2}"
+    "lerna": "./packages/lerna/node_modules/.bin/lerna",
+    "client-cli": "./packages/client-cli/bin/cli.js",
+    "clean": "npm run lerna -- clean --yes && rm -rf node_modules",
+    "bootstrap": "npm run lerna -- bootstrap --concurrency ${CONCURRENCY:-2}",
+    "install": "(cd packages/lerna && npm i) && npm run bootstrap",
+    "lint": "npm run lerna -- run lint --stream --concurrency ${CONCURRENCY:-2}",
+    "test": "npm run lerna -- run test --stream --concurrency ${CONCURRENCY:-2}",
+    "deploy": "npm run lerna -- run deploy --stream --concurrency ${CONCURRENCY:-2}"
   },
   "keywords": [],
-  "author": "engineforce@gmail.com",
-  "license": "MIT",
-  "devDependencies": {
-    "@super-integrity/client-cli": "file:packages/client-cli"
-  }
+  "author": "engineforce@gmail.com"
 }

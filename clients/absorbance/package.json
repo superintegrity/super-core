@@ -3,7 +3,6 @@
   "description": "Super Integrity",
   "version": "0.1.0",
   "author": "engineforce@gmail.com",
-  "license": "MIT",
   "scripts": {
     "dev": "export NODE_CONFIG_ENV=$ENV && gatsby develop",
     "build": "export NODE_CONFIG_ENV=$ENV && gatsby build",

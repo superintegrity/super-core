@@ -1,0 +1,11 @@
+{
+  "name": "@super-integrity/lerna",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
+}
