@@ -8,7 +8,7 @@
   })
 
   import { bars } from 'svelte-awesome/icons'
-  import { NavItem } from '../nav-item'
+  import { NavItem2 } from '../nav-item2'
   import { parse } from 'uri-js'
   import type { IRoute } from './IRoute'
   import {
@@ -59,12 +59,12 @@
       transition:slide={{ delay: 0, duration: shouldAnimate ? 300 : 0 }}
       class:shown={menuShown}>
       {#each routes as route}
-        <NavItem
+        <NavItem2
           class={bpClasses}
           url={route.url}
           selected={parse(currentUrl).path === route.url}>
           {route.title}
-        </NavItem>
+        </NavItem2>
       {/each}
     </ul>
   {/if}

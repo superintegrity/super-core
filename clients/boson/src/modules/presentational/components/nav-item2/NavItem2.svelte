@@ -11,20 +11,28 @@
 </li>
 
 <style lang="scss">
-  .root {
+  a {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    color: #a9977b;
+    display: inline-block;
+
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+
+    padding: 10px 15px;
+
+    &.selected {
+      background-color: rgb(246, 245, 245);
+    }
+  }
+
+  // Set by parent nav-bar
+  .bp-medium {
     a {
-      font-style: normal;
-      font-weight: bold;
-      font-size: 20px;
-      color: #a9977b;
-
-      text-decoration: none;
-
-      padding: 5px 10px;
-
-      &.selected {
-        background-color: rgb(246, 245, 245);
-      }
+      width: auto;
     }
   }
 </style>

@@ -1,17 +1,14 @@
 <script lang="ts">
-  import SuperIntegrityIcon from './images/super-integrity-small.png'
+  import IconAndText from './images/icon-and-text.png'
 </script>
 
-<div class="root {$$props.class || ''}">
-  <img src={SuperIntegrityIcon} alt="logo" />
+<div class="logo-root {$$props.class || ''}">
+  <img src={IconAndText} alt="logo" />
 </div>
 
 <style lang="scss">
-  .root {
-    margin: 10px;
-  }
-
   img {
-    width: 50px;
+    display: block;
+    height: 100%;
   }
 </style>
