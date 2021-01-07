@@ -14,7 +14,7 @@
   a {
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 2rem;
     color: #a9977b;
     display: inline-block;
 
@@ -22,7 +22,7 @@
     width: 100%;
     text-align: center;
 
-    padding: 10px 15px;
+    padding: 0.5em 0.75em;
 
     &.selected {
       background-color: rgb(246, 245, 245);

@@ -100,9 +100,10 @@
       font-style: normal;
       font-weight: bold;
 
-      font-size: 1.5rem;
+      font-size: 2.5rem;
       margin-top: 1em;
-      margin-left: 1em;
+      margin-left: 2em;
+      margin-right: 2em;
 
       color: #ffffff;
 
@@ -122,9 +123,8 @@
   .bp-large {
     .slide-content {
       .title {
-        font-size: 3rem;
-        margin-top: 2em;
-        margin-left: 3em;
+        font-size: 4rem;
+        line-height: 118%;
       }
     }
   }

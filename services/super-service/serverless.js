@@ -16,6 +16,8 @@ const serverlessConfiguration = {
     name: 'aws',
     region: 'ap-southeast-2',
     runtime: 'nodejs12.x',
+    // We have staging already, and we don't have multiple accounts
+    versionFunctions: false,
     apiGateway: {
       minimumCompressionSize: 1024,
       shouldStartNameWithService: true,

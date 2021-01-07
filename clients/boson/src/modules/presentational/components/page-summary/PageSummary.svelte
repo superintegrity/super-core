@@ -5,8 +5,7 @@
   } from '../../../container-query'
 
   export let heading: string
-  export let content: string
-  export let imageSrc: string | undefined = undefined
+  export let children: string = ''
 </script>
 
 <div
@@ -15,51 +14,45 @@
   <h1>{heading}</h1>
 
   <div class="content">
-    {#if imageSrc}<img src={imageSrc} alt="content" />{/if}
-    <p>{content}</p>
+    <slot>{children}</slot>
   </div>
 </div>
 
 <style lang="scss">
   h1 {
-    font-size: 1.2rem;
-    line-height: 1.5em;
-    color: #03cce6;
-    font-weight: 600;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 150%;
+    color: #a9977b;
   }
 
   .content {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.5rem;
+    line-height: 167%;
+    text-align: justify;
+    color: rgba(0, 0, 0, 0.51);
+
     margin-top: 2em;
-
-    img {
-      width: 100%;
-    }
-
-    p {
-      font-size: 0.9rem;
-      color: #777777;
-      line-height: 2em;
-      letter-spacing: 1px;
-      font-weight: 300;
-
-      margin-top: 2em;
-    }
   }
 
   .bp-medium {
     &.root {
       display: flex;
-      align-items: flex-start;
+      align-items: initial;
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: 3rem;
       flex: 2;
     }
 
     .content {
+      font-size: 1.8rem;
       margin-left: 5%;
-      margin-top: 0;
+      margin-top: 0.4em;
       flex: 3;
     }
   }

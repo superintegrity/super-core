@@ -1,12 +1,11 @@
-import PageSummary from './PageSummary.svelte'
-import DefaultStory from './stories/DefaultStory.svelte'
+import InfosGrid from './InfosGrid.svelte'
 
 export default {
-  title: 'Presentational/PageSummary',
-  component: PageSummary,
+  title: 'Presentational/InfosGrid',
+  component: InfosGrid,
   parameters: {
     docs: {
-      iframeHeight: 550,
+      iframeHeight: 400,
     },
   },
 }
@@ -15,7 +14,7 @@ export const Default = () => Desktop()
 
 export const Desktop = () => {
   return {
-    Component: DefaultStory,
+    Component: InfosGrid,
   }
 }
 
@@ -30,6 +29,6 @@ export const Mobile = () => {
   })
 
   return {
-    Component: DefaultStory,
+    Component: InfosGrid,
   }
 }

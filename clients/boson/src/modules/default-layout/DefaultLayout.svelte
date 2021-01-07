@@ -43,14 +43,14 @@
 
 <style lang="scss">
   header {
-    margin: 16px;
+    margin: 2%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     align-content: center;
 
     :global(.nav) {
-      margin-left: 20%;
+      margin-left: 5%;
       flex: 1;
       max-width: 600px;
     }
