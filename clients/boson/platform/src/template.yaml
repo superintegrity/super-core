@@ -1,3 +1,4 @@
+# CloudFormation Template
 # https://github.com/sjevs/cloudformation-s3-static-website-with-cloudfront-and-route-53/blob/master/s3-static-website-with-cloudfront-and-route-53.yaml
 Transform: 'AWS::Serverless-2016-10-31'
 
