@@ -16,14 +16,13 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Use Node.js 12.x
+      - name: Use Node.js 15.x
         uses: actions/setup-node@v1
         with:
-          node-version: 12.x
+          node-version: 15.x
 
       - name: install
         run: |
-          npm i -g lerna
           npm ci
 
       - name: Build and Test (non-master)
@@ -47,10 +46,10 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Use Node.js 12.x
+      - name: Use Node.js 15.x
         uses: actions/setup-node@v1
         with:
-          node-version: 12.x
+          node-version: 15.x
 
       - name: install
         run: |
@@ -60,7 +59,6 @@ jobs:
           export PATH=/home/runner/.local/bin:$PATH
           sam --version
 
-          npm i -g lerna
           npm ci
 
       - name: Deploy to dev staging

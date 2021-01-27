@@ -1,32 +1,35 @@
 import PageSummary from './PageSummary.svelte'
-import aboutImageSrc from './images/about.png'
+import DefaultStory from './stories/DefaultStory.svelte'
 
 export default {
   title: 'Presentational/PageSummary',
   component: PageSummary,
+  parameters: {
+    docs: {
+      iframeHeight: 550,
+    },
+  },
 }
 
-export const Default = () => NoImage()
+export const Default = () => Desktop()
 
-export const NoImage = () => {
+export const Desktop = () => {
   return {
-    Component: PageSummary,
-    props: {
-      heading: 'We help our customer to build Digital World',
-      content:
-        'Maecenas quis neque libero. Class aptent taciti.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Pellentesque convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget pulvinar neque pharetra ac.',
-    },
+    Component: DefaultStory,
   }
 }
 
-export const WithImage = () => {
+export const Mobile = () => {
+  setTimeout(() => {
+    /** @type {HTMLDivElement?} */
+    const rootElement = document.querySelector('#root')
+    if (rootElement) {
+      // rootElement.style.minHeight = '300px'
+      rootElement.style.width = '320px'
+    }
+  })
+
   return {
-    Component: PageSummary,
-    props: {
-      heading: 'We help our customer to build Digital World',
-      content:
-        'Maecenas quis neque libero. Class aptent taciti.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Pellentesque convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget pulvinar neque pharetra ac.',
-      imageSrc: aboutImageSrc,
-    },
+    Component: DefaultStory,
   }
 }

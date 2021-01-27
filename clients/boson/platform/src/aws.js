@@ -114,14 +114,13 @@ async function invalidateCloudfront({ stackName }) {
  * @param {string} input.env
  */
 const undeploy = async ({ realm, env }) => {
+  const stackName = `si-${realm}-${env}-boson`
+  console.log('Deleting stack', stackName)
+
   await exec(
-    [
-      'aws',
-      'cloudformation',
-      'delete-stack',
-      '--stack-name',
-      `si-${realm}-${env}-boson`,
-    ].join(' '),
+    ['aws', 'cloudformation', 'delete-stack', '--stack-name', stackName].join(
+      ' ',
+    ),
   )
 }
 

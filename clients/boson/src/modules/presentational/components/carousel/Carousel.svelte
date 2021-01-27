@@ -12,10 +12,14 @@
     Carousel = module.default
   })
   import { ChevronLeftIcon, ChevronRightIcon } from 'svelte-feather-icons'
-  import banner1Src from './images/banner1.jpg'
-  import banner2Src from './images/banner2.jpg'
-  import banner3Src from './images/banner3.jpg'
-  import banner4Src from './images/banner4.jpg'
+  import {
+    containerQuery,
+    DEFAULT_BREAKPOINT_INFOS,
+  } from '../../../container-query'
+  import banner1Src from './images/banner-1@3x.png'
+  import banner2Src from './images/banner-2@3x.png'
+  import banner3Src from './images/banner-3@3x.png'
+  import banner4Src from './images/banner-4@3x.png'
 
   export let maxHeight = '680px'
   let carousel: ICarousel
@@ -30,7 +34,8 @@
 </script>
 
 <div
-  class="root {$$props.class || ''}"
+  class="carousel-root {$$props.class || ''}"
+  use:containerQuery={DEFAULT_BREAKPOINT_INFOS}
   on:mouseenter={enter}
   on:mouseleave={leave}>
   <svelte:component
@@ -44,6 +49,10 @@
     </span>
 
     <div class="slide-content">
+      <div class="title">
+        <p>SUPER INTEGRITY</p>
+        <p>Trustworthy SMSF Accountants</p>
+      </div>
       <img src={banner1Src} alt="Banner 1" style="max-height:{maxHeight};" />
     </div>
     <div class="slide-content">
@@ -62,7 +71,7 @@
 </div>
 
 <style lang="scss">
-  .root {
+  .carousel-root {
     :global(ul) {
       margin-top: -100px !important;
     }
@@ -83,11 +92,40 @@
   }
 
   .slide-content {
+    position: relative;
+
+    .title {
+      position: absolute;
+
+      font-style: normal;
+      font-weight: bold;
+
+      font-size: 2.5rem;
+      margin-top: 1em;
+      margin-left: 2em;
+      margin-right: 2em;
+
+      color: #ffffff;
+
+      p + p {
+        margin-top: 0.1em;
+      }
+    }
+
     img {
       object-position: center top;
       object-fit: cover;
       width: 100%;
       min-height: 300px;
+    }
+  }
+
+  .bp-large {
+    .slide-content {
+      .title {
+        font-size: 4rem;
+        line-height: 118%;
+      }
     }
   }
 </style>

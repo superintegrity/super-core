@@ -1,7 +1,10 @@
 {
   "version": "0.1",
   "language": "en",
-  "words": [],
+  "words": [
+    "preprocessors",
+    "sveltejs"
+  ],
   "ignoreWords": [
     "lerna",
     "setuptools",

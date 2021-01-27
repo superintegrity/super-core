@@ -19,7 +19,6 @@
       icon={laptop}
       heading="SMSF Setup"
       content="We offer administration services to facilitate SMSF establishment process. We can help you obtain all the required documentation and guide you through the process step by step to ensure its legal compliance." />
-
     <InfoBox
       class="info-box"
       icon={laptop}

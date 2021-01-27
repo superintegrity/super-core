@@ -8,7 +8,7 @@
   })
 
   import { bars } from 'svelte-awesome/icons'
-  import NavItem from '../nav-item/NavItem.svelte'
+  import { NavItem } from '../nav-item'
   import { parse } from 'uri-js'
   import type { IRoute } from './IRoute'
   import {
@@ -20,6 +20,7 @@
   import { clickOutside } from '../../libs/clickOutsideAction'
 
   export let currentUrl = '/'
+  export let routes: IRoute[] = []
 
   let clientWidth: number
   let bpClasses: string[] = []
@@ -35,25 +36,6 @@
     menuShown = bpClasses.includes('bp-medium')
     shouldAnimate = !bpClasses.includes('bp-medium')
   }
-
-  const routes: IRoute[] = [
-    {
-      url: '/',
-      title: 'Home',
-    },
-    {
-      url: '/service',
-      title: 'Services',
-    },
-    {
-      url: '/about',
-      title: 'About',
-    },
-    {
-      url: '/contact',
-      title: 'Contact',
-    },
-  ]
 </script>
 
 <div

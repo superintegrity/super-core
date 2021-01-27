@@ -1,17 +1,36 @@
 <script lang="ts">
-  import { NavBar } from '../presentational'
+  import { NavBar2 } from '../presentational/components/nav-bar2'
   import AboutSummaryBox from '../presentational/components/about-summary-box/AboutSummaryBox.svelte'
   import ContactSummaryBox from '../presentational/components/contact-summary-box/ContactSummaryBox.svelte'
   import { Logo } from '../presentational/components/logo'
   import Context from './Context.svelte'
 
   export let currentUrl: string | undefined
+
+  const ROUTES = [
+    {
+      url: '/',
+      title: 'Home',
+    },
+    {
+      url: '/service',
+      title: 'Services',
+    },
+    {
+      url: '/about',
+      title: 'About',
+    },
+    {
+      url: '/contact',
+      title: 'Contact',
+    },
+  ]
 </script>
 
 <Context>
   <header>
     <Logo />
-    <NavBar class="nav" currentUrl={currentUrl} />
+    <NavBar2 routes={ROUTES} class="nav" currentUrl={currentUrl} />
   </header>
   <main class="root {$$props.class || ''}">
     <slot />
@@ -24,16 +43,14 @@
 
 <style lang="scss">
   header {
-    margin-left: 16px;
-    margin-right: 16px;
-    margin-bottom: 16px;
+    margin: 2%;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    align-content: flex-start;
+    align-items: center;
+    align-content: center;
 
     :global(.nav) {
-      margin-left: 20%;
+      margin-left: 5%;
       flex: 1;
       max-width: 600px;
     }

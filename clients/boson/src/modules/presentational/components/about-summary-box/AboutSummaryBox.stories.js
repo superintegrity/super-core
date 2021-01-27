@@ -4,6 +4,11 @@ import AboutSummaryBox from './AboutSummaryBox.svelte'
 export default {
   title: 'Presentational/AboutSummaryBox',
   component: AboutSummaryBox,
+  parameters: {
+    docs: {
+      iframeHeight: 300,
+    },
+  },
 }
 
 export const Default = () => About()
