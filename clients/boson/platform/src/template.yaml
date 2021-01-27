@@ -47,7 +47,7 @@ Resources:
   PlaceholderBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: !Sub boson-${Env}.${DomainName}
+      BucketName: !Sub placeholder-boson-${Env}.${DomainName}
       AccessControl: PublicRead
       WebsiteConfiguration:
         IndexDocument: index.html
