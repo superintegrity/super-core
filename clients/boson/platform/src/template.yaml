@@ -1,3 +1,4 @@
+# CloudFormation Template
 # https://github.com/sjevs/cloudformation-s3-static-website-with-cloudfront-and-route-53/blob/master/s3-static-website-with-cloudfront-and-route-53.yaml
 Transform: 'AWS::Serverless-2016-10-31'
 
@@ -43,16 +44,40 @@ Resources:
             Action: s3:GetObject
             Resource: !Join ['', ['arn:aws:s3:::', !Ref 'WebsiteBucket', /*]]
 
+  PlaceholderBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub placeholder-boson-${Env}.${DomainName}
+      AccessControl: PublicRead
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: 404.html
+    # DeletionPolicy: Retain
+
+  PlaceholderBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref 'PlaceholderBucket'
+      PolicyDocument:
+        Statement:
+          - Sid: PublicReadForGetBucketObjects
+            Effect: Allow
+            Principal: '*'
+            Action: s3:GetObject
+            Resource:
+              !Join ['', ['arn:aws:s3:::', !Ref 'PlaceholderBucket', /*]]
+
   WebsiteCloudfront:
     Type: AWS::CloudFront::Distribution
     DependsOn:
       - WebsiteBucket
+      - PlaceholderBucket
     Properties:
       DistributionConfig:
         Comment: Cloudfront Distribution pointing to S3 bucket
         Origins:
           - DomainName:
-              !Select [2, !Split ['/', !GetAtt WebsiteBucket.WebsiteURL]]
+              !Select [2, !Split ['/', !GetAtt PlaceholderBucket.WebsiteURL]]
             Id: S3Origin
             CustomOriginConfig:
               HTTPPort: '80'
