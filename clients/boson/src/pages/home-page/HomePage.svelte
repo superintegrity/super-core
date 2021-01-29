@@ -41,10 +41,6 @@
   </div>
 
   <section>
-    <KeyPointsContent />
-  </section>
-
-  <section>
     <ServicesContent />
   </section>
 

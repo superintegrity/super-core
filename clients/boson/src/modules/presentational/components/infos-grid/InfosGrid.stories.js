@@ -5,18 +5,12 @@ export default {
   component: InfosGrid,
   parameters: {
     docs: {
-      iframeHeight: 400,
+      iframeHeight: 750,
     },
   },
 }
 
-export const Default = () => Desktop()
-
-export const Desktop = () => {
-  return {
-    Component: InfosGrid,
-  }
-}
+export const Default = () => Mobile()
 
 export const Mobile = () => {
   setTimeout(() => {
@@ -28,6 +22,12 @@ export const Mobile = () => {
     }
   })
 
+  return {
+    Component: InfosGrid,
+  }
+}
+
+export const Desktop = () => {
   return {
     Component: InfosGrid,
   }

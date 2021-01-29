@@ -7,41 +7,35 @@
     Icon = module.default
   })
 
-  export let icon: any
+  export let icon: any = undefined
   export let heading: string
-  export let content: string
+  export let children: string = ''
 </script>
 
-<div class="root {$$props.class || ''}" data-aos="zoom-in">
+<div class="info-box-root {$$props.class || ''}" data-aos="zoom-in">
   <div class="icon">
-    <svelte:component this={Icon} data={icon} scale={3} />
+    <slot name="icon">
+      {#if icon}
+        <svelte:component this={Icon} data={icon} scale={3} />
+      {/if}
+    </slot>
   </div>
   <h1>{heading}</h1>
-  <p>{content}</p>
+  <div class="content">
+    <slot>{children}</slot>
+  </div>
 </div>
 
 <style lang="scss">
-  .root {
+  .info-box-root {
     background-color: #f5f5f5;
-    padding: 3em 2em;
-  }
-
-  .icon {
-    color: var(--theme-primary-main, #03cce6);
+    padding: 5rem min(10%, 4rem);
   }
 
   h1 {
-    font-size: 1.2rem;
+    font-size: 2.4rem;
     color: #333;
-    margin: 1em 0;
+    margin-top: 2.4rem;
     font-weight: 600;
-  }
-
-  p {
-    font-size: 0.9rem;
-    color: #777777;
-    line-height: 2em;
-    letter-spacing: 1px;
-    font-weight: 300;
   }
 </style>

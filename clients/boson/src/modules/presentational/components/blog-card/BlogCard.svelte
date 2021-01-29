@@ -33,7 +33,7 @@
 
   .image {
     flex: 1;
-    min-width: 10em;
+    min-width: 20rem;
     margin-top: 28px;
   }
 
@@ -43,18 +43,17 @@
 
   .content {
     flex: 3;
-    min-width: 18em;
+    min-width: 18rem;
   }
 
   h1 {
-    font-size: 1.5rem;
-    line-height: 1.5em;
+    font-size: 3rem;
     color: #03cce6;
     font-weight: 600;
   }
 
   p {
-    font-size: 0.9rem;
+    font-size: 1.5rem;
     color: #777777;
     line-height: 2em;
     letter-spacing: 1px;

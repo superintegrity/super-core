@@ -1,27 +1,25 @@
 import { setWrapper } from '../../../storybook/setWrapper'
 import InfoBox from './InfoBox.svelte'
-import { laptop } from 'svelte-awesome/icons'
+import DefaultStory from './stories/DefaultStory.svelte'
 
 export default {
   title: 'Presentational/InfoBox',
   component: InfoBox,
+  parameters: {
+    docs: {
+      iframeHeight: 300,
+    },
+  },
 }
 
-export const Default = () => Responsive()
+export const Default = () => SmsfSetup()
 
-export const Responsive = () => {
+export const SmsfSetup = () => {
   setTimeout(() => {
-    setWrapper(`<div style="width: 350px"></div>`)
+    setWrapper(`<div style="width: 320px"></div>`)
   })
 
   return {
-    Component: InfoBox,
-    props: {
-      heading: 'Fully Responsive',
-      content:
-        'Lorem ipsum dolor sit amet,vehicula vel sapien et, feugiat sapien amet.',
-      detailUrl: '/about',
-      icon: laptop,
-    },
+    Component: DefaultStory,
   }
 }

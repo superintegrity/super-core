@@ -1,16 +1,24 @@
 <script lang="ts">
+  import {
+    containerQuery,
+    DEFAULT_BREAKPOINT_INFOS,
+  } from '../../../container-query'
+
   import accountantImage from './images/accountant@3x.png'
   import trusteeImage from './images/trustee@3x.png'
 </script>
 
-<div class="infos-grid-root {$$props.class || ''}">
+<div
+  class="infos-grid-root {$$props.class || ''}"
+  use:containerQuery={DEFAULT_BREAKPOINT_INFOS}
+>
   <div class="row odd">
     <div class="cell cell-1">
       <img src={accountantImage} alt="accountants" />
     </div>
 
     <div class="cell cell-2">
-      <section>
+      <section class="description">
         <h1>Advisers & Accountants</h1>
         <ul>
           <li>Back office & technical support</li>
@@ -25,7 +33,7 @@
     <div class="cell cell-1"><img src={trusteeImage} alt="trustees" /></div>
 
     <div class="cell cell-2">
-      <section>
+      <section class="description">
         <h1>SMSF Trustees</h1>
         <ul>
           <li>Professional guidance & ongoing support</li>
@@ -50,20 +58,10 @@
 
   .cell {
     flex: 1;
-    min-width: 400px;
+    min-width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  .row.odd {
-    .cell-1 {
-      order: 2;
-    }
-
-    .cell-2 {
-      order: 1;
-    }
   }
 
   img {
@@ -73,19 +71,48 @@
     max-height: 400px;
   }
 
+  .description {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
   h1 {
     font-style: normal;
     font-weight: bold;
-    font-size: 3rem;
-    line-height: 167%;
+    font-size: 2rem;
+    line-height: 116%;
     color: rgba(0, 0, 0, 0.69);
+    margin-top: 1em;
+    // text-align: center;
   }
 
   ul {
     font-style: normal;
     font-weight: normal;
     font-size: 1.8rem;
-    line-height: 167%;
     color: rgba(0, 0, 0, 0.44);
+    margin-top: 1em;
+    margin-bottom: 1em;
+    // text-align: center;
+  }
+
+  li {
+    margin-top: 0.6em;
+  }
+
+  .bp-medium {
+    .row.odd {
+      .cell-1 {
+        order: 2;
+      }
+
+      .cell-2 {
+        order: 1;
+      }
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
   }
 </style>

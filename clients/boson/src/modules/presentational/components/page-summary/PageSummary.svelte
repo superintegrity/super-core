@@ -10,7 +10,8 @@
 
 <div
   class="root {$$props.class || ''}"
-  use:containerQuery={DEFAULT_BREAKPOINT_INFOS}>
+  use:containerQuery={DEFAULT_BREAKPOINT_INFOS}
+>
   <h1>{heading}</h1>
 
   <div class="content">
@@ -30,7 +31,7 @@
   .content {
     font-style: normal;
     font-weight: normal;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     line-height: 167%;
     text-align: justify;
     color: rgba(0, 0, 0, 0.51);
@@ -50,7 +51,6 @@
     }
 
     .content {
-      font-size: 1.8rem;
       margin-left: 5%;
       margin-top: 0.4em;
       flex: 3;

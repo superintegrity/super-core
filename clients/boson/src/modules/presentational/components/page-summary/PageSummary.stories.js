@@ -11,13 +11,7 @@ export default {
   },
 }
 
-export const Default = () => Desktop()
-
-export const Desktop = () => {
-  return {
-    Component: DefaultStory,
-  }
-}
+export const Default = () => Mobile()
 
 export const Mobile = () => {
   setTimeout(() => {
@@ -29,6 +23,12 @@ export const Mobile = () => {
     }
   })
 
+  return {
+    Component: DefaultStory,
+  }
+}
+
+export const Desktop = () => {
   return {
     Component: DefaultStory,
   }

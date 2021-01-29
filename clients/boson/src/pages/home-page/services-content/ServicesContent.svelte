@@ -1,41 +1,62 @@
 <script lang="ts">
-  import { laptop } from 'svelte-awesome/icons'
   import {
     containerQuery,
     DEFAULT_BREAKPOINT_INFOS,
   } from '../../../modules/container-query'
   import { H1 } from '../../../modules/presentational/components/headings'
   import { InfoBox } from '../../../modules/presentational/components/info-box'
+  import smsfSetupSrc from './images/smsf-setup.png'
+  import adminSrc from './images/admin.png'
+  import consultingSrc from './images/consulting.png'
+  import documentSrc from './images/document.png'
 </script>
 
 <div
   class="root {$$props.class || ''}"
-  use:containerQuery={DEFAULT_BREAKPOINT_INFOS}>
+  use:containerQuery={DEFAULT_BREAKPOINT_INFOS}
+>
   <H1 class="h1">Services</H1>
 
   <div class="info-boxes">
-    <InfoBox
-      class="info-box"
-      icon={laptop}
-      heading="SMSF Setup"
-      content="We offer administration services to facilitate SMSF establishment process. We can help you obtain all the required documentation and guide you through the process step by step to ensure its legal compliance." />
-    <InfoBox
-      class="info-box"
-      icon={laptop}
-      heading="SMSF Administration"
-      content="We take care of your or your clients’ day-to-day accounting and administration tasks. We can also attend to end of year compliance work including full set of financial statements, tax return and arranging an independent annual audit." />
-    <InfoBox
-      class="info-box"
-      icon={laptop}
-      heading="SMSF Consulting Services"
-      content="We provide factual information advice to help you keep up with legislation changes and meet compliance requirement. We work with financial advisors, accountants, trustees and auditors to clarify issues and solve problems." />
+    <InfoBox class="info-box" icon="" heading="SMSF Setup">
+      <img slot="icon" src={smsfSetupSrc} alt="SMSF Setup" />
+      <ul>
+        <li>Step by step guide</li>
+        <li>Full setup process support</li>
+        <li>Quality documents & templates</li>
+      </ul>
+    </InfoBox>
+    <InfoBox class="info-box" heading="Admin & Compliance">
+      <img slot="icon" src={adminSrc} alt="SMSF Setup" />
+      <ul>
+        <li>All essential admin tasks</li>
+        <li>Free SMSF transfer services</li>
+        <li>Financials, tax return and audit</li>
+      </ul>
+    </InfoBox>
+    <InfoBox class="info-box" heading="Consulting Services">
+      <img slot="icon" src={consultingSrc} alt="SMSF Setup" />
+      <ul>
+        <li>Super & tax law information</li>
+        <li>Independent advice & second opinion</li>
+        <li>Go-to person & ad-hoc enquiries welcome</li>
+      </ul>
+    </InfoBox>
+    <InfoBox class="info-box" heading="Document Services">
+      <img slot="icon" src={documentSrc} alt="SMSF Setup" />
+      <ul>
+        <li>Trust deed upgrade</li>
+        <li>Pension documentation</li>
+        <li>SMSF borrowing documents (LRBA)</li>
+      </ul>
+    </InfoBox>
   </div>
 </div>
 
 <style lang="scss">
   .root {
     :global(.h1) {
-      font-size: 1.6rem;
+      font-size: 2rem;
       text-align: center;
       margin-bottom: 1em;
     }
@@ -55,14 +76,35 @@
     }
   }
 
+  ul {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.8rem;
+    color: rgba(0, 0, 0, 0.44);
+    margin-top: 3rem;
+  }
+
+  li {
+    margin-top: 0.6em;
+  }
+
   .bp-medium {
+    .info-boxes {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-left: -50px;
+
+      :global(.info-box) {
+        min-width: 30rem;
+        margin-left: 50px;
+        margin-top: 30px;
+      }
+    }
+
     :global(.h1) {
       font-size: 2.8rem;
       text-align: center;
-    }
-
-    :global(.info-box) {
-      min-width: 20rem;
     }
   }
 </style>
