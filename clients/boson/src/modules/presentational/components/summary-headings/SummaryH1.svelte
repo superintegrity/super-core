@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let children: string = ''
+  export let children: string = '';
 </script>
 
 <h1 class="root {$$props.class || ''}">
@@ -8,9 +8,9 @@
 
 <style lang="scss">
   h1 {
-    font-size: 1.3rem;
+    font-size: 2.6rem;
     color: #ffffff;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     font-weight: 600;
   }
 </style>

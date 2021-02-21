@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { NavBar2 } from '../presentational/components/nav-bar2'
-  import AboutSummaryBox from '../presentational/components/about-summary-box/AboutSummaryBox.svelte'
-  import ContactSummaryBox from '../presentational/components/contact-summary-box/ContactSummaryBox.svelte'
-  import { Logo } from '../presentational/components/logo'
-  import Context from './Context.svelte'
+  import { NavBar2 } from '../presentational/components/nav-bar2';
+  import AboutSummaryBox from '../presentational/components/about-summary-box/AboutSummaryBox.svelte';
+  import ContactSummaryBox from '../presentational/components/contact-summary-box/ContactSummaryBox.svelte';
+  import { Logo } from '../presentational/components/logo';
+  import Context from './Context.svelte';
 
-  export let currentUrl: string | undefined
+  export let currentUrl: string | undefined;
 
   const ROUTES = [
     {
@@ -24,7 +24,7 @@
       url: '/contact',
       title: 'Contact',
     },
-  ]
+  ];
 </script>
 
 <Context>
@@ -58,7 +58,7 @@
 
   footer {
     margin-top: 100px;
-    padding: 3em 3% 0;
+    padding: 6em 3%;
     background-color: #0e0f10;
 
     display: flex;
@@ -66,9 +66,11 @@
     justify-content: space-around;
 
     :global(.summary-box) {
-      min-width: 10rem;
-      max-width: 13rem;
-      margin-bottom: 3em;
+      min-width: 16rem;
+      max-width: 23rem;
+      margin-top: 3em;
+      margin-left: 2%;
+      margin-right: 2%;
     }
   }
 </style>

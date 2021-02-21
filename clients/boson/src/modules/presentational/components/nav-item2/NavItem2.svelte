@@ -1,7 +1,7 @@
 <script lang="ts">
-  export let url = '/'
-  export let selected = false
-  export let children: string = ''
+  export let url = '/';
+  export let selected = false;
+  export let children: string = '';
 </script>
 
 <li class="root {$$props.class || ''}">
@@ -26,6 +26,10 @@
 
     &.selected {
       background-color: rgb(246, 245, 245);
+    }
+
+    &:hover {
+      background-color: rgba(246, 245, 245, 0.5);
     }
   }
 

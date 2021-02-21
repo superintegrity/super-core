@@ -1,16 +1,17 @@
 <script lang="ts">
-  import { DefaultLayout } from '../../modules/default-layout'
-  import { Carousel } from '../../modules/presentational/components/carousel'
-  import { PageSummary } from '../../modules/presentational/components/page-summary'
+  import { DefaultLayout } from '../../modules/default-layout';
+  import { HomeCarousel } from '../../modules/presentational/components/home-carousel';
+  import { RecommendationCarousel } from '../../modules/presentational/components/recommendation-carousel';
+  import { PageSummary } from '../../modules/presentational/components/page-summary';
 
-  import { ServicesContent } from './services-content'
-  import { KeyPointsContent } from './key-points-content'
-  import { InfosGrid } from '../../modules/presentational/components/infos-grid'
+  import { ServicesContent } from './services-content';
+  import { KeyPointsContent } from './key-points-content';
+  import { InfosGrid } from '../../modules/presentational/components/infos-grid';
 </script>
 
 <DefaultLayout currentUrl="/">
   <div class="banner">
-    <Carousel />
+    <HomeCarousel />
   </div>
 
   <section>
@@ -44,9 +45,9 @@
     <ServicesContent />
   </section>
 
-  <!-- <section>
-    <BlogsContent />
-  </section> -->
+  <div class="recommendation">
+    <RecommendationCarousel />
+  </div>
 </DefaultLayout>
 
 <style lang="scss">
@@ -54,12 +55,16 @@
     margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
-    max-width: 1250px;
+    max-width: 1500px;
     padding-left: 5%;
     padding-right: 5%;
   }
 
   .infos-grid-wrapper {
+    margin-top: 100px;
+  }
+
+  .recommendation {
     margin-top: 100px;
   }
 

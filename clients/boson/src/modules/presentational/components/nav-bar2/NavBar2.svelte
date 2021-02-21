@@ -1,40 +1,40 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
-  let Icon: typeof import('svelte-awesome').default
+  import { onMount } from 'svelte';
+  let Icon: typeof import('svelte-awesome').default;
 
   onMount(async () => {
-    const module = await import('svelte-awesome')
-    Icon = module.default
-  })
+    const module = await import('svelte-awesome');
+    Icon = module.default;
+  });
 
-  import { bars } from 'svelte-awesome/icons'
-  import { NavItem2 } from '../nav-item2'
-  import { parse } from 'uri-js'
-  import type { IRoute } from './IRoute'
+  import { bars } from 'svelte-awesome/icons';
+  import { NavItem2 } from '../nav-item2';
+  import { parse } from 'uri-js';
+  import type { IRoute } from './IRoute';
   import {
     containerQuery,
     DEFAULT_BREAKPOINT_INFOS,
     getActiveBreakpointNames,
-  } from '../../../container-query'
-  import { slide } from 'svelte/transition'
-  import { clickOutside } from '../../libs/clickOutsideAction'
+  } from '../../../container-query';
+  import { slide } from 'svelte/transition';
+  import { clickOutside } from '../../libs/clickOutsideAction';
 
-  export let currentUrl = '/'
-  export let routes: IRoute[] = []
+  export let currentUrl = '/';
+  export let routes: IRoute[] = [];
 
-  let clientWidth: number
-  let bpClasses: string[] = []
-  let menuShown = false
-  let shouldAnimate = false
+  let clientWidth: number;
+  let bpClasses: string[] = [];
+  let menuShown = false;
+  let shouldAnimate = false;
 
   $: {
     bpClasses = getActiveBreakpointNames({
       breakpointInfos: DEFAULT_BREAKPOINT_INFOS,
       clientWidth,
-    })
+    });
 
-    menuShown = bpClasses.includes('bp-medium')
-    shouldAnimate = !bpClasses.includes('bp-medium')
+    menuShown = bpClasses.includes('bp-medium');
+    shouldAnimate = !bpClasses.includes('bp-medium');
   }
 </script>
 
@@ -44,25 +44,29 @@
   bind:clientWidth
   use:clickOutside
   on:clickOutside={() => {
-    menuShown = bpClasses.includes('bp-medium') ? true : false
-  }}>
+    menuShown = bpClasses.includes('bp-medium') ? true : false;
+  }}
+>
   <button
     class="menu"
     on:click={() => {
-      menuShown = !menuShown
-    }}>
+      menuShown = !menuShown;
+    }}
+  >
     <svelte:component this={Icon} data={bars} scale={2} />
   </button>
 
   {#if menuShown}
     <ul
       transition:slide={{ delay: 0, duration: shouldAnimate ? 300 : 0 }}
-      class:shown={menuShown}>
+      class:shown={menuShown}
+    >
       {#each routes as route}
         <NavItem2
           class={bpClasses}
           url={route.url}
-          selected={parse(currentUrl).path === route.url}>
+          selected={parse(currentUrl).path === route.url}
+        >
           {route.title}
         </NavItem2>
       {/each}

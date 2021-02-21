@@ -1,34 +1,30 @@
-import InfosGrid from './InfosGrid.svelte'
+import InfosGrid from './InfosGrid.svelte';
 
 export default {
   title: 'Presentational/InfosGrid',
   component: InfosGrid,
-  parameters: {
-    docs: {
-      iframeHeight: 750,
-    },
-  },
-}
+};
 
-export const Default = () => Mobile()
+export const Default = () => Mobile();
 
-export const Mobile = () => {
+const Mobile = () => {
   setTimeout(() => {
-    /** @type {HTMLDivElement?} */
-    const rootElement = document.querySelector('#root')
-    if (rootElement) {
-      // rootElement.style.minHeight = '300px'
-      rootElement.style.width = '320px'
-    }
-  })
+    /** @type {any} */ (window.frameElement).style.width = '320px';
+    /** @type {any} */ (window.frameElement).closest('div').style.height =
+      '850px';
+  });
 
   return {
     Component: InfosGrid,
-  }
-}
+  };
+};
 
 export const Desktop = () => {
+  setTimeout(() => {
+    /** @type {any} */ (window.frameElement).closest('div').style.height =
+      '700px';
+  });
   return {
     Component: InfosGrid,
-  }
-}
+  };
+};

@@ -2,10 +2,10 @@
   import {
     containerQuery,
     DEFAULT_BREAKPOINT_INFOS,
-  } from '../../../container-query'
+  } from '../../../container-query';
 
-  import accountantImage from './images/accountant@3x.png'
-  import trusteeImage from './images/trustee@3x.png'
+  import accountantImage from './images/accountant@3x.png';
+  import trusteeImage from './images/trustee@3x.png';
 </script>
 
 <div
@@ -72,8 +72,8 @@
   }
 
   .description {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
   h1 {

@@ -2,10 +2,10 @@
   import {
     containerQuery,
     DEFAULT_BREAKPOINT_INFOS,
-  } from '../../../container-query'
+  } from '../../../container-query';
 
-  export let heading: string
-  export let children: string = ''
+  export let heading: string;
+  export let children: string = '';
 </script>
 
 <div
@@ -23,7 +23,7 @@
   h1 {
     font-style: normal;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     line-height: 150%;
     color: #a9977b;
   }
@@ -33,7 +33,7 @@
     font-weight: normal;
     font-size: 1.8rem;
     line-height: 167%;
-    text-align: justify;
+    /* text-align: justify; */
     color: rgba(0, 0, 0, 0.51);
 
     margin-top: 2em;
@@ -46,7 +46,6 @@
     }
 
     h1 {
-      font-size: 3rem;
       flex: 2;
     }
 

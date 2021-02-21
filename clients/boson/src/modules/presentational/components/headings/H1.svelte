@@ -8,9 +8,10 @@
 
 <style lang="scss">
   .root {
-    font-size: 2.8rem;
-    font-weight: 600;
-    color: #2c363e;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 4.8rem;
+
+    color: rgba(0, 0, 0, 0.74);
   }
 </style>

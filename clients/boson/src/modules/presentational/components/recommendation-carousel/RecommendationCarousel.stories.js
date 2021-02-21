@@ -1,31 +1,30 @@
-import PageSummary from './PageSummary.svelte';
-import DefaultStory from './stories/DefaultStory.svelte';
+import RecommendationCarousel from './RecommendationCarousel.svelte';
 
 export default {
-  title: 'Presentational/PageSummary',
-  component: PageSummary,
+  title: 'Presentational/RecommendationCarousel',
+  component: RecommendationCarousel,
 };
 
 export const Default = () => Mobile();
 
-export const Mobile = () => {
+const Mobile = () => {
   setTimeout(() => {
     /** @type {any} */ (window.frameElement).style.width = '320px';
     /** @type {any} */ (window.frameElement).closest('div').style.height =
-      '1050px';
+      '850px';
   });
 
   return {
-    Component: DefaultStory,
+    Component: RecommendationCarousel,
   };
 };
 
 export const Desktop = () => {
   setTimeout(() => {
     /** @type {any} */ (window.frameElement).closest('div').style.height =
-      '550px';
+      '900px';
   });
   return {
-    Component: DefaultStory,
+    Component: RecommendationCarousel,
   };
 };

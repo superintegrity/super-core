@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { SummaryH1 } from '../summary-headings'
-  import { getConfig } from '../../../config'
+  import { SummaryH1 } from '../summary-headings';
+  import { getConfig } from '../../../config';
 
-  const { ADDRESS, EMAIL } = getConfig()
+  const { ADDRESS, EMAIL } = getConfig();
 </script>
 
 <div class="root {$$props.class || ''}">
@@ -26,22 +26,21 @@
   h2 {
     color: #7dd7e2;
     font-weight: 400;
-    font-size: 0.9rem;
+    font-size: 1.8rem;
     margin: 0.7em 0;
   }
 
   p {
     color: #bfbfbf;
     font-weight: 400;
-    font-size: 0.9rem;
+    font-size: 1.6rem;
     line-height: 1.3em;
   }
 
   p.phone,
   p.email {
     color: #bfbfbf;
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 500;
 
     a {
       color: #bfbfbf;

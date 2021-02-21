@@ -2,20 +2,20 @@
   import {
     containerQuery,
     DEFAULT_BREAKPOINT_INFOS,
-  } from '../../../modules/container-query'
-  import { H1 } from '../../../modules/presentational/components/headings'
-  import { InfoBox } from '../../../modules/presentational/components/info-box'
-  import smsfSetupSrc from './images/smsf-setup.png'
-  import adminSrc from './images/admin.png'
-  import consultingSrc from './images/consulting.png'
-  import documentSrc from './images/document.png'
+  } from '../../../modules/container-query';
+  import { H1 } from '../../../modules/presentational/components/headings';
+  import { InfoBox } from '../../../modules/presentational/components/info-box';
+  import smsfSetupSrc from './images/smsf-setup.png';
+  import adminSrc from './images/admin.png';
+  import consultingSrc from './images/consulting.png';
+  import documentSrc from './images/document.png';
 </script>
 
 <div
-  class="root {$$props.class || ''}"
+  class="service-content-root {$$props.class || ''}"
   use:containerQuery={DEFAULT_BREAKPOINT_INFOS}
 >
-  <H1 class="h1">Services</H1>
+  <H1 class="h1">Our Services</H1>
 
   <div class="info-boxes">
     <InfoBox class="info-box" icon="" heading="SMSF Setup">
@@ -54,14 +54,6 @@
 </div>
 
 <style lang="scss">
-  .root {
-    :global(.h1) {
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 1em;
-    }
-  }
-
   .info-boxes {
     display: flex;
     flex-direction: row;
@@ -70,9 +62,16 @@
 
     :global(.info-box) {
       flex: 1;
-      min-width: 16rem;
+      min-width: 28rem;
       margin-top: 20px;
       margin-left: 20px;
+    }
+  }
+
+  .service-content-root {
+    :global(.h1) {
+      text-align: center;
+      font-size: 2.5rem;
     }
   }
 
@@ -81,7 +80,7 @@
     font-weight: normal;
     font-size: 1.8rem;
     color: rgba(0, 0, 0, 0.44);
-    margin-top: 3rem;
+    margin-top: 30px;
   }
 
   li {
@@ -96,15 +95,15 @@
       margin-left: -50px;
 
       :global(.info-box) {
-        min-width: 30rem;
+        min-width: 40%;
         margin-left: 50px;
-        margin-top: 30px;
+        margin-top: 60px;
       }
     }
 
     :global(.h1) {
-      font-size: 2.8rem;
-      text-align: center;
+      font-size: 4.8rem;
+      margin-bottom: 20px;
     }
   }
 </style>
