@@ -21,14 +21,9 @@
     align-items: stretch;
   }
 
-  .root-child {
-    background-color: red;
-  }
-
   .image {
     flex: 2;
     min-width: 20rem;
-    background-color: red;
   }
 
   img {

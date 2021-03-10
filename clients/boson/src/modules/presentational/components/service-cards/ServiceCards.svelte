@@ -56,6 +56,8 @@
 
   ul {
     list-style: disc;
-    list-style-position: inside;
+    list-style-position: outside;
+    margin-left: 1.2em;
+    margin-top: 0.8em;
   }
 </style>

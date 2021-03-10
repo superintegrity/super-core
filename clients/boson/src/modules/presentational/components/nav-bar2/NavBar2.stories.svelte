@@ -1,14 +1,3 @@
-<!-- <script lang="ts" ✂prettier:content✂="CiAgaW1wb3J0IHsgTWV0YSwgU3RvcnkgfSBmcm9tICdAc3Rvcnlib29rL2FkZG9uLXN2ZWx0ZS1jc2YnOwogIGltcG9ydCB0eXBlIHsgSVJvdXRlIH0gZnJvbSAnLi9JUm91dGUnOwoKICBpbXBvcnQgTmF2QmFyMiBmcm9tICcuL05hdkJhcjIuc3ZlbHRlJzsKCiAgY29uc3QgUk9VVEVTOiBJUm91dGVbXSA9IFsKICAgIHsKICAgICAgdXJsOiAnLycsCiAgICAgIHRpdGxlOiAnSG9tZScsCiAgICB9LAogICAgewogICAgICB1cmw6ICcvc2VydmljZScsCiAgICAgIHRpdGxlOiAnU2VydmljZXMnLAogICAgfSwKICAgIHsKICAgICAgdXJsOiAnL2Fib3V0JywKICAgICAgdGl0bGU6ICdBYm91dCcsCiAgICB9LAogICAgewogICAgICB1cmw6ICcvY29udGFjdCcsCiAgICAgIHRpdGxlOiAnQ29udGFjdCcsCiAgICB9LAogIF07Cg==" ✂prettier:content✂="e30=" ✂prettier:content✂="e30=" ✂prettier:content✂="e30=" ✂prettier:content✂="e30=" ✂prettier:content✂="e30=" ✂prettier:content✂="e30=" ✂prettier:content✂="e30=" ✂prettier:content✂="e30=" ✂prettier:content✂="e30=" ✂prettier:content✂="e30=" ✂prettier:content✂="e30=" ✂prettier:content✂="e30=" ✂prettier:content✂="e30=">{}</script>
-
-<Meta title="Presentational/NavBar3" component={NavBar2} />
-
-<Story name="Default">
-  <NavBar2 routes={ROUTES} />
-</Story>
-
-<Story name="SelectedAbout">
-  <NavBar2 routes={ROUTES} currentUrl="/about" />
-</Story> -->
 <script>
   import { Meta, Story } from '@storybook/addon-svelte-csf';
 
