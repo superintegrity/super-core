@@ -1,9 +1,9 @@
 <script lang="ts">
-  import truncate from 'lodash/truncate'
+  import truncate from 'lodash/truncate';
 
-  export let imageSrc: string
-  export let heading: string
-  export let summary: string
+  export let imageSrc: string;
+  export let heading: string;
+  export let summary: string;
 </script>
 
 <div class="root {$$props.class || ''}" data-aos="zoom-in">
@@ -27,14 +27,14 @@
   }
 
   .root-child {
-    margin-top: 20px;
+    margin-top: 28px;
     margin-left: 20px;
   }
 
   .image {
     flex: 1;
     min-width: 20rem;
-    margin-top: 28px;
+    /* margin-top: 28px; */
   }
 
   img {

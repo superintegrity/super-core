@@ -37,7 +37,7 @@
     line-height: 1.3em;
   }
 
-  p.phone,
+  /* p.phone, */
   p.email {
     color: #bfbfbf;
     font-weight: 500;
