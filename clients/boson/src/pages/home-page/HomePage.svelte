@@ -5,8 +5,7 @@
   import { PageSummary } from '../../modules/presentational/components/page-summary';
 
   import { ServicesContent } from './services-content';
-  import { KeyPointsContent } from './key-points-content';
-  import { InfosGrid } from '../../modules/presentational/components/infos-grid';
+  import { InfosContent } from './infos-content';
 </script>
 
 <DefaultLayout currentUrl="/">
@@ -38,7 +37,7 @@
   </section>
 
   <div class="infos-grid-wrapper">
-    <InfosGrid />
+    <InfosContent />
   </div>
 
   <section>

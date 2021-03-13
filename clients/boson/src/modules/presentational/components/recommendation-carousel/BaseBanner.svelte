@@ -10,7 +10,7 @@
     </p>
     <p class="name">{messageAuthor}</p>
   </div>
-  <img src={bannerSrc} alt="Banner 1" />
+  <img src={bannerSrc} alt="Banner" />
 </div>
 
 <style lang="scss">
@@ -25,7 +25,7 @@
 
       padding: 5%;
 
-      width: clamp(200px, 70%, 600px);
+      width: clamp(200px, 70%, 800px);
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);

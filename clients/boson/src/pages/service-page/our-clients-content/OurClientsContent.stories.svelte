@@ -5,7 +5,7 @@
 </script>
 
 <Meta
-  title="Page/About/OurClientsContent"
+  title="Page/Service/OurClientsContent"
   component={OurClientsContent}
   parameters={{
     docs: {

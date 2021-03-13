@@ -52,8 +52,14 @@
   }
 
   .description {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: max(20px, 10%);
+    margin-right: max(20px, 10%);
+    padding-bottom: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   h1 {

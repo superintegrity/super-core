@@ -20,15 +20,11 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      align-items: flex-start;
     }
 
     :global(.cell) {
       flex: 1;
-      min-width: 300px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      min-width: 30rem;
     }
 
     &.bp-medium {

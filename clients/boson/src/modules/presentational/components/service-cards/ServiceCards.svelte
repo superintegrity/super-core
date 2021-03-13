@@ -7,7 +7,7 @@
   import documentSrc from './images/document@3x.png';
 </script>
 
-<div class="root {$$props.class || ''}">
+<div class="service-cards-root {$$props.class || ''}">
   <div class="card">
     <ServiceCard imageSrc={smsfSrc} heading="SMSF Setup">
       We offer administration services to facilitate SMSF establishment process,
@@ -47,7 +47,7 @@
 </div>
 
 <style lang="scss">
-  .root {
+  .service-cards-root {
   }
 
   .card + .card {

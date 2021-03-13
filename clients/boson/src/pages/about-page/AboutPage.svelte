@@ -2,7 +2,6 @@
   import { DefaultLayout } from '../../modules/default-layout';
   import { H1 } from '../../modules/presentational/components/headings';
   import { ServiceCards } from '../../modules/presentational/components/service-cards';
-  import { OurClientsContent } from './our-clients-content';
   import bannerSrc from './images/banner-about@3x.png';
 
   export let currentUrl = '/about';
@@ -16,11 +15,6 @@
       <H1 class="h1">Our Services</H1>
       <ServiceCards />
     </section>
-
-    <div class="our-clients-content-wrapper">
-      <H1 class="h1">Our Clients</H1>
-      <OurClientsContent />
-    </div>
   </div>
 </DefaultLayout>
 

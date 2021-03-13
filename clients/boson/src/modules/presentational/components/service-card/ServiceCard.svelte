@@ -4,7 +4,7 @@
   export let children: string = '';
 </script>
 
-<div class="root {$$props.class || ''}" data-aos="zoom-in">
+<div class="root {$$props.class || ''}">
   <div class="root-child image"><img src={imageSrc} alt="service" /></div>
   <div class="root-child content">
     <h1>{heading}</h1>
