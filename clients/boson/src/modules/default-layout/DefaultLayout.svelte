@@ -28,14 +28,14 @@
 </script>
 
 <Context>
-  <header>
+  <header class="layout-header-root">
     <Logo />
     <NavBar2 routes={ROUTES} class="nav" currentUrl={currentUrl} />
   </header>
-  <main class="root {$$props.class || ''}">
+  <main class="layout-main-root {$$props.class || ''}">
     <slot />
   </main>
-  <footer>
+  <footer class="layout-footer-root">
     <AboutSummaryBox class="summary-box" />
     <ContactSummaryBox class="summary-box" />
   </footer>
@@ -57,7 +57,6 @@
   }
 
   footer {
-    margin-top: 100px;
     padding: 6em 3%;
     background-color: #0e0f10;
 

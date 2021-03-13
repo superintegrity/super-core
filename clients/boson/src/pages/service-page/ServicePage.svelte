@@ -1,20 +1,11 @@
 <script lang="ts">
-  import { DefaultLayout } from '../../modules/default-layout'
-  import { PageSummary } from '../../modules/presentational/components/page-summary'
-  import { Banner } from '../../modules/presentational/components/banner'
-  import summaryImageSrc from './images/summary.png'
-  import { KeyPointsContent } from './key-points-content'
-  import { H1, H2 } from '../../modules/presentational/components/headings'
+  import { DefaultLayout } from '../../modules/default-layout';
+  import bannerSrc from './images/banner-service@3x.png';
+  import { H1, H2 } from '../../modules/presentational/components/headings';
 </script>
 
 <DefaultLayout currentUrl="/service">
-  <Banner />
-  <section>
-    <PageSummary
-      imageSrc={summaryImageSrc}
-      heading="We help our customer to build Digital World"
-      content="Maecenas quis neque libero. Class aptent taciti.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Pellentesque convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget pulvinar neque pharetra ac." />
-  </section>
+  <img class="banner" src={bannerSrc} alt="service banner" />
 
   <section>
     <H1>Advisors / Accountants</H1>
@@ -46,13 +37,17 @@
       any questions you may have.
     </p>
   </section>
-
-  <section>
-    <KeyPointsContent />
-  </section>
 </DefaultLayout>
 
 <style lang="scss">
+  img.banner {
+    width: 100%;
+    min-height: 220px;
+    max-height: 600px;
+    object-position: center top;
+    object-fit: cover;
+  }
+
   section {
     margin-top: 100px;
     margin-left: auto;

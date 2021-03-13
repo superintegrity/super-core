@@ -59,6 +59,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     margin-left: -20px;
+    margin-top: -20px;
 
     :global(.info-box) {
       flex: 1;
@@ -71,7 +72,8 @@
   .service-content-root {
     :global(.h1) {
       text-align: center;
-      font-size: 2.5rem;
+      font-size: clamp(2.5rem, 5vw, 4.8rem);
+      margin-bottom: clamp(20px, 5vw, 80px);
     }
   }
 
@@ -92,18 +94,10 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      margin-left: -50px;
 
       :global(.info-box) {
         min-width: 40%;
-        margin-left: 50px;
-        margin-top: 60px;
       }
-    }
-
-    :global(.h1) {
-      font-size: 4.8rem;
-      margin-bottom: 20px;
     }
   }
 </style>

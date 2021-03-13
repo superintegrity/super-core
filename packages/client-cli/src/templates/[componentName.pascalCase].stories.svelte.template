@@ -1,0 +1,15 @@
+<script>
+  import { Meta, Story } from '@storybook/addon-svelte-csf';
+
+  import <%= componentName.pascalCase %> from './<%= componentName.pascalCase %>.svelte'
+</script>
+
+<Meta
+  title="Presentational/<%= componentName.pascalCase %>"
+  component={<%= componentName.pascalCase %>}
+  
+/>
+
+<Story name="Default">
+  <<%= componentName.pascalCase %> />
+</Story>

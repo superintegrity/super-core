@@ -1,26 +1,27 @@
 <script lang="ts">
-  import { DefaultLayout } from '../../modules/default-layout'
-  import { Banner } from '../../modules/presentational/components/banner'
-  import { getConfig } from '../../modules/config'
+  import { DefaultLayout } from '../../modules/default-layout';
+  import { getConfig } from '../../modules/config';
   import {
     containerQuery,
     DEFAULT_BREAKPOINT_INFOS,
-  } from '../../modules/container-query'
-  import { ContactsContent } from './contacts-content'
+  } from '../../modules/container-query';
+  import { ContactsContent } from './contacts-content';
+  import bannerSrc from './images/banner-contact@3x.png';
 
-  const { MAP_API_KEY } = getConfig()
-  const mapMarker = '203-205 Blackburn Road, Mount Waverley VIC 3149'
+  const { MAP_API_KEY } = getConfig();
+  const mapMarker = '203-205 Blackburn Road, Mount Waverley VIC 3149';
 
   const mapSrc = `https://www.google.com/maps/embed/v1/place?key=${MAP_API_KEY}&q=${encodeURIComponent(
     mapMarker,
-  )}`
+  )}`;
 </script>
 
 <DefaultLayout currentUrl="/contact">
   <div
     class={false ? 'bp-medium' : ''}
-    use:containerQuery={DEFAULT_BREAKPOINT_INFOS}>
-    <Banner />
+    use:containerQuery={DEFAULT_BREAKPOINT_INFOS}
+  >
+    <img class="banner" src={bannerSrc} alt="service banner" />
 
     <section class="map">
       <h1>Contact Us</h1>
@@ -34,6 +35,14 @@
 </DefaultLayout>
 
 <style lang="scss">
+  img.banner {
+    width: 100%;
+    min-height: 220px;
+    max-height: 600px;
+    object-position: center top;
+    object-fit: cover;
+  }
+
   section {
     margin-top: 60px;
     margin-left: auto;

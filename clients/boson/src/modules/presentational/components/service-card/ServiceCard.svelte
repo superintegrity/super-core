@@ -22,8 +22,8 @@
   }
 
   .image {
-    flex: 2;
-    min-width: 20rem;
+    flex: 1;
+    min-width: 30rem;
   }
 
   img {
@@ -34,7 +34,7 @@
 
   .content {
     flex: 4;
-    min-width: 18rem;
+    min-width: 30rem;
     background-color: rgb(243, 243, 243);
     padding-top: 30px;
     padding-bottom: 30px;

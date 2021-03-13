@@ -1,22 +1,10 @@
-<script>
-  import { Meta, Story } from '@storybook/addon-svelte-csf';
-
-  import InfosGrid from './InfosGrid.svelte';
+<script lang="ts">
+  import { InfosGrid } from '../../../modules/presentational/components/infos-grid';
   import accountantImage from './images/accountant@3x.png';
   import trusteeImage from './images/trustee@3x.png';
 </script>
 
-<Meta
-  title="Presentational/InfosGrid"
-  component={InfosGrid}
-  parameters={{
-    docs: {
-      iframeHeight: 850,
-    },
-  }}
-/>
-
-<Story name="Default">
+<div class="infos-content-root {$$props.class || ''}">
   <InfosGrid>
     <div class="row">
       <div class="cell">
@@ -50,9 +38,12 @@
       </div>
     </div>
   </InfosGrid>
-</Story>
+</div>
 
-<style>
+<style lang="scss">
+  .infos-content-root {
+  }
+
   img {
     object-position: center top;
     object-fit: cover;
@@ -68,7 +59,7 @@
   h1 {
     font-style: normal;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: clamp(2rem, 3vw, 3rem);
     line-height: 116%;
     color: rgba(0, 0, 0, 0.69);
     margin-top: 1em;
