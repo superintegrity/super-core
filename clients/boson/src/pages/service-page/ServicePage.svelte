@@ -3,7 +3,7 @@
   import bannerSrc from './images/banner-service@3x.png';
   import { H1 } from '../../modules/presentational/components/headings';
   import { OurClientsContent } from './our-clients-content';
-  import { ServiceCards } from '../../modules/presentational/components/service-cards';
+  import OurServicesContent from './our-services-content/OurServicesContent.svelte';
 </script>
 
 <DefaultLayout currentUrl="/service">
@@ -12,7 +12,7 @@
 
     <section>
       <H1 class="h1">Our Services</H1>
-      <ServiceCards />
+      <OurServicesContent />
     </section>
 
     <div class="our-clients-content-wrapper">

@@ -11,7 +11,7 @@
   component={InfosGrid}
   parameters={{
     docs: {
-      iframeHeight: 850,
+      iframeHeight: 950,
     },
   }}
 />

@@ -4,7 +4,7 @@
   import Counter from './Counter.svelte';
 </script>
 
-<Meta title="Presentational/Counter" component={Counter} />
+<Meta title="Sample/Counter" component={Counter} />
 
 <Story name="Default">
   <Counter />

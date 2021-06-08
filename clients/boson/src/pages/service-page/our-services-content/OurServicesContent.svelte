@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ServiceCard } from '../service-card';
+  import { ServiceCard } from '../../../modules/presentational/components/service-card';
 
   import smsfSrc from './images/smsf@3x.png';
   import adminSrc from './images/admin@3x.png';
@@ -7,7 +7,7 @@
   import documentSrc from './images/document@3x.png';
 </script>
 
-<div class="service-cards-root {$$props.class || ''}">
+<div class="our-services-content-root {$$props.class || ''}">
   <div class="card">
     <ServiceCard imageSrc={smsfSrc} heading="SMSF Setup">
       We offer administration services to facilitate SMSF establishment process,
@@ -47,7 +47,7 @@
 </div>
 
 <style lang="scss">
-  .service-cards-root {
+  .our-services-content-root {
   }
 
   .card + .card {
