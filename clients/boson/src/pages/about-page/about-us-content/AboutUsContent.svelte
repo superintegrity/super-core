@@ -2,9 +2,10 @@
   import { ServiceCard } from '../../../modules/presentational/components/service-card';
 
   import smsfSrc from './images/smsf@3x.png';
+
 </script>
 
-<div class="our-services-content-root {$$props.class || ''}">
+<div class="about-us-content-root {$$props.class || ''}">
   <div class="card">
     <ServiceCard imageSrc={smsfSrc} heading="SMSF Setup">
       We offer administration services to facilitate SMSF establishment process,
@@ -16,7 +17,7 @@
 </div>
 
 <style lang="scss">
-  .our-services-content-root {
+  .about-us-content-root {
   }
 
   .card + .card {
@@ -29,4 +30,5 @@
     margin-left: 1.2em;
     margin-top: 0.8em;
   }
+
 </style>

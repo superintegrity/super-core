@@ -4,6 +4,7 @@
   import InfosGrid from './InfosGrid.svelte';
   import accountantImage from './images/accountant@3x.png';
   import trusteeImage from './images/trustee@3x.png';
+
 </script>
 
 <Meta
@@ -11,7 +12,7 @@
   component={InfosGrid}
   parameters={{
     docs: {
-      iframeHeight: 950,
+      iframeHeight: 1050,
     },
   }}
 />
@@ -93,4 +94,5 @@
   li {
     margin-top: 0.6em;
   }
+
 </style>
