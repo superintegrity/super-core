@@ -1,19 +1,18 @@
 <script lang="ts">
   import { DefaultLayout } from '../../modules/default-layout';
   import { H1 } from '../../modules/presentational/components/headings';
-  import { ServiceCards } from '../../modules/presentational/components/service-cards';
+  import { AboutUsContent } from './about-us-content';
   import bannerSrc from './images/banner-about@3x.png';
 
-  export let currentUrl = '/about';
 </script>
 
-<DefaultLayout currentUrl={currentUrl}>
+<DefaultLayout currentUrl="/about">
   <div class="about-page-root">
     <img class="banner" src={bannerSrc} alt="about banner" />
 
     <section>
-      <H1 class="h1">Our Services</H1>
-      <ServiceCards />
+      <H1 class="h1">About Us</H1>
+      <AboutUsContent />
     </section>
   </div>
 </DefaultLayout>
@@ -25,6 +24,7 @@
     img.banner {
       width: 100%;
       min-height: 220px;
+      height: 30vw;
       max-height: 600px;
       object-position: center top;
       object-fit: cover;
@@ -50,9 +50,6 @@
       font-size: clamp(2.5rem, 5vw, 4.8rem);
       margin-bottom: clamp(20px, 5vw, 80px);
     }
-
-    .our-clients-content-wrapper {
-      margin-top: 100px;
-    }
   }
+
 </style>

@@ -1,28 +1,29 @@
 <script lang="ts">
-  import { decrement, increment } from '../../../count'
+  import { decrement, increment } from '../../../count';
 
-  export let count = 0
+  export let count = 0;
+
 </script>
 
 <button
   on:click={() => {
-    count = increment(count)
-  }}>
+    count = increment(count);
+  }}
+>
   Clicks:
   {count}
 </button>
 
 <button
   on:click={() => {
-    count = decrement(count)
-  }}>
+    count = decrement(count);
+  }}
+>
   Decrement
 </button>
 
 <style lang="scss">
   button {
-    font-family: inherit;
-    font-size: inherit;
     padding: 1em 2em;
     color: #ff3e00;
     background-color: rgba(255, 62, 0, 0.1);
@@ -40,4 +41,5 @@
   button:active {
     background-color: rgba(255, 62, 0, 0.2);
   }
+
 </style>

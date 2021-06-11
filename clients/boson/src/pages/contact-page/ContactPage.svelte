@@ -1,5 +1,6 @@
 <script lang="ts">
   import { DefaultLayout } from '../../modules/default-layout';
+  import { H1 } from '../../modules/presentational/components/headings';
   import { getConfig } from '../../modules/config';
   import {
     containerQuery,
@@ -14,6 +15,7 @@
   const mapSrc = `https://www.google.com/maps/embed/v1/place?key=${MAP_API_KEY}&q=${encodeURIComponent(
     mapMarker,
   )}`;
+
 </script>
 
 <DefaultLayout currentUrl="/contact">
@@ -24,7 +26,7 @@
     <img class="banner" src={bannerSrc} alt="service banner" />
 
     <section class="map">
-      <h1>Contact Us</h1>
+      <H1 class="h1">Contact Us</H1>
       <iframe title="address" src={mapSrc} />
     </section>
 
@@ -38,6 +40,7 @@
   img.banner {
     width: 100%;
     min-height: 220px;
+    height: 30vw;
     max-height: 600px;
     object-position: center top;
     object-fit: cover;
@@ -63,12 +66,10 @@
     }
   }
 
-  h1 {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #2c363e;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
-    margin-bottom: 30px;
+  :global(.h1) {
+    text-align: center;
+    font-size: clamp(2.5rem, 5vw, 4.8rem);
+    margin-bottom: clamp(20px, 5vw, 80px);
   }
 
   iframe {
@@ -85,4 +86,5 @@
       height: 350px;
     }
   }
+
 </style>

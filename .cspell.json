@@ -3,7 +3,8 @@
   "language": "en",
   "words": [
     "preprocessors",
-    "sveltejs"
+    "sveltejs",
+    "iframe"
   ],
   "ignoreWords": [
     "lerna",
