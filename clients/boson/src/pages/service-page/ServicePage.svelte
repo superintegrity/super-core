@@ -4,6 +4,7 @@
   import { H1 } from '../../modules/presentational/components/headings';
   import { OurClientsContent } from './our-clients-content';
   import OurServicesContent from './our-services-content/OurServicesContent.svelte';
+
 </script>
 
 <DefaultLayout currentUrl="/service">
@@ -59,4 +60,5 @@
       margin-top: 100px;
     }
   }
+
 </style>

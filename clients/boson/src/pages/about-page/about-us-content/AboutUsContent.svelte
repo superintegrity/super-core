@@ -1,13 +1,13 @@
 <script lang="ts">
   import { ServiceCard } from '../../../modules/presentational/components/service-card';
 
-  import smsfSrc from './images/smsf@3x.png';
+  import dueDiligenceSrc from './images/due-diligence@3x.png';
 
 </script>
 
 <div class="about-us-content-root {$$props.class || ''}">
   <div class="card">
-    <ServiceCard imageSrc={smsfSrc} heading="SMSF Setup">
+    <ServiceCard imageSrc={dueDiligenceSrc}>
       We are registered tax agents, IPAs, CPAs and accredited SMSF specialist
       advisors. We have been working in SMSF industry for over 20 years. We do
       not deal with investment or financial products hence our advice is

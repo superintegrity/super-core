@@ -2,10 +2,6 @@
   import { DefaultLayout } from '../../modules/default-layout';
   import { H1 } from '../../modules/presentational/components/headings';
   import { getConfig } from '../../modules/config';
-  import {
-    containerQuery,
-    DEFAULT_BREAKPOINT_INFOS,
-  } from '../../modules/container-query';
   import { ContactsContent } from './contacts-content';
   import bannerSrc from './images/banner-contact@3x.png';
 
@@ -19,10 +15,7 @@
 </script>
 
 <DefaultLayout currentUrl="/contact">
-  <div
-    class={false ? 'bp-medium' : ''}
-    use:containerQuery={DEFAULT_BREAKPOINT_INFOS}
-  >
+  <div class="contract-page-root">
     <img class="banner" src={bannerSrc} alt="service banner" />
 
     <section class="map">
@@ -37,6 +30,10 @@
 </DefaultLayout>
 
 <style lang="scss">
+  .contract-page-root {
+    margin-bottom: 100px;
+  }
+
   img.banner {
     width: 100%;
     min-height: 220px;
@@ -74,17 +71,7 @@
 
   iframe {
     width: 100%;
-    height: 250px;
-  }
-
-  .bp-medium {
-    h1 {
-      font-size: 2rem;
-    }
-
-    iframe {
-      height: 350px;
-    }
+    height: clamp(250px, 100vw, 450px);
   }
 
 </style>

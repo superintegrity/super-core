@@ -1,19 +1,23 @@
 <script lang="ts">
   export let imageSrc: string;
-  export let heading: string;
+  export let heading: string = '';
   export let children: string = '';
+
 </script>
 
-<div class="root {$$props.class || ''}">
+<div class="service-card-root {$$props.class || ''}">
   <div class="root-child image"><img src={imageSrc} alt="service" /></div>
   <div class="root-child content">
-    <h1>{heading}</h1>
+    {#if heading}
+      <h1>{heading}</h1>
+    {/if}
     <p><slot>{children}</slot></p>
   </div>
 </div>
 
 <style lang="scss">
-  .root {
+  .service-card-root {
+    background-color: rgb(243, 243, 243);
     display: flex;
     flex-wrap: wrap;
     justify-content: stretch;
@@ -23,7 +27,7 @@
 
   .image {
     flex: 1;
-    min-width: 30rem;
+    min-width: 25rem;
   }
 
   img {
@@ -59,4 +63,5 @@
 
     margin-top: 30px;
   }
+
 </style>
