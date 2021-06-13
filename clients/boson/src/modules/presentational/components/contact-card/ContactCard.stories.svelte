@@ -6,7 +6,7 @@
 </script>
 
 <Meta
-  title="Sample/ContactCard"
+  title="Presentational/ContactCard"
   component={ContactCard}
   parameters={{
     docs: {
@@ -16,21 +16,17 @@
 />
 
 <Story name="Default">
-  <ContactCard heading="Phone Number" content="0430 777 699" icon={phone} />
+  <ContactCard heading="Phone Number" icon={phone}>0430 777 699</ContactCard>
 </Story>
 
 <Story name="EmailAddress">
-  <ContactCard
-    heading="Email Address"
-    content="info@superintegrity.com.au"
-    icon={envelope}
-  />
+  <ContactCard heading="Email Address" icon={envelope}>
+    info@superintegrity.com.au
+  </ContactCard>
 </Story>
 
 <Story name="Location">
-  <ContactCard
-    heading="Location"
-    content="Suite 2.17/203-205 Blackburn Road, Mount Waverley VIC 3149"
-    icon={mapMarker}
-  />
+  <ContactCard heading="Location" icon={mapMarker}>
+    Suite 2.17/203-205 Blackburn Road, Mount Waverley VIC 3149
+  </ContactCard>
 </Story>

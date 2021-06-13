@@ -1,9 +1,10 @@
 <script lang="ts">
-  import { envelope, mapMarker } from 'svelte-awesome/icons'
-  import { ContactCard } from '../../../modules/presentational/components/contact-card'
-  import { getConfig } from '../../../modules/config'
+  import { envelope, mapMarker } from 'svelte-awesome/icons';
+  import { ContactCard } from '../../../modules/presentational/components/contact-card';
+  import { getConfig } from '../../../modules/config';
 
-  const { ADDRESS, EMAIL } = getConfig()
+  const { ADDRESS, EMAIL } = getConfig();
+
 </script>
 
 <div class="root {$$props.class || ''}">
@@ -20,6 +21,7 @@
 
 <style lang="scss">
   .root {
+    height: 25rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -39,4 +41,5 @@
       text-decoration: none;
     }
   }
+
 </style>
