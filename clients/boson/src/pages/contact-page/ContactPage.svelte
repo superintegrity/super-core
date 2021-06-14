@@ -3,7 +3,7 @@
   import { H1 } from '../../modules/presentational/components/headings';
   import { getConfig } from '../../modules/config';
   import { ContactsContent } from './contacts-content';
-  import bannerSrc from './images/banner-contact@3x.png';
+  import bannerSrc from './images/contact-banner.jpg';
 
   const { MAP_API_KEY } = getConfig();
   const mapMarker = '203-205 Blackburn Road, Mount Waverley VIC 3149';
@@ -37,7 +37,6 @@
   img.banner {
     width: 100%;
     min-height: 220px;
-    height: 30vw;
     max-height: 600px;
     object-position: center top;
     object-fit: cover;

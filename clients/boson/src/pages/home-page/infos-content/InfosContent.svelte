@@ -1,7 +1,8 @@
 <script lang="ts">
   import { InfosGrid } from '../../../modules/presentational/components/infos-grid';
-  import accountantImage from './images/accountant@3x.png';
-  import trusteeImage from './images/trustee@3x.png';
+  import accountantImage from './images/accountant.jpg';
+  import trusteeImage from './images/trustee.jpg';
+
 </script>
 
 <div class="infos-content-root {$$props.class || ''}">
@@ -83,4 +84,5 @@
   li {
     margin-top: 0.6em;
   }
+
 </style>

@@ -25,6 +25,7 @@
       title: 'Contact',
     },
   ];
+
 </script>
 
 <Context>
@@ -72,4 +73,5 @@
       margin-right: 2%;
     }
   }
+
 </style>

@@ -26,8 +26,8 @@
   }
 
   .image {
-    flex: 1;
-    min-width: 25rem;
+    flex: 2;
+    min-width: 30rem;
   }
 
   img {
@@ -37,7 +37,7 @@
   }
 
   .content {
-    flex: 4;
+    flex: 5;
     min-width: 30rem;
     background-color: rgb(243, 243, 243);
     padding-top: 30px;
@@ -58,7 +58,7 @@
     font-style: normal;
     font-weight: normal;
     font-size: 1.8rem;
-    line-height: 139%;
+    line-height: 180%;
     color: rgba(0, 0, 0, 0.38);
 
     margin-top: 30px;

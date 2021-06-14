@@ -2,23 +2,27 @@
   import { DefaultLayout } from '../../modules/default-layout';
   import { H1 } from '../../modules/presentational/components/headings';
   import { AboutUsContent } from './about-us-content';
-  import bannerSrc from './images/banner@3x.png';
-  import bottomBannerSrc from './images/bottom-banner@3x.png';
-  import type { default as SvelteImage } from 'svelte-image';
+  import bannerSrc from './images/banner.jpg';
+  import bottomBannerSrc from './images/bottom-banner.jpg';
 
-  import { onMount } from 'svelte';
-  let Image: typeof SvelteImage;
+  // It caused bug: navigate from /about to /service shows blank
+  // import type { default as SvelteImage } from 'svelte-image';
 
-  onMount(async () => {
-    const module = await import('svelte-image');
-    Image = module.default;
-  });
+  // import { onMount } from 'svelte';
+  // let Image: typeof SvelteImage;
+
+  // onMount(async () => {
+  //   const module = await import('svelte-image');
+  //   Image = module.default;
+  // });
 
 </script>
 
 <DefaultLayout currentUrl="/about">
   <div class="about-page-root">
-    <svelte:component this={Image} src={bannerSrc} alt="about banner" />
+    <!-- It caused bug: navigate from /about to /service shows blank -->
+    <!-- <svelte:component this={Image} class="banner" src={bannerSrc} alt="about banner" /> -->
+    <img src={bannerSrc} class="banner" alt="about banner" />
 
     <section class="top-section">
       <H1 class="h1">About Us</H1>
@@ -40,9 +44,8 @@
     img.banner {
       width: 100%;
       min-height: 220px;
-      height: 30vw;
       max-height: 600px;
-      object-position: center top;
+      object-position: center 30%;
       object-fit: cover;
     }
 
@@ -50,6 +53,7 @@
       margin-top: 100px;
       margin-left: auto;
       margin-right: auto;
+      max-width: 1400px;
       padding-left: 5%;
       padding-right: 5%;
       margin-bottom: 100px;
@@ -76,12 +80,12 @@
     img.bottom-banner {
       width: 100%;
       min-height: 220px;
-      height: 50vw;
       max-height: 500px;
       object-position: center top;
       object-fit: cover;
 
-      // Paul Debug: check again with the real image
+      // Paul Debug: check again with the real image,
+      // Why is this needed
       margin-bottom: -2px;
     }
   }

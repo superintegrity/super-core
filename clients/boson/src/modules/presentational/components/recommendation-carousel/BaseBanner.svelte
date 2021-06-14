@@ -1,6 +1,7 @@
 <script lang="ts">
-  import bannerSrc from './images/banner@3x.png';
+  import bannerSrc from './images/banner.jpg';
   export let messageAuthor: string;
+
 </script>
 
 <div class="base-banner-root {$$props.class || ''}">
@@ -39,10 +40,12 @@
     }
 
     img {
-      object-position: center top;
+      object-position: center 50%;
       object-fit: cover;
       width: 100%;
       min-height: 300px;
+      max-height: 600px;
     }
   }
+
 </style>

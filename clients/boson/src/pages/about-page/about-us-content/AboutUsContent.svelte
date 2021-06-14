@@ -1,7 +1,7 @@
 <script lang="ts">
   import { ServiceCard } from '../../../modules/presentational/components/service-card';
 
-  import dueDiligenceSrc from './images/due-diligence@3x.png';
+  import dueDiligenceSrc from './images/due-diligence.jpg';
 
 </script>
 

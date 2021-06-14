@@ -1,6 +1,6 @@
 <script lang="ts">
   import { DefaultLayout } from '../../modules/default-layout';
-  import bannerSrc from './images/banner-service@3x.png';
+  import bannerSrc from './images/services-banner.jpg';
   import { H1 } from '../../modules/presentational/components/headings';
   import { OurClientsContent } from './our-clients-content';
   import OurServicesContent from './our-services-content/OurServicesContent.svelte';
@@ -31,7 +31,7 @@
       width: 100%;
       min-height: 220px;
       max-height: 600px;
-      object-position: center top;
+      object-position: center center;
       object-fit: cover;
     }
 
@@ -39,6 +39,7 @@
       margin-top: 100px;
       margin-left: auto;
       margin-right: auto;
+      max-width: 1600px;
       padding-left: 5%;
       padding-right: 5%;
     }

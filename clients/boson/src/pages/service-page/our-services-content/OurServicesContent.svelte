@@ -1,10 +1,11 @@
 <script lang="ts">
   import { ServiceCard } from '../../../modules/presentational/components/service-card';
 
-  import smsfSrc from './images/smsf@3x.png';
-  import adminSrc from './images/admin@3x.png';
-  import consultingSrc from './images/consulting@3x.png';
-  import documentSrc from './images/document@3x.png';
+  import smsfSrc from './images/smsf.jpg';
+  import adminSrc from './images/admin.jpg';
+  import consultingSrc from './images/consulting.jpg';
+  import documentSrc from './images/document.jpg';
+
 </script>
 
 <div class="our-services-content-root {$$props.class || ''}">
@@ -60,4 +61,5 @@
     margin-left: 1.2em;
     margin-top: 0.8em;
   }
+
 </style>

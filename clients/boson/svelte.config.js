@@ -1,5 +1,5 @@
 const sveltePreprocess = require('svelte-preprocess');
-const image = require('svelte-image');
+// const image = require('svelte-image');
 
 module.exports = {
   // Consult https://github.com/sveltejs/svelte-preprocess
@@ -8,9 +8,9 @@ module.exports = {
     {
       ...sveltePreprocess(),
     },
-    {
-      ...image(),
-    },
+    // {
+    //   ...image(),
+    // },
   ],
 
   // By default, `npm run build` will create a standard Node app.

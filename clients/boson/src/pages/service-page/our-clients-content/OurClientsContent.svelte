@@ -1,7 +1,8 @@
 <script lang="ts">
   import { InfosGrid } from '../../../modules/presentational/components/infos-grid';
-  import adviserImage from './images/adviser@3x.png';
-  import smsfTrusteeImage from './images/smsf-trustee@3x.png';
+  import adviserImage from './images/adviser.jpg';
+  import smsfTrusteeImage from './images/smsf.jpg';
+
 </script>
 
 <div class="our-clients-content-root {$$props.class || ''}">
@@ -99,4 +100,5 @@
 
     margin-top: 20px;
   }
+
 </style>
