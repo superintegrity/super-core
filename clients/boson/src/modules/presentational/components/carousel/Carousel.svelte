@@ -39,6 +39,7 @@
       clientWidth,
     });
   }
+
 </script>
 
 <div
@@ -97,4 +98,5 @@
     position: relative;
     max-height: 680px;
   }
+
 </style>

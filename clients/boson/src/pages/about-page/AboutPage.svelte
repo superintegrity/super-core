@@ -4,12 +4,21 @@
   import { AboutUsContent } from './about-us-content';
   import bannerSrc from './images/banner@3x.png';
   import bottomBannerSrc from './images/bottom-banner@3x.png';
+  import type { default as SvelteImage } from 'svelte-image';
+
+  import { onMount } from 'svelte';
+  let Image: typeof SvelteImage;
+
+  onMount(async () => {
+    const module = await import('svelte-image');
+    Image = module.default;
+  });
 
 </script>
 
 <DefaultLayout currentUrl="/about">
   <div class="about-page-root">
-    <img class="banner" src={bannerSrc} alt="about banner" />
+    <svelte:component this={Image} src={bannerSrc} alt="about banner" />
 
     <section class="top-section">
       <H1 class="h1">About Us</H1>

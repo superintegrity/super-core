@@ -1,0 +1,55 @@
+diff --git a/node_modules/svelte/compiler.js b/node_modules/svelte/compiler.js
+index 23c90b5..d53500d 100644
+--- a/node_modules/svelte/compiler.js
++++ b/node_modules/svelte/compiler.js
+@@ -30185,21 +30185,36 @@
+ 	    // @ts-ignore todo: doublecheck
+ 	    const filename = (options && options.filename) || preprocessor.filename; // legacy
+ 	    const preprocessors = preprocessor ? (Array.isArray(preprocessor) ? preprocessor : [preprocessor]) : [];
+-	    const markup = preprocessors.map(p => p.markup).filter(Boolean);
+-	    const script = preprocessors.map(p => p.script).filter(Boolean);
+-	    const style = preprocessors.map(p => p.style).filter(Boolean);
+ 	    const result = new PreprocessResult(source, filename);
+-	    // TODO keep track: what preprocessor generated what sourcemap?
+-	    // to make debugging easier = detect low-resolution sourcemaps in fn combine_mappings
+-	    for (const process of markup) {
+-	        result.update_source(await process_markup(filename, process, result));
+-	    }
+-	    for (const process of script) {
+-	        result.update_source(await process_tag('script', process, result));
+-	    }
+-	    for (const preprocess of style) {
+-	        result.update_source(await process_tag('style', preprocess, result));
+-	    }
++
++			// const markup = preprocessors.map(p => p.markup).filter(Boolean);
++	    // const script = preprocessors.map(p => p.script).filter(Boolean);
++	    // const style = preprocessors.map(p => p.style).filter(Boolean);
++	    // // TODO keep track: what preprocessor generated what sourcemap?
++	    // // to make debugging easier = detect low-resolution sourcemaps in fn combine_mappings
++
++	    // for (const process of markup) {
++	    //     result.update_source(await process_markup(filename, process, result));
++	    // }
++	    // for (const process of script) {
++	    //     result.update_source(await process_tag('script', process, result));
++	    // }
++	    // for (const preprocess of style) {
++	    //     result.update_source(await process_tag('style', preprocess, result));
++	    // }
++			for (const p of preprocessors) {
++				const {markup, script, style} = p
++				if (markup) {
++					result.update_source(await process_markup(filename, markup, result));
++				}
++				if (script) {
++					result.update_source(await process_tag('script', script, result));
++				}
++				if (style) {
++					result.update_source(await process_tag('style', style, result));
++				}
++			}
++
+ 	    return result.to_processed();
+ 	}
+ 
