@@ -1,7 +1,8 @@
 <script>
   import { Meta, Story } from '@storybook/addon-svelte-csf';
-  import smsfSrc from './images/smsf@3x.png';
+  import smsfSrc from './images/smsf.jpg';
   import ServiceCard from './ServiceCard.svelte';
+
 </script>
 
 <Meta

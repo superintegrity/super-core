@@ -38,7 +38,7 @@ jobs:
         run: |
           npm test -- --since $(git rev-parse HEAD~1)
 
-  deploy:
+  deploy-dev-staging:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
     needs: build
@@ -58,7 +58,6 @@ jobs:
           pip3 install aws-sam-cli
           export PATH=/home/runner/.local/bin:$PATH
           sam --version
-
           npm ci
 
       - name: Deploy to dev staging
@@ -70,6 +69,28 @@ jobs:
         run: |
           export PATH=/home/runner/.local/bin:$PATH
           npm run deploy -- --since $(git rev-parse HEAD~1)
+
+  deploy-prod-green:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    needs: build
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Use Node.js 15.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 15.x
+
+      - name: install
+        run: |
+          pip3 install --upgrade setuptools pip
+          pip3 install wheel
+          pip3 install aws-sam-cli
+          export PATH=/home/runner/.local/bin:$PATH
+          sam --version
+          npm ci
 
       - name: Deploy to prod green
         env:
