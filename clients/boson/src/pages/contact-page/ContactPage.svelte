@@ -37,13 +37,14 @@
   img.banner {
     width: 100%;
     min-height: 220px;
+    height: 38vw;
     max-height: 600px;
     object-position: center top;
     object-fit: cover;
   }
 
   section {
-    margin-top: 60px;
+    margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
     max-width: 1250px;

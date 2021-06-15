@@ -2,8 +2,8 @@
   import { Meta, Story } from '@storybook/addon-svelte-csf';
 
   import InfosGrid from './InfosGrid.svelte';
-  import accountantImage from './images/accountant@3x.png';
-  import trusteeImage from './images/trustee@3x.png';
+  import accountantImage from './images/accountant.jpg';
+  import trusteeImage from './images/trustee.jpg';
 
 </script>
 

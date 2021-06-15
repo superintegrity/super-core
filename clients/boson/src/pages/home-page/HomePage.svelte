@@ -6,6 +6,7 @@
 
   import { ServicesContent } from './services-content';
   import { InfosContent } from './infos-content';
+
 </script>
 
 <DefaultLayout currentUrl="/">
@@ -70,4 +71,5 @@
   p + p {
     margin-top: 1.5em;
   }
+
 </style>

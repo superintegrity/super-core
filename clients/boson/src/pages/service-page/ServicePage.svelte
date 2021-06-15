@@ -30,6 +30,7 @@
     img.banner {
       width: 100%;
       min-height: 220px;
+      height: 38vw;
       max-height: 600px;
       object-position: center center;
       object-fit: cover;

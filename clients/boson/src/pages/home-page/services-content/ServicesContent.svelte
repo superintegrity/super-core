@@ -5,10 +5,11 @@
   } from '../../../modules/container-query';
   import { H1 } from '../../../modules/presentational/components/headings';
   import { InfoBox } from '../../../modules/presentational/components/info-box';
-  import smsfSetupSrc from './images/smsf-setup.png';
-  import adminSrc from './images/admin.png';
-  import consultingSrc from './images/consulting.png';
-  import documentSrc from './images/document.png';
+  import smsfSetupSrc from './images/smsf-setup2.png';
+  import adminSrc from './images/admin2.png';
+  import consultingSrc from './images/consulting2.png';
+  import documentSrc from './images/document2.png';
+
 </script>
 
 <div
@@ -27,7 +28,7 @@
       </ul>
     </InfoBox>
     <InfoBox class="info-box" heading="Admin & Compliance">
-      <img slot="icon" src={adminSrc} alt="SMSF Setup" />
+      <img slot="icon" src={adminSrc} alt="Admin & Compliance" />
       <ul>
         <li>All essential admin tasks</li>
         <li>Free SMSF transfer services</li>
@@ -35,7 +36,7 @@
       </ul>
     </InfoBox>
     <InfoBox class="info-box" heading="Consulting Services">
-      <img slot="icon" src={consultingSrc} alt="SMSF Setup" />
+      <img slot="icon" src={consultingSrc} alt="Consulting Services" />
       <ul>
         <li>Super & tax law information</li>
         <li>Independent advice & second opinion</li>
@@ -43,7 +44,7 @@
       </ul>
     </InfoBox>
     <InfoBox class="info-box" heading="Document Services">
-      <img slot="icon" src={documentSrc} alt="SMSF Setup" />
+      <img slot="icon" src={documentSrc} alt="Document Services" />
       <ul>
         <li>Trust deed upgrade</li>
         <li>Pension documentation</li>
@@ -67,6 +68,10 @@
       margin-top: 20px;
       margin-left: 20px;
     }
+  }
+
+  img {
+    width: 40px;
   }
 
   .service-content-root {
@@ -100,4 +105,5 @@
       }
     }
   }
+
 </style>

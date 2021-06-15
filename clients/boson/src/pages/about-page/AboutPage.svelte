@@ -44,6 +44,7 @@
     img.banner {
       width: 100%;
       min-height: 220px;
+      height: 38vw;
       max-height: 600px;
       object-position: center 30%;
       object-fit: cover;
@@ -56,7 +57,7 @@
       max-width: 1400px;
       padding-left: 5%;
       padding-right: 5%;
-      margin-bottom: 100px;
+      margin-bottom: 200px;
     }
 
     @media (max-width: 600px) {
@@ -72,11 +73,6 @@
       margin-bottom: clamp(20px, 5vw, 80px);
     }
 
-    .bottom-banner-wrapper {
-      margin: 0;
-      padding: 0;
-    }
-
     img.bottom-banner {
       width: 100%;
       min-height: 220px;
@@ -84,9 +80,7 @@
       object-position: center top;
       object-fit: cover;
 
-      // Paul Debug: check again with the real image,
-      // Why is this needed
-      margin-bottom: -2px;
+      margin-bottom: -3px;
     }
   }
 

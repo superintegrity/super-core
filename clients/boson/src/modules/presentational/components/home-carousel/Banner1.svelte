@@ -1,5 +1,6 @@
 <script lang="ts">
-  import banner1Src from './images/banner-1@3x.png';
+  import banner1Src from './images/banner-1.jpg';
+
 </script>
 
 <div class="banner1-root {$$props.class || ''}">
@@ -16,6 +17,7 @@
 
     font-style: normal;
     font-weight: bold;
+    line-height: 125%;
 
     font-size: clamp(1.8rem, 5vw, 4rem);
     margin-top: 1em;
@@ -30,10 +32,12 @@
   }
 
   img {
-    object-position: center top;
+    object-position: center bottom;
     object-fit: cover;
     width: 100%;
+    height: 38vw;
     min-height: 300px;
+    max-height: 680px;
   }
 
   /* // Set by parent
@@ -43,4 +47,5 @@
       line-height: 118%;
     }
   } */
+
 </style>
