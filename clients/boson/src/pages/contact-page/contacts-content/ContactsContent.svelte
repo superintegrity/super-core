@@ -21,7 +21,6 @@
 
 <style lang="scss">
   .root {
-    height: 25rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -31,7 +30,7 @@
 
     :global(.contact-card) {
       flex: 1;
-      min-width: 18rem;
+      min-width: 28rem;
       margin-top: 20px;
       margin-left: 20px;
     }

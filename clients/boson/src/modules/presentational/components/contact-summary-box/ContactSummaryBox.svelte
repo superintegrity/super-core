@@ -3,9 +3,10 @@
   import { getConfig } from '../../../config';
 
   const { ADDRESS, EMAIL } = getConfig();
+
 </script>
 
-<div class="root {$$props.class || ''}">
+<div class="contact-summary-box-root {$$props.class || ''}">
   <SummaryH1 class="summary-h1">Contact Us</SummaryH1>
 
   <h2>Address:</h2>
@@ -19,7 +20,7 @@
 </div>
 
 <style lang="scss">
-  .root :global(.summary-h1) {
+  .contact-summary-box-root :global(.summary-h1) {
     margin-bottom: 10%;
   }
 
@@ -47,4 +48,5 @@
       text-decoration: none;
     }
   }
+
 </style>

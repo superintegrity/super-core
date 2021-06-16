@@ -36,6 +36,7 @@
     menuShown = bpClasses.includes('bp-medium');
     shouldAnimate = !bpClasses.includes('bp-medium');
   }
+
 </script>
 
 <div
@@ -102,7 +103,6 @@
   }
 
   ul {
-    width: 100%;
     display: none;
     flex-direction: column;
     position: absolute;
@@ -123,6 +123,7 @@
     }
 
     ul {
+      width: 100%;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -131,4 +132,5 @@
       top: 0;
     }
   }
+
 </style>

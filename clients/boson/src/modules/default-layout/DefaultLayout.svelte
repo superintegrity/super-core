@@ -3,6 +3,7 @@
   import AboutSummaryBox from '../presentational/components/about-summary-box/AboutSummaryBox.svelte';
   import ContactSummaryBox from '../presentational/components/contact-summary-box/ContactSummaryBox.svelte';
   import { Logo } from '../presentational/components/logo';
+  import { SiteMap } from './SiteMap';
   import Context from './Context.svelte';
 
   export let currentUrl: string | undefined;
@@ -37,8 +38,11 @@
     <slot />
   </main>
   <footer class="layout-footer-root">
-    <AboutSummaryBox class="summary-box" />
-    <ContactSummaryBox class="summary-box" />
+    <div class="summary-boxes">
+      <AboutSummaryBox class="summary-box" />
+      <ContactSummaryBox class="summary-box" />
+    </div>
+    <SiteMap class="site-map" />
   </footer>
 </Context>
 
@@ -58,16 +62,23 @@
   }
 
   footer {
-    padding: 6em 3%;
     background-color: #0e0f10;
+    padding: 6em 3%;
+    .summary-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+      :global(.summary-box) {
+        min-width: 16rem;
+        max-width: 23rem;
+        margin-top: 3em;
+        margin-left: 2%;
+        margin-right: 2%;
+      }
+    }
 
-    :global(.summary-box) {
-      min-width: 16rem;
-      max-width: 23rem;
+    :global(.site-map) {
       margin-top: 3em;
       margin-left: 2%;
       margin-right: 2%;
