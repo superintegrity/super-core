@@ -1,12 +1,18 @@
 <script lang="ts">
   export let imageSrc: string;
+  export let image2Src: string = '';
   export let heading: string = '';
   export let children: string = '';
 
 </script>
 
 <div class="service-card-root {$$props.class || ''}">
-  <div class="root-child image"><img src={imageSrc} alt="service" /></div>
+  <div class="root-child image">
+    <img src={imageSrc} alt="service" />
+    {#if image2Src}
+      <img src={image2Src} alt="service 2" />
+    {/if}
+  </div>
   <div class="root-child content">
     {#if heading}
       <h1>{heading}</h1>
@@ -28,10 +34,13 @@
   .image {
     flex: 2;
     min-width: 30rem;
+    display: flex;
+    flex-direction: column;
   }
 
   img {
-    height: 100%;
+    /* height: 100%; */
+    flex: 1;
     width: 100%;
     object-fit: cover;
   }

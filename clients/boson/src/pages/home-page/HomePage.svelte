@@ -32,16 +32,16 @@
         all day-to-day administration tasks. We facilitate SMSF operations and
         prepare documents as instructed. We provide technical support and
         factual information on tax laws and superannuation rules. You have our
-        support for every aspect of your SMSF needs
+        support for every aspect of your SMSF needs.
       </p>
     </PageSummary>
   </section>
 
-  <div class="infos-grid-wrapper">
+  <div class="infos-content-wrapper">
     <InfosContent />
   </div>
 
-  <section>
+  <section class="service-content-wrapper">
     <ServicesContent />
   </section>
 
@@ -60,12 +60,20 @@
     padding-right: 5%;
   }
 
-  .infos-grid-wrapper {
+  .infos-content-wrapper {
     margin-top: 100px;
+  }
+
+  .service-content-wrapper {
+    max-width: 1200px;
   }
 
   .recommendation {
     margin-top: 100px;
+  }
+
+  p {
+    text-align: justify;
   }
 
   p + p {

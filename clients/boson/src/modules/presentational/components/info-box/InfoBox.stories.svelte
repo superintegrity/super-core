@@ -16,7 +16,7 @@
 />
 
 <Story name="Default">
-  <InfoBox heading="SMSF Setup">
+  <InfoBox url="/services" heading="SMSF Setup">
     <img slot="icon" src={smsfSetupSrc} alt="SMSF Setup" />
     <ul>
       <li>Step by step guide</li>

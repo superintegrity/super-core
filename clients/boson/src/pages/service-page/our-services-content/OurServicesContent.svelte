@@ -9,7 +9,7 @@
 </script>
 
 <div class="our-services-content-root {$$props.class || ''}">
-  <div class="card">
+  <div id="smsf-setup" class="card">
     <ServiceCard imageSrc={smsfSrc} heading="SMSF Setup">
       We offer administration services to facilitate SMSF establishment process,
       including ABN and TFN application if required. We can help you obtain all
@@ -17,7 +17,7 @@
       to ensure its legal compliance.
     </ServiceCard>
   </div>
-  <div class="card">
+  <div id="admin-compliance" class="card">
     <ServiceCard imageSrc={adminSrc} heading="Administration & EOFY Compliance">
       We take care of your day-to-day accounting and administration tasks,
       including monitoring contribution caps and pension minimum (and maximum
@@ -26,7 +26,7 @@
       arranging an independent annual audit.
     </ServiceCard>
   </div>
-  <div class="card">
+  <div id="consulting" class="card">
     <ServiceCard imageSrc={consultingSrc} heading="Consulting Services">
       We provide regulation and tax related factual information and technical
       support to help you keep up with legislation changes and meet compliance
@@ -34,7 +34,7 @@
       accountants, and auditors to clarify issues and solve problems.
     </ServiceCard>
   </div>
-  <div class="card">
+  <div id="document" class="card">
     <ServiceCard imageSrc={documentSrc} heading="Document Services">
       We can help source legal documents and assist with the following on an
       execution-only basis:

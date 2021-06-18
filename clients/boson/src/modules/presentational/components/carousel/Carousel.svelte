@@ -53,6 +53,7 @@
     this={Carousel}
     perPage={1}
     duration={500}
+    autoplay={5000}
     bind:this={carousel}
   >
     <span class="control" slot="left-control">

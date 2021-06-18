@@ -6,7 +6,7 @@
 <div class="banner1-root {$$props.class || ''}">
   <div class="title">
     <p>SUPER INTEGRITY</p>
-    <p>Trustworthy SMSF Accountants</p>
+    <p>Trustworthy SMSF Specialists</p>
   </div>
   <img src={banner1Src} alt="Banner 1" />
 </div>
@@ -19,7 +19,7 @@
     font-weight: bold;
     line-height: 125%;
 
-    font-size: clamp(1.8rem, 5vw, 4rem);
+    font-size: clamp(1.8rem, 5vw, 4.5rem);
     margin-top: 1em;
     margin-left: 2em;
     margin-right: 2em;

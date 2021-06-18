@@ -19,7 +19,7 @@
   <H1 class="h1">Our Services</H1>
 
   <div class="info-boxes">
-    <InfoBox class="info-box" icon="" heading="SMSF Setup">
+    <InfoBox class="info-box" url="/service#smsf-setup" heading="SMSF Setup">
       <img slot="icon" src={smsfSetupSrc} alt="SMSF Setup" />
       <ul>
         <li>Step by step guide</li>
@@ -27,23 +27,35 @@
         <li>Quality documents & templates</li>
       </ul>
     </InfoBox>
-    <InfoBox class="info-box" heading="Admin & Compliance">
+    <InfoBox
+      class="info-box"
+      url="/service#admin-compliance"
+      heading="Admin & Compliance"
+    >
       <img slot="icon" src={adminSrc} alt="Admin & Compliance" />
       <ul>
         <li>All essential admin tasks</li>
         <li>Free SMSF transfer services</li>
-        <li>Financials, tax return and audit</li>
+        <li>EOFY Financials, tax return and audit</li>
       </ul>
     </InfoBox>
-    <InfoBox class="info-box" heading="Consulting Services">
+    <InfoBox
+      class="info-box"
+      url="/service#consulting"
+      heading="Consulting Services"
+    >
       <img slot="icon" src={consultingSrc} alt="Consulting Services" />
       <ul>
         <li>Super & tax law information</li>
+        <li>Go-to person & ad-hoc enquiries</li>
         <li>Independent advice & second opinion</li>
-        <li>Go-to person & ad-hoc enquiries welcome</li>
       </ul>
     </InfoBox>
-    <InfoBox class="info-box" heading="Document Services">
+    <InfoBox
+      class="info-box"
+      url="/service#document"
+      heading="Document Services"
+    >
       <img slot="icon" src={documentSrc} alt="Document Services" />
       <ul>
         <li>Trust deed upgrade</li>

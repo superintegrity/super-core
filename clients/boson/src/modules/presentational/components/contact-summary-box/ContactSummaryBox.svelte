@@ -15,20 +15,20 @@
   <!-- <h2>Phone:</h2>
   <p class="phone">{PHONE_NUMBER}</p> -->
 
-  <h2>Email:</h2>
+  <h2 class="email">Email:</h2>
   <p class="email"><a href="mailto:{EMAIL}">{EMAIL}</a></p>
 </div>
 
 <style lang="scss">
   .contact-summary-box-root :global(.summary-h1) {
-    margin-bottom: 10%;
+    margin-bottom: 15px;
   }
 
   h2 {
     color: #7dd7e2;
     font-weight: 400;
     font-size: 1.8rem;
-    margin: 0.7em 0;
+    margin-bottom: 0.5em;
   }
 
   p {
@@ -36,6 +36,10 @@
     font-weight: 400;
     font-size: 1.6rem;
     line-height: 1.3em;
+  }
+
+  h2.email {
+    margin-top: 0.5em;
   }
 
   /* p.phone, */

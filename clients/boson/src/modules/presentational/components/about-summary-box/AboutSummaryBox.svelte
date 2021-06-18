@@ -5,9 +5,10 @@
 
 <div class="about-summary-box-root {$$props.class || ''}">
   <SummaryH1 class="summary-h1">About Us</SummaryH1>
+  <p>We are registered tax agents, IPAs, CPAs and SMSF specialist advisors.</p>
   <p>
-    Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. lacinia
-    eget consectetur sed, convallis at tellus.
+    We deliver a comprehensive range of SMSF services to help our clients manage
+    their funds more efficiently and successfully.
   </p>
 </div>
 
@@ -19,10 +20,14 @@
 
     p {
       color: #bfbfbf;
-      font-size: 1.8rem;
-      line-height: 1.9;
+      font-size: 1.4rem;
+      line-height: 1.5em;
       letter-spacing: 1px;
-      font-weight: 300;
+      font-weight: 400;
+    }
+
+    p + p {
+      margin-top: 10px;
     }
   }
 

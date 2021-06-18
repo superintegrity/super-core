@@ -29,12 +29,14 @@
 
       <div class="cell">
         <section class="description">
-          <h1>SMSF Trustees</h1>
-          <ul>
-            <li>Professional guidance & ongoing support</li>
-            <li>Independent advice & second opinion</li>
-            <li>Go-to person & ad-hoc enquiries</li>
-          </ul>
+          <div>
+            <h1>SMSF Trustees</h1>
+            <ul>
+              <li>Professional guidance & ongoing support</li>
+              <li>Independent advice & second opinion</li>
+              <li>Go-to person & ad-hoc enquiries</li>
+            </ul>
+          </div>
         </section>
       </div>
     </div>
