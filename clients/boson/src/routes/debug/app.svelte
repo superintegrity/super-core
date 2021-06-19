@@ -1,14 +1,14 @@
 <script lang="ts">
-  import ImmutableTodo from '../../modules/debug/ImmutableTodo.svelte'
-  import type { ITodo } from '../../modules/debug/ITodo'
-  import MutableTodo from '../../modules/debug/MutableTodo.svelte'
-  import DefaultLayout from '../../modules/default-layout/DefaultLayout.svelte'
+  import ImmutableTodo from '../../modules/debug/ImmutableTodo.svelte';
+  import type { ITodo } from '../../modules/debug/ITodo';
+  import MutableTodo from '../../modules/debug/MutableTodo.svelte';
+  import DefaultLayout from '../../modules/default-layout/DefaultLayout.svelte';
 
   $: todos = [
     { id: 1, done: true, text: 'wash the car' },
     { id: 2, done: false, text: 'take the dog for a walk' },
     { id: 3, done: false, text: 'mow the lawn' },
-  ] as ITodo[]
+  ] as ITodo[];
 
   function toggle(id: number) {
     todos = todos.map((todo) => {
@@ -18,12 +18,12 @@
           id,
           done: !todo.done,
           text: todo.text,
-        }
+        };
       }
 
       // return the same object
-      return todo
-    })
+      return todo;
+    });
   }
 
   function addTodo() {
@@ -31,11 +31,12 @@
       id: todos.length + 1,
       done: false,
       text: 'new todo',
-    })
+    });
   }
+
 </script>
 
-<DefaultLayout currentUrl="/debug/app">
+<DefaultLayout currentUrl="/debug/app/">
   <h2>Immutable</h2>
   {#each todos as todo}
     <ImmutableTodo todo={todo} on:click={() => toggle(todo.id)} />

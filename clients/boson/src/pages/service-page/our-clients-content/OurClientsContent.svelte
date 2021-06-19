@@ -13,7 +13,7 @@
       </div>
 
       <div class="cell">
-        <section class="description">
+        <section id="advicers-accountants" class="description">
           <div>
             <h1>Advisers & Accountants</h1>
             <p>
@@ -39,7 +39,7 @@
       <div class="cell"><img src={smsfTrusteeImage} alt="trustees" /></div>
 
       <div class="cell">
-        <section class="description">
+        <section id="smsf-trustees" class="description">
           <div>
             <h1>SMSF Trustees</h1>
             <p>

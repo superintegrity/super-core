@@ -73,7 +73,7 @@
   }
 
   p {
-    text-align: justify;
+    /* text-align: justify; */
   }
 
   p + p {

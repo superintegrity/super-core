@@ -27,14 +27,14 @@
   h2 {
     color: #7dd7e2;
     font-weight: 400;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin-bottom: 0.5em;
   }
 
   p {
     color: #bfbfbf;
     font-weight: 400;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     line-height: 1.3em;
   }
 

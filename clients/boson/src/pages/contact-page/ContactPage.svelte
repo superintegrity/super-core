@@ -14,7 +14,7 @@
 
 </script>
 
-<DefaultLayout currentUrl="/contact">
+<DefaultLayout currentUrl="/contact/">
   <div class="contract-page-root">
     <img class="banner" src={bannerSrc} alt="service banner" />
 
@@ -32,46 +32,46 @@
 <style lang="scss">
   .contract-page-root {
     margin-bottom: 100px;
-  }
 
-  img.banner {
-    width: 100%;
-    min-height: 220px;
-    height: 38vw;
-    max-height: 600px;
-    object-position: center top;
-    object-fit: cover;
-  }
-
-  section {
-    margin-top: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1250px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-
-    padding-left: 5%;
-    padding-right: 5%;
-
-    &.map {
-      padding-left: 0;
-      padding-right: 0;
+    img.banner {
+      width: 100%;
+      min-height: 220px;
+      height: 38vw;
+      max-height: 600px;
+      object-position: center top;
+      object-fit: cover;
     }
-  }
 
-  :global(.h1) {
-    text-align: center;
-    font-size: clamp(2.5rem, 5vw, 4.8rem);
-    margin-bottom: clamp(20px, 5vw, 80px);
-  }
+    section {
+      margin-top: 100px;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1250px;
 
-  iframe {
-    width: 100%;
-    height: clamp(250px, 100vw, 450px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-content: center;
+
+      padding-left: 5%;
+      padding-right: 5%;
+
+      &.map {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    :global(.h1) {
+      text-align: center;
+      font-size: clamp(2.5rem, 5vw, 4.8rem);
+      margin-bottom: clamp(20px, 5vw, 80px);
+    }
+
+    iframe {
+      width: 100%;
+      height: clamp(250px, 100vw, 450px);
+    }
   }
 
 </style>

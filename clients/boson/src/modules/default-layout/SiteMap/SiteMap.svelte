@@ -3,9 +3,10 @@
 
 <div class="site-map-root {$$props.class || ''}">
   <div class="links">
-    <a href="/">Home</a> | <a href="/service">Services</a> |
-    <a href="/about">About</a>
-    | <a href="/contact">Contact</a>
+    <a href="/">Home</a> |
+    <a href="/service/">Services</a> |
+    <a href="/about/">About</a> |
+    <a href="/contact/">Contact</a>
   </div>
 </div>
 

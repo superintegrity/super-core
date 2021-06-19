@@ -19,7 +19,7 @@
   <H1 class="h1">Our Services</H1>
 
   <div class="info-boxes">
-    <InfoBox class="info-box" url="/service#smsf-setup" heading="SMSF Setup">
+    <InfoBox class="info-box" url="/service/#smsf-setup" heading="SMSF Setup">
       <img slot="icon" src={smsfSetupSrc} alt="SMSF Setup" />
       <ul>
         <li>Step by step guide</li>
@@ -29,7 +29,7 @@
     </InfoBox>
     <InfoBox
       class="info-box"
-      url="/service#admin-compliance"
+      url="/service/#admin-compliance"
       heading="Admin & Compliance"
     >
       <img slot="icon" src={adminSrc} alt="Admin & Compliance" />
@@ -41,7 +41,7 @@
     </InfoBox>
     <InfoBox
       class="info-box"
-      url="/service#consulting"
+      url="/service/#consulting"
       heading="Consulting Services"
     >
       <img slot="icon" src={consultingSrc} alt="Consulting Services" />
@@ -53,7 +53,7 @@
     </InfoBox>
     <InfoBox
       class="info-box"
-      url="/service#document"
+      url="/service/#document"
       heading="Document Services"
     >
       <img slot="icon" src={documentSrc} alt="Document Services" />

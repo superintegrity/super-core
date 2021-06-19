@@ -18,7 +18,7 @@
 
 </script>
 
-<DefaultLayout currentUrl="/about">
+<DefaultLayout currentUrl="/about/">
   <div class="about-page-root">
     <!-- It caused bug: navigate from /about to /service shows blank -->
     <!-- <svelte:component this={Image} class="banner" src={bannerSrc} alt="about banner" /> -->

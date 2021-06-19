@@ -3,7 +3,7 @@
   import AboutSummaryBox from '../presentational/components/about-summary-box/AboutSummaryBox.svelte';
   import ContactSummaryBox from '../presentational/components/contact-summary-box/ContactSummaryBox.svelte';
   import { Logo } from '../presentational/components/logo';
-  import logosSrc from './images/logos.png';
+  import { Logos } from './logos';
   import { SiteMap } from './SiteMap';
   import Context from './Context.svelte';
 
@@ -15,15 +15,15 @@
       title: 'Home',
     },
     {
-      url: '/service',
+      url: '/service/',
       title: 'Services',
     },
     {
-      url: '/about',
+      url: '/about/',
       title: 'About',
     },
     {
-      url: '/contact',
+      url: '/contact/',
       title: 'Contact',
     },
   ];
@@ -41,7 +41,7 @@
   <footer class="layout-footer-root">
     <div class="summary-boxes">
       <AboutSummaryBox class="summary-box" />
-      <img src={logosSrc} />
+      <Logos class="summary-box" />
       <ContactSummaryBox class="summary-box" />
     </div>
     <SiteMap class="site-map" />
@@ -74,14 +74,14 @@
       :global(.summary-box) {
         min-width: 16rem;
         max-width: 30rem;
-        margin-top: 3em;
+        margin-top: 4em;
         margin-left: 2%;
         margin-right: 2%;
       }
     }
 
     :global(.site-map) {
-      margin-top: 3em;
+      margin-top: 4em;
       margin-left: 2%;
       margin-right: 2%;
     }

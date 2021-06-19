@@ -57,7 +57,7 @@
     color: #083940;
     font-size: 1.6rem;
     letter-spacing: 1px;
-    font-weight: 300;
+    font-weight: 400;
     text-align: center;
   }
 

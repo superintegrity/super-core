@@ -7,7 +7,7 @@
 
 </script>
 
-<DefaultLayout currentUrl="/service">
+<DefaultLayout currentUrl="/service/">
   <div class="service-page-root">
     <img class="banner" src={bannerSrc} alt="service banner" />
 

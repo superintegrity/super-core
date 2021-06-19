@@ -7,7 +7,7 @@
 
 </script>
 
-<div class="root {$$props.class || ''}">
+<div class="contacts-card-root {$$props.class || ''}">
   <!-- <ContactCard class="contact-card" heading="Phone Number" icon={phone}>
     {PHONE_NUMBER}
   </ContactCard> -->
@@ -20,7 +20,7 @@
 </div>
 
 <style lang="scss">
-  .root {
+  .contacts-card-root {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

@@ -54,7 +54,7 @@
   }
 
   p {
-    text-align: justify;
+    /* text-align: justify; */
   }
 
   p + p {
@@ -63,7 +63,7 @@
 
   .disclaimer {
     font-style: italic;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 130%;
   }
 
