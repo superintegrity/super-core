@@ -3,7 +3,10 @@
 
 </script>
 
-<BaseBanner class="banner2-root {$$props.class || ''}" messageAuthor="Paul">
+<BaseBanner
+  class="banner2-root {$$props.class || ''}"
+  messageAuthor="G. Thompson"
+>
   “I was recommended by a friend to use Super Integrity for my SMSF tax and have
   been very pleased with all the advice and support I’ve received. There is
   always a prompt response to any of my queries. They also keep me up to date
