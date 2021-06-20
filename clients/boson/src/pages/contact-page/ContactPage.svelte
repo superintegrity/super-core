@@ -1,16 +1,18 @@
 <script lang="ts">
   import { DefaultLayout } from '../../modules/default-layout';
   import { H1 } from '../../modules/presentational/components/headings';
-  import { getConfig } from '../../modules/config';
   import { ContactsContent } from './contacts-content';
   import bannerSrc from './images/contact-banner.jpg';
+  // import { getConfig } from '../../modules/config';
 
-  const { MAP_API_KEY } = getConfig();
-  const mapMarker = '203-205 Blackburn Road, Mount Waverley VIC 3149';
+  // const { MAP_API_KEY } = getConfig();
+  // const mapMarker = '203-205 Blackburn Road, Mount Waverley VIC 3149';
 
-  const mapSrc = `https://www.google.com/maps/embed/v1/place?key=${MAP_API_KEY}&q=${encodeURIComponent(
-    mapMarker,
-  )}`;
+  // const mapSrc = `https://www.google.com/maps/embed/v1/place?q=${encodeURIComponent(
+  //   mapMarker,
+  // )}`;
+
+  const mapSrc = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d787.3632747689494!2d145.14749482919726!3d-37.873085198733826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x245b23ab3efbcd81!2sSUPER%20INTEGRITY!5e0!3m2!1sen!2sau!4v1624188872774!5m2!1sen!2sau`;
 
 </script>
 
