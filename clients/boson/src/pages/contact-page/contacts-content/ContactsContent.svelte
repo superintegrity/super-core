@@ -15,7 +15,11 @@
     <a href="mailto:{EMAIL}">{EMAIL}</a>
   </ContactCard>
   <ContactCard class="contact-card" heading="Location" icon={mapMarker}>
-    {ADDRESS}
+    {#each ADDRESS as line}
+      <div class="address-line">
+        {line}
+      </div>
+    {/each}
   </ContactCard>
 </div>
 
@@ -30,14 +34,22 @@
 
     :global(.contact-card) {
       flex: 1;
-      min-width: 28rem;
+      min-width: 30rem;
       margin-top: 20px;
       margin-left: 20px;
+      padding: 30px;
+      padding-left: clamp(20px, 5vw, 50px);
+      padding-right: clamp(20px, 5vw, 50px);
     }
 
     a {
       color: #083940;
       text-decoration: none;
+    }
+
+    .address-line {
+      white-space: nowrap;
+      line-height: 150%;
     }
   }
 

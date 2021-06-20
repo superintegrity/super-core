@@ -72,8 +72,7 @@
       justify-content: space-around;
 
       :global(.summary-box) {
-        min-width: 16rem;
-        max-width: 30rem;
+        width: 30rem;
         margin-top: 4em;
         margin-left: 2%;
         margin-right: 2%;

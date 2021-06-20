@@ -10,7 +10,9 @@
   <SummaryH1 class="summary-h1">Contact Us</SummaryH1>
 
   <h2>Address:</h2>
-  <p>{ADDRESS}</p>
+  {#each ADDRESS as line}
+    <p>{line}</p>
+  {/each}
 
   <!-- <h2>Phone:</h2>
   <p class="phone">{PHONE_NUMBER}</p> -->
