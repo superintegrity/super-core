@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 
-const assert = require('assert')
-const Yargs = require('yargs/yargs')
-const { flow } = require('lodash')
-const { makeLogger } = require('../libs/effects/console-logger')
-const { loadEnv } = require('../../config')
+const assert = require('assert');
+const Yargs = require('yargs/yargs');
+const { flow } = require('lodash');
+const { makeLogger } = require('../libs/effects/console-logger');
+const { loadEnv } = require('../../config');
 
-loadEnv()
-const { makeAws } = require('../libs/aws')
+loadEnv();
+const { makeAws } = require('../libs/aws');
 
 function main() {
-  const yargs = createYargs()
+  const yargs = createYargs();
 
   yargs // eslint-disable-line no-unused-expressions
     .option('verbose', {
@@ -29,7 +29,7 @@ function main() {
       demand: true,
     })
     .strict()
-    .help().argv
+    .help().argv;
 }
 
 /**
@@ -38,8 +38,8 @@ function main() {
 function createYargs() {
   // https://github.com/yargs/yargs/issues/1008
 
-  const yargs = Yargs(process.argv.slice(2))
-  return flow([addDeployCommand, addUndeployCommand])(yargs).demandCommand()
+  const yargs = Yargs(process.argv.slice(2));
+  return flow([addDeployCommand, addUndeployCommand])(yargs).demandCommand();
 }
 
 /**
@@ -50,29 +50,34 @@ function addDeployCommand(yargs) {
     .command(
       'deploy',
       'Deploy',
-      {},
+      deployYargs => {
+        return deployYargs.option('skip-s3-sync', {
+          type: 'boolean',
+          demand: false,
+        });
+      },
       /**
        * @param {any} argv
        */
-      async ({ verbose, realm, env }) => {
-        assert(typeof realm === 'string')
-        assert(typeof env === 'string')
-        assert(env !== 'local', `env: ${env} is invalid`)
+      async ({ verbose, realm, env, skipS3Sync }) => {
+        assert(typeof realm === 'string');
+        assert(typeof env === 'string');
+        assert(env !== 'local', `env: ${env} is invalid`);
 
         const logger = makeLogger({
           verbose,
-        })
-        const { deploy } = makeAws({ logger })
+        });
+        const { deploy } = makeAws({ logger });
 
         try {
-          await deploy({ realm, env })
+          await deploy({ realm, env, skipS3Sync });
         } catch (ex) {
-          logger.error(ex)
-          process.exit(1)
+          logger.error(ex);
+          process.exit(1);
         }
       },
     )
-    .demandCommand()
+    .demandCommand();
 }
 
 /**
@@ -88,24 +93,24 @@ function addUndeployCommand(yargs) {
        * @param {any} argv
        */
       async ({ verbose, realm, env }) => {
-        assert(typeof realm === 'string')
-        assert(typeof env === 'string')
-        assert(env !== 'local', `env: ${env} is invalid`)
+        assert(typeof realm === 'string');
+        assert(typeof env === 'string');
+        assert(env !== 'local', `env: ${env} is invalid`);
 
         const logger = makeLogger({
           verbose,
-        })
-        const { undeploy } = makeAws({ logger })
+        });
+        const { undeploy } = makeAws({ logger });
 
         try {
-          await undeploy({ realm, env })
+          await undeploy({ realm, env });
         } catch (ex) {
-          logger.error(ex)
-          process.exit(1)
+          logger.error(ex);
+          process.exit(1);
         }
       },
     )
-    .demandCommand()
+    .demandCommand();
 }
 
-main()
+main();

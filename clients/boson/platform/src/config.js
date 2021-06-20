@@ -1,5 +1,5 @@
 /** @type {import('assert')} */
-const assert = require('assert')
+const assert = require('assert');
 
 /**
  * @param {string=} env
@@ -8,13 +8,13 @@ const getConfig = (env) => {
   assert(
     env === 'staging' || env === 'green' || env === 'paul1',
     `env: ${env} is not supported`,
-  )
+  );
 
   return {
     ...DEFAULT,
     ...(env ? CONFIGS[env] : {}),
-  }
-}
+  };
+};
 
 const DEFAULT = {
   DOMAIN: 'superintegrity.com.au',
@@ -24,12 +24,14 @@ const DEFAULT = {
   IS_MAIN_CLOUDFRONT: false,
   REALM: process.env.REALM,
   ENV: process.env.ENV,
-}
+};
 
 const CONFIGS = {
   paul1: {},
-  staging: {},
+  staging: {
+    IS_MAIN_CLOUDFRONT: true,
+  },
   green: {},
-}
+};
 
-module.exports = { getConfig }
+module.exports = { getConfig };

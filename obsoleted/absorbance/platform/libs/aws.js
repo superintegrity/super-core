@@ -1,20 +1,20 @@
-const { keyBy, some, startsWith } = require('lodash')
-const { CloudFront, CloudFormation, Route53 } = require('aws-sdk')
-const uuidv4 = require('uuid/v4')
-const assert = require('assert')
-const { makeExec } = require('./effects/exec')
-const { DOMAIN, SSL_CERTIFICATE_ARN, IS_MAIN_CLOUDFRONT } = require('./config')
+const { keyBy, some, startsWith } = require('lodash');
+const { CloudFront, CloudFormation, Route53 } = require('aws-sdk');
+const uuidv4 = require('uuid/v4');
+const assert = require('assert');
+const { makeExec } = require('./effects/exec');
+const { DOMAIN, SSL_CERTIFICATE_ARN, IS_MAIN_CLOUDFRONT } = require('./config');
 
 /**
  * @param {object} input
  * @param {import('./logger').ILogger} input.logger
  */
 function makeAws({ logger }) {
-  const exec = makeExec({ logger })
+  const exec = makeExec({ logger });
   return {
     deploy: makeDeploy({ exec }),
     undeploy: makeUndeploy({ exec }),
-  }
+  };
 }
 
 /**
@@ -28,16 +28,17 @@ const makeDeploy = ({ exec }) =>
    * @param {object} input
    * @param {string} input.realm
    * @param {string} input.env
+   * @param {boolean} input.skipS3Sync
    */
-  async ({ realm, env }) => {
-    assert(DOMAIN, 'DOMAIN must be defined.')
-    assert(SSL_CERTIFICATE_ARN, 'SSL_CERTIFICATE_ARN must be defined.')
+  async ({ realm, env, skipS3Sync }) => {
+    assert(DOMAIN, 'DOMAIN must be defined.');
+    assert(SSL_CERTIFICATE_ARN, 'SSL_CERTIFICATE_ARN must be defined.');
 
     if (!(await isDomainExists({ domainName: DOMAIN || '' }))) {
-      throw new Error(`${DOMAIN} does not exist.`)
+      throw new Error(`${DOMAIN} does not exist.`);
     }
 
-    const stackName = `si-${realm}-${env}-absorbance`
+    const stackName = `si-${realm}-${env}-absorbance`;
     await exec([
       'sam',
       'deploy',
@@ -53,18 +54,20 @@ const makeDeploy = ({ exec }) =>
       `AcmCertificateArn=${SSL_CERTIFICATE_ARN}`,
       `Env=${env}`,
       `IsMainCloudfront=${IS_MAIN_CLOUDFRONT === 'true' ? '1' : '0'}`,
-    ])
+    ]);
 
-    await exec([
-      'aws',
-      's3',
-      'sync',
-      'public/',
-      `s3://absorbance-${env}.${DOMAIN}`,
-    ])
+    if (!skipS3Sync) {
+      await exec([
+        'aws',
+        's3',
+        'sync',
+        'public/',
+        `s3://absorbance-${env}.${DOMAIN}`,
+      ]);
 
-    await invalidateCloudfront({ stackName })
-  }
+      await invalidateCloudfront({ stackName });
+    }
+  };
 
 /**
  *
@@ -72,14 +75,14 @@ const makeDeploy = ({ exec }) =>
  * @param {string} input.domainName
  */
 async function isDomainExists({ domainName }) {
-  const route53 = new Route53()
+  const route53 = new Route53();
   const { HostedZones } = await route53
     .listHostedZonesByName({
       DNSName: domainName,
     })
-    .promise()
+    .promise();
 
-  return some(HostedZones, zone => startsWith(zone.Name, domainName))
+  return some(HostedZones, zone => startsWith(zone.Name, domainName));
 }
 
 /**
@@ -88,26 +91,26 @@ async function isDomainExists({ domainName }) {
  * @param {string} input.stackName
  */
 async function invalidateCloudfront({ stackName }) {
-  const cloudFormation = new CloudFormation()
+  const cloudFormation = new CloudFormation();
   const { Stacks: stacks } = await cloudFormation
     .describeStacks({
       StackName: stackName,
     })
-    .promise()
+    .promise();
 
   if (!stacks || stacks.length !== 1) {
-    throw new Error(`Cannot find stack ${stackName}`)
+    throw new Error(`Cannot find stack ${stackName}`);
   }
 
   const distributionId = keyBy(stacks[0].Outputs, 'OutputKey')
-    .CloudfrontDistributionId.OutputValue
+    .CloudfrontDistributionId.OutputValue;
 
   if (!distributionId) {
-    throw new Error(`Cannot get distribution ID from stack ${stackName}`)
+    throw new Error(`Cannot get distribution ID from stack ${stackName}`);
   }
 
-  const cloudFront = new CloudFront()
-  const invalidatingItems = ['/*']
+  const cloudFront = new CloudFront();
+  const invalidatingItems = ['/*'];
 
   await cloudFront
     .createInvalidation({
@@ -120,7 +123,7 @@ async function invalidateCloudfront({ stackName }) {
         },
       },
     })
-    .promise()
+    .promise();
 }
 
 /**
@@ -142,7 +145,7 @@ const makeUndeploy = ({ exec }) =>
       'delete-stack',
       '--stack-name',
       `si-${realm}-${env}-absorbance`,
-    ])
-  }
+    ]);
+  };
 
-module.exports = { makeAws }
+module.exports = { makeAws };
