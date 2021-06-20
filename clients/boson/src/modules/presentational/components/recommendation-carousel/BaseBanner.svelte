@@ -20,7 +20,7 @@
       font-style: italic;
       font-weight: normal;
       /* text-align: justify; */
-      font-size: clamp(1.5rem, 1vw, 1.8rem);
+      font-size: clamp(1.5rem, 1.5vw, 1.8rem);
       line-height: 1.3;
       color: rgba(0, 0, 0, 0.69);
       background-color: rgba(255, 255, 255, 0.8);
