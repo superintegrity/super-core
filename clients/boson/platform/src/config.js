@@ -28,10 +28,10 @@ const DEFAULT = {
 
 const CONFIGS = {
   paul1: {},
-  staging: {
-    IS_MAIN_CLOUDFRONT: true,
+  staging: {},
+  green: {
+    IS_MAIN_CLOUDFRONT: false,
   },
-  green: {},
 };
 
 module.exports = { getConfig };
