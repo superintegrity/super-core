@@ -30,7 +30,7 @@ const CONFIGS = {
   paul1: {},
   staging: {},
   green: {
-    IS_MAIN_CLOUDFRONT: false,
+    IS_MAIN_CLOUDFRONT: true,
   },
 };
 
