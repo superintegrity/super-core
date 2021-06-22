@@ -6,8 +6,13 @@
 
   import { ServicesContent } from './services-content';
   import { InfosContent } from './infos-content';
-
 </script>
+
+<svelte:head>
+  <title>Home | Super Integrity</title>
+  <meta property="og:title" content="Home" />
+  <meta name="twitter:title" content="Home" />
+</svelte:head>
 
 <DefaultLayout currentUrl="/">
   <div class="banner">
@@ -79,5 +84,4 @@
   p + p {
     margin-top: 1.5em;
   }
-
 </style>

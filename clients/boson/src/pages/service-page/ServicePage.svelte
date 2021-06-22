@@ -4,8 +4,13 @@
   import { H1 } from '../../modules/presentational/components/headings';
   import { OurClientsContent } from './our-clients-content';
   import OurServicesContent from './our-services-content/OurServicesContent.svelte';
-
 </script>
+
+<svelte:head>
+  <title>Services | Super Integrity</title>
+  <meta property="og:title" content="Services" />
+  <meta name="twitter:title" content="Services" />
+</svelte:head>
 
 <DefaultLayout currentUrl="/service/">
   <div class="service-page-root">
@@ -62,5 +67,4 @@
       margin-top: 100px;
     }
   }
-
 </style>

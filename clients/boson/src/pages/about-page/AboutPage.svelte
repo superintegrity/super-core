@@ -15,8 +15,13 @@
   //   const module = await import('svelte-image');
   //   Image = module.default;
   // });
-
 </script>
+
+<svelte:head>
+  <title>About | Super Integrity</title>
+  <meta property="og:title" content="About" />
+  <meta name="twitter:title" content="About" />
+</svelte:head>
 
 <DefaultLayout currentUrl="/about/">
   <div class="about-page-root">
@@ -83,5 +88,4 @@
       margin-bottom: -3px;
     }
   }
-
 </style>
