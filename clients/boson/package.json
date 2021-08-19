@@ -19,7 +19,7 @@
   "dependencies": {
     "aos": "^2.3.4",
     "core-js": "^3.7.0",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "reset-css": "^5.0.1",
     "svelte-awesome": "^2.3.0",
     "uri-js": "^4.4.0",
