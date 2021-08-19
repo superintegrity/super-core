@@ -5,6 +5,7 @@
     "dev": "next dev",
     "build": "next build && next export",
     "lint": "tsc",
+    "test": "npm run lint",
     "deploy": "npm run build && ./platform/bin/aws.js deploy --verbose --realm $REALM --env $ENV"
   },
   "dependencies": {
