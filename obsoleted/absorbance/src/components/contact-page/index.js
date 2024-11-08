@@ -18,7 +18,7 @@ export const ContactPage = () => {
     }
   `)
 
-  const address = 'Suite 2.17/203-205 Blackburn Road, Mount Waverley VIC 3149'
+  const address = '203-205 Blackburn Road, Mount Waverley VIC 3149'
   const mapMarker = '203-205 Blackburn Road, Mount Waverley VIC 3149'
   const email = 'info@superintegrity.com.au'
   return (

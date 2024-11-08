@@ -12,7 +12,8 @@
   //   mapMarker,
   // )}`;
 
-  const mapSrc = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d787.3632747689494!2d145.14749482919726!3d-37.873085198733826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x245b23ab3efbcd81!2sSUPER%20INTEGRITY!5e0!3m2!1sen!2sau!4v1624188872774!5m2!1sen!2sau`;
+  // Exact location from Google Maps > Share > Embed a map
+  const mapSrc = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6298.8944759151!2d145.1478022!3d-37.873222299999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad63f8d7a632393%3A0xf2278e67a876470d!2s203-205%20Blackburn%20Rd%2C%20Mount%20Waverley%20VIC%203149!5e0!3m2!1sen!2sau!4v1731068091008!5m2!1sen!2sau`;
 </script>
 
 <svelte:head>

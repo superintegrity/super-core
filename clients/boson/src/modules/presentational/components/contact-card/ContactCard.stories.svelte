@@ -27,6 +27,6 @@
 
 <Story name="Location">
   <ContactCard heading="Location" icon={mapMarker}>
-    Suite 2.17/203-205 Blackburn Road, Mount Waverley VIC 3149
+    203-205 Blackburn Road, Mount Waverley VIC 3149
   </ContactCard>
 </Story>

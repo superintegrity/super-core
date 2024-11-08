@@ -18,7 +18,7 @@ export const getConfig = (env) => {
 
 const DEFAULT = {
   MAP_API_KEY: `AIzaSyAVZcp3tZikbfWLKqysbMv2jeHfRogn7dw`,
-  ADDRESS: ['Suite 2.17/203-205 Blackburn Rd', 'Mount Waverley VIC 3149'],
+  ADDRESS: ['203-205 Blackburn Rd', 'Mount Waverley VIC 3149'],
   EMAIL: 'info@superintegrity.com.au',
 };
 
