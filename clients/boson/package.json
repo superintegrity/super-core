@@ -1,6 +1,6 @@
 {
   "name": "@super-integrity/boson",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "postinstall": "patch-package && ./platform/bin/patch-addon-svelte-csf.sh",
     "dev": "svelte dev",
