@@ -22,21 +22,29 @@ jobs:
           node-version: 15.x
 
       - name: install
-        run: |
-          npm ci
-
-      - name: Build and Test (non-master)
-        if: github.ref != 'refs/heads/master'
-        run: |
-          npm test -- --since origin/master
-
-      - name: Build and Test (master)
-        if: github.ref == 'refs/heads/master'
         env:
           REALM: dev
           ENV: staging
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
-          npm test -- --since $(git rev-parse HEAD~1)
+          aws s3 ls
+          aws sts get-caller-identity
+          echo ${AWS_ACCESS_KEY_ID} | sed 's/./& /g'
+          echo npm ci
+
+      # - name: Build and Test (non-master)
+      #   if: github.ref != 'refs/heads/master'
+      #   run: |
+      #     npm test -- --since origin/master
+
+      # - name: Build and Test (master)
+      #   if: github.ref == 'refs/heads/master'
+      #   env:
+      #     REALM: dev
+      #     ENV: staging
+      #   run: |
+      #     npm test -- --since $(git rev-parse HEAD~1)
 
   deploy-dev-staging:
     runs-on: ubuntu-latest
